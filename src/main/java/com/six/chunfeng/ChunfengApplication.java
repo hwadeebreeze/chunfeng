@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.six.chunfeng.repository")
+@MapperScan("com.six.chunfeng.mapper")
 public class ChunfengApplication {
 
 	public static void main(String[] args) {
