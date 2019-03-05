@@ -1,0 +1,148 @@
+.jobinfo_cont{
+	position:relative;
+	height:auto;
+	min-height:630px;
+	background-color:#FFF;
+	opacity:0.8;
+	border: 3px solid #000;
+	margin-top:5px;
+	margin-bottom:5px;
+}
+.job_title{
+	width:100%;
+	height:60px;
+	line-height:60px;
+	text-indent:20px;
+	background-color:#5CACEE;
+	color:#FFF;
+	font-size:20px;
+	font-weight:900;
+	font-family:sans-serif;
+	-webkit-text-stroke: 1px black;
+}
+.jobinfo{
+	width:100%;
+	text-indent:20px;
+	font-size:14px;
+	border:none;
+	text-align:center;
+}
+.jobinfo table{
+	border:none;
+	margin:30px;
+	text-align:left;
+}
+.jobinfo table tr{
+	border:none;
+}
+.jobinfo table tr td{
+	width:300px;
+	height:40px;
+	line-height:40px;
+	border:none;
+	font-weight:bold;
+}
+.jobinfo table span{
+	color:#06C;
+	font-weight: bold;
+}
+.jobinfo table i{
+	color:#f60;
+	font-size:18px;
+	font-weight:bold;
+	font-family:Arial;
+}
+.jobinfo_btn{
+	width:200px;
+	height:50px;
+	line-height:50px;
+	text-align:center;
+	color:#FFF;
+	-webkit-text-stroke: 1px black;
+	background-color:#5CACEE;
+	font-size:30px;
+	font-family:sans-serif;
+	letter-spacing:4px;
+	margin-bottom:20px;
+	border-radius:10px;
+	border:1px solid #000;
+}
+.jobinfo_btn:hover{
+	background-color:#FFF;
+	color:#5CACEE;
+	border-width:2px;
+}
+.jobdetail_label{
+	width:100%;
+	height:40px;
+	line-height:40px;
+	background-color:#5CACEE;
+	color:#FFF;
+	font-weight:900;
+	font-size:20px;
+	font-family:sans-serif;
+	text-indent:10px;
+	margin-bottom:30px;
+	-webkit-text-stroke: 1px black
+}
+.jobdetail p{
+	line-height:24px;
+	font-size:14px;
+}
+
+/*弹窗*/
+#_report {
+	/*position:absolute;*/
+	height: 0px;
+	width: 0px;
+	background: #000080;
+	color: white;
+	text-align: center;
+	line-height: 40px;
+	position:fixed;
+	z-index:9999;
+	border-radius:20px;
+	opacity:0.8;
+}
+
+#report_close {
+	float: right;
+	top:6px;
+	right:4px;
+	height: 0px;
+	width: 0px;
+	background:url(../img/close.png);
+	text-align: center;
+	background-size:100%, 100%;
+	cursor: pointer;
+}
+
+#report_container{
+	font-family:sans-serif;
+	width: 100%;
+	text-align: center;
+	display: none;
+	margin-top: 30px;
+	padding-bottom: 10px;
+}
+#industry_comp, #city_comp{
+	display:inline-block;
+	font-weight:bold;
+	color:#FFF;
+	background-color:#FFF;
+	font-family:sans-serif;
+	-webkit-text-stroke: 1px black;
+	font-size:20px;
+	border:1px solid #FFF;
+}
+#industry_comp:hover, #city_comp:hover{
+	color:#5CACEE;
+}
+#graph_cont{
+	background-color:#FFF;
+	width:590px;
+	height:400px;
+	border:1px solid #000;
+	margin:auto;
+	
+}

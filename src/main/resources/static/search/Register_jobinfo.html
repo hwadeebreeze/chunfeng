@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>应聘信息</title>
+	
+   <script src="js/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.css">
+    <script src="js/bootstrap.min.js"></script>
+
+    <link href="css/bootstrap-select.css" rel="stylesheet">
+    <script src="js/bootstrap-select.js"></script>
+
+	<!-- Header CSS -->
+	<link href="../css/header.css" rel="stylesheet">
+	<!-- Footer CSS -->
+	<link href="../css/footer.css" rel="stylesheet">
+	<!-- Style CSS -->
+	<link href="../css/style.css" rel="stylesheet">
+	<!-- Register CSS -->
+	<link href="../css/register.css" rel="stylesheet">
+	<!-- Search CSS -->
+	<link href="css/search.css" rel="stylesheet">
+	
+    <script type="text/javascript">
+
+        init();
+
+        function init() {
+            initInfo();
+        }
+
+        function loadSkillInfo() {
+
+            // 接口获取数据
+            // $.ajax({
+            //     type: "get",
+            //     url: "http://localhost:8000/data/orange_info/",
+            //     // xhrFields: {withCredentials: true},
+            //     success: function (data) {
+            //
+            //         var area = document.getElementById("id_select");
+            //         area.options.length = 0;
+            //         result = "";
+            //
+            //         if (data.status === 0) {
+            //             result = data.data;
+            //             for (var item in result) {
+            //                 area.options.add(new Option(result[item], result[item]));
+            //             }
+            //             $('.selectpicker').selectpicker('refresh');
+            //             // $('.selectpicker').selectpicker('render');
+            //         } else {
+            //             controls.log(data)
+            //         }
+            //     }
+            // });
+
+            // 默认数据
+            var area = document.getElementById("skill_select");
+            area.options.length = 0;
+            result = {
+                "6": "技能1",
+                "7": "技能2",
+                "8": "技能3",
+                "9": "技能4",
+                "10": "技能5",
+                "11": "技能6",
+                "17": "技能7",
+                "18": "技能8",
+                "19": "技能9",
+                "20": "技能10"
+            };
+            for (var item in result) {
+                area.options.add(new Option(result[item], result[item]));
+            }
+
+            $('#skill_select').selectpicker('refresh');
+        }
+		
+		function loadTendency_jobInfo() {
+
+            // 接口获取数据
+            // $.ajax({
+            //     type: "get",
+            //     url: "http://localhost:8000/data/orange_info/",
+            //     // xhrFields: {withCredentials: true},
+            //     success: function (data) {
+            //
+            //         var area = document.getElementById("id_select");
+            //         area.options.length = 0;
+            //         result = "";
+            //
+            //         if (data.status === 0) {
+            //             result = data.data;
+            //             for (var item in result) {
+            //                 area.options.add(new Option(result[item], result[item]));
+            //             }
+            //             $('.selectpicker').selectpicker('refresh');
+            //             // $('.selectpicker').selectpicker('render');
+            //         } else {
+            //             controls.log(data)
+            //         }
+            //     }
+            // });
+
+            // 默认数据
+            var area = document.getElementById("tendency_job_select");
+            area.options.length = 0;
+            result = {
+                "6": "倾向1",
+                "7": "倾向2",
+                "8": "倾向3",
+                "9": "倾向4",
+                "10": "倾向5",
+                "11": "倾向6",
+                "17": "倾向7",
+                "18": "倾向8",
+                "19": "倾向9",
+                "20": "倾向10"
+            };
+            for (var item in result) {
+                area.options.add(new Option(result[item], result[item]));
+            }
+
+            $('#tendency_job_select').selectpicker('refresh');
+        }
+		
+		function loadTendency_walInfo() {
+
+            // 接口获取数据
+            // $.ajax({
+            //     type: "get",
+            //     url: "http://localhost:8000/data/orange_info/",
+            //     // xhrFields: {withCredentials: true},
+            //     success: function (data) {
+            //
+            //         var area = document.getElementById("id_select");
+            //         area.options.length = 0;
+            //         result = "";
+            //
+            //         if (data.status === 0) {
+            //             result = data.data;
+            //             for (var item in result) {
+            //                 area.options.add(new Option(result[item], result[item]));
+            //             }
+            //             $('.selectpicker').selectpicker('refresh');
+            //             // $('.selectpicker').selectpicker('render');
+            //         } else {
+            //             controls.log(data)
+            //         }
+            //     }
+            // });
+
+            // 默认数据
+            var area = document.getElementById("tendency_wal_select");
+            area.options.length = 0;
+            result = {
+                "6": "福利1",
+                "7": "福利2",
+                "8": "福利3",
+                "9": "福利4",
+                "10": "福利5",
+                "11": "福利6",
+                "17": "福利7",
+                "18": "福利8",
+                "19": "福利9",
+                "20": "福利10"
+            };
+            for (var item in result) {
+                area.options.add(new Option(result[item], result[item]));
+            }
+
+            $('#tendency_wal_select').selectpicker('refresh');
+        }
+		
+		function loadFamiliarInfo() {
+
+            // 接口获取数据
+            // $.ajax({
+            //     type: "get",
+            //     url: "http://localhost:8000/data/orange_info/",
+            //     // xhrFields: {withCredentials: true},
+            //     success: function (data) {
+            //
+            //         var area = document.getElementById("id_select");
+            //         area.options.length = 0;
+            //         result = "";
+            //
+            //         if (data.status === 0) {
+            //             result = data.data;
+            //             for (var item in result) {
+            //                 area.options.add(new Option(result[item], result[item]));
+            //             }
+            //             $('.selectpicker').selectpicker('refresh');
+            //             // $('.selectpicker').selectpicker('render');
+            //         } else {
+            //             controls.log(data)
+            //         }
+            //     }
+            // });
+
+            // 默认数据
+            var area = document.getElementById("familiar_select");
+            area.options.length = 0;
+            result = {
+                "6": "行业1",
+                "7": "行业2",
+                "8": "行业3",
+                "9": "行业4",
+                "10": "行业5",
+                "11": "行业6",
+                "17": "行业7",
+                "18": "行业8",
+                "19": "行业9",
+                "20": "行业10"
+            };
+            for (var item in result) {
+                area.options.add(new Option(result[item], result[item]));
+            }
+
+            $('#familiar_select').selectpicker('refresh');
+        }
+		
+        function initInfo() {
+            $(window).on('load', function () {
+
+                $('#skill_select').selectpicker({
+                    noneSelectedText: '请选择',
+                    noneResultsText: '没有找到匹配的组织 {0}'
+                });
+
+                loadSkillInfo();
+
+                $("#chooseskill").unbind("click").click(function () {
+                    var info = $('#skill_select').selectpicker('val');
+
+                    var label = document.getElementById("skill_Info");
+                    label.innerHTML = info;
+                    console.log(info)
+                });
+				
+                $('#tendency_job_select').selectpicker({
+                    noneSelectedText: '请选择',
+                    noneResultsText: '没有找到匹配的组织 {0}'
+                });
+				
+                loadTendency_jobInfo();
+
+                $("#choosetendency_job").unbind("click").click(function () {
+                    var info = $('#tendency_job_select').selectpicker('val');
+
+                    var label = document.getElementById("tendency_job_Info");
+                    label.innerHTML = info;
+                    console.log(info)
+                });
+					
+                $('#tendency_wal_select').selectpicker({
+                    noneSelectedText: '请选择',
+                    noneResultsText: '没有找到匹配的组织 {0}'
+                });
+				
+                loadTendency_walInfo();
+
+                $("#choosetendency_wal").unbind("click").click(function () {
+                    var info = $('#tendency_wal_select').selectpicker('val');
+
+                    var label = document.getElementById("tendency_wal_Info");
+                    label.innerHTML = info;
+                    console.log(info)
+                });	
+
+                $('#familiar_select').selectpicker({
+                    noneSelectedText: '请选择',
+                    noneResultsText: '没有找到匹配的组织 {0}'
+                });
+				
+                loadFamiliarInfo();
+
+                $("#choosefamiliar").unbind("click").click(function () {
+                    var info = $('#familiar_select').selectpicker('val');
+                    var label = document.getElementById("familiar_Info");
+                    label.innerHTML = info;
+                    console.log(info)
+                });				
+				
+                // 检测浏览器的方法由用户自行决定
+				/*
+                if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+                    $('.selectpicker').selectpicker('mobile');
+                }
+				*/
+                // 销毁： $('.selectpicker').selectpicker('destroy');
+
+            });
+        }
+    </script>
+
+</head>
+<body>
+<header class="header">
+	<nav class="navbar navbar-default navbar-fixed-top box-shadow-10" style="height:60px;">
+		<div class="collapse navbar-collapse container top_head">
+			<ul class="nav navbar-nav navbar-right" style="margin-right:200px;">
+				<li><a id="login" data-scroll-nav="0" href="#">登陆</a></li>
+				<li><a id="register" data-scroll-nav="1" href="#">注册</a></li>
+			</ul>				
+		</div>
+	</nav>
+</header>
+<div class="register_cont container">
+	<div class="register">
+		<h2 style="font-size:30px; font-weight:900;">求职信息（选填）</h2>
+		<div class="register_form">
+			<form action="#" method="post">
+				<input type="text"  name="worktime" placeholder="工作年限" required="" />
+				<input type="text"  name="low_salary" placeholder="薪资下限" required="" />
+				<input type="text"  name="high_salary" placeholder="薪资上限" required="" />
+				<!--
+				<input type="email"  name="familiar" placeholder="熟悉行业" required="" />
+				<input type="text"  name="tendency_job" placeholder="倾向职业" required="" />
+				<input type="text"  name="tendency_wal" placeholder="倾向福利" required="" />
+				-->
+				<select class="city_select" style="color:#FFF">
+					<option>首选工作地</option>
+					<option>城市1</option>
+					<option>城市2</option>
+					<option>城市3</option>
+					<option>城市4</option>
+					<option>城市5</option>
+					<option>城市6</option>
+				</select>
+				
+				<div class="search_cont">
+				<label class="choose_title">技能：</label>
+				<div class="search">
+				<select id="skill_select" class="selectpicker" multiple
+						data-live-search="true"
+						data-width="300px"
+						data-actions-box="true"></select>
+				</div>
+				<button id="chooseskill" class="choose_tag">选中信息</button>
+				<label class="result_label">选中结果:</label>
+				<label id="skill_Info" class="choose_result"></label>
+				</div>
+				
+				<div class="search_cont">
+				<label class="choose_title">职位倾向：</label>
+				<div class="search">
+				<select id="tendency_job_select" class="selectpicker" multiple
+						data-live-search="true"
+						data-width="300px"
+						data-actions-box="true"></select>
+				</div>
+				<button id="choosetendency_job" class="choose_tag">选中信息</button>
+				<label class="result_label">选中结果:</label>
+				<label id="tendency_job_Info" class="choose_result"></label>
+				</div>
+				
+				<div class="search_cont">
+				<label class="choose_title">福利倾向：</label>
+				<div class="search">
+				<select id="tendency_wal_select" class="selectpicker" multiple
+						data-live-search="true"
+						data-width="300px"
+						data-actions-box="true"></select>
+				</div>
+				<button id="choosetendency_wal" class="choose_tag">选中信息</button>
+				<label class="result_label">选中结果:</label>
+				<label id="tendency_wal_Info" class="choose_result"></label>
+				</div>
+				
+				<div class="search_cont">
+				<label class="choose_title">熟悉行业：</label>
+				<div class="search">
+				<select id="familiar_select" class="selectpicker" multiple
+						data-live-search="true"
+						data-width="300px"
+						data-actions-box="true"></select>
+				</div>
+				<button id="choosefamiliar" class="choose_tag">选中信息</button>
+				<label class="result_label">选中结果:</label>
+				<label id="familiar_Info" class="choose_result"></label>
+				</div>
+				
+				<input type="submit" value="提交">
+			</form>	
+		</div>
+	</div>
+</div>
+<footer class="footer">
+	<div class="container">
+		<!-- Col Start -->
+		<div class="copy-right">
+			<p>Copyright &copy; 2018.Company name All rights reserved.</p>
+		</div>
+		<!-- Col End -->
+	</div>
+</footer>
+
+</body>
+</html>
