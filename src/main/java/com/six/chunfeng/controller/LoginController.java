@@ -1,5 +1,8 @@
 package com.six.chunfeng.controller;
 
-public class LoginController {
+import org.springframework.stereotype.Controller;
 
+@Controller
+public class LoginController {
+	
 }
