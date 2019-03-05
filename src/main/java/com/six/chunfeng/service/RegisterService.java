@@ -1,5 +1,5 @@
 package com.six.chunfeng.service;
 
-public class LoginService {
+public class RegisterService {
 
 }
