@@ -10,10 +10,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 @MapperScan("com.six.chunfeng.mapper")
 public class ChunfengApplication {
-	private static final Logger LOG = LoggerFactory.getLogger(ChunfengApplication.class);
 	public static void main(String[] args) {
 		SpringApplication.run(ChunfengApplication.class, args);
-		LOG.error("error");
 	}
 
 }

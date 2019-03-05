@@ -48,7 +48,7 @@
 	font-weight:600;
 	line-height:16px;
 	color:#999;
-	-webkit-text-stroke: 0.8px black;
+	
 	
 }
 
@@ -69,7 +69,6 @@
 	-webkit-border-radius:20px;
 	-moz-border-radius:20px;
 	border-radius: 20px;
-	border:2px solid #000;
 }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover{

@@ -1,5 +1,8 @@
 package com.six.chunfeng.controller;
 
-public class InfoController {
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
+public class InfoController {
+	
 }
