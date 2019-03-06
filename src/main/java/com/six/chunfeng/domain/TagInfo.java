@@ -1,7 +1,7 @@
 package com.six.chunfeng.domain;
 
 public class TagInfo {
-	
+	private int id;
 	private String workYear;
 	private String salaryLeast;
 	private String salaryMost;
@@ -10,6 +10,20 @@ public class TagInfo {
 	private String position;
 	private String welfare;
 	private String industry;
+	
+	
+	/**
+	 * @return id
+	 */
+	public int getId() {
+		return id;
+	}
+	/**
+	 * @param id 要设置的 id
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
 	/**
 	 * @return workYear
 	 */
@@ -115,6 +129,7 @@ public class TagInfo {
 		int result = 1;
 		result = prime * result + ((capacity == null) ? 0 : capacity.hashCode());
 		result = prime * result + ((city == null) ? 0 : city.hashCode());
+		result = prime * result + id;
 		result = prime * result + ((industry == null) ? 0 : industry.hashCode());
 		result = prime * result + ((position == null) ? 0 : position.hashCode());
 		result = prime * result + ((salaryLeast == null) ? 0 : salaryLeast.hashCode());
@@ -150,6 +165,9 @@ public class TagInfo {
 				return false;
 			}
 		} else if (!city.equals(other.city)) {
+			return false;
+		}
+		if (id != other.id) {
 			return false;
 		}
 		if (industry == null) {
@@ -201,9 +219,9 @@ public class TagInfo {
 	 */
 	@Override
 	public String toString() {
-		return "TagInfo [workYear=" + workYear + ", salaryLeast=" + salaryLeast + ", salaryMost=" + salaryMost
-				+ ", city=" + city + ", capacity=" + capacity + ", position=" + position + ", welfare=" + welfare
-				+ ", industry=" + industry + "]";
+		return "TagInfo [id=" + id + ", workYear=" + workYear + ", salaryLeast=" + salaryLeast + ", salaryMost="
+				+ salaryMost + ", city=" + city + ", capacity=" + capacity + ", position=" + position + ", welfare="
+				+ welfare + ", industry=" + industry + "]";
 	}
 	
 	
