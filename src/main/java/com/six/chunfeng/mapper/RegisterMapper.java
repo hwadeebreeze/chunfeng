@@ -13,6 +13,7 @@ public interface RegisterMapper {
 	@Select("select count(*) from user_info where tel=#{phone}")
 	public Integer countPhone(@Param("phone") String phone);
 	
-	@Insert("")
-	public void insertUser(User user);
+	@Insert("insert into user_info(name,sex,age,edu,tel,pswd) values(#{user.name},#{user.gender},#{user.age},"
+			+ "#{user.education},#{user.phone},#{user.password})")
+	public void insertUser(@Param("user") User user);
 }

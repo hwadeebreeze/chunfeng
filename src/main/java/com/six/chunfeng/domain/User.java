@@ -1,12 +1,28 @@
 package com.six.chunfeng.domain;
 
 public class User {
+	private int id;
 	private String name;
 	private String gender;
 	private String age;;
 	private String education;
 	private String phone;
 	private String password;
+	
+	
+	
+	/**
+	 * @return id
+	 */
+	public int getId() {
+		return id;
+	}
+	/**
+	 * @param id 要设置的 id
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
 	/**
 	 * @return name
 	 */
@@ -89,8 +105,8 @@ public class User {
 	 */
 	@Override
 	public String toString() {
-		return "User [name=" + name + ", gender=" + gender + ", age=" + age + ", education=" + education + ", phone="
-				+ phone + ", password=" + password + "]";
+		return "User [id=" + id + ", name=" + name + ", gender=" + gender + ", age=" + age + ", education=" + education
+				+ ", phone=" + phone + ", password=" + password + "]";
 	}
 	/* （非 Javadoc）
 	 * @see java.lang.Object#hashCode()
@@ -102,6 +118,7 @@ public class User {
 		result = prime * result + ((age == null) ? 0 : age.hashCode());
 		result = prime * result + ((education == null) ? 0 : education.hashCode());
 		result = prime * result + ((gender == null) ? 0 : gender.hashCode());
+		result = prime * result + id;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
 		result = prime * result + ((phone == null) ? 0 : phone.hashCode());
@@ -141,6 +158,9 @@ public class User {
 				return false;
 			}
 		} else if (!gender.equals(other.gender)) {
+			return false;
+		}
+		if (id != other.id) {
 			return false;
 		}
 		if (name == null) {
