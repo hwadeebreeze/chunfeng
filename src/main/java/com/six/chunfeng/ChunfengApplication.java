@@ -11,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @MapperScan("com.six.chunfeng.mapper")
 public class ChunfengApplication {
 	public static void main(String[] args) {
+		
 		SpringApplication.run(ChunfengApplication.class, args);
 	}
 
