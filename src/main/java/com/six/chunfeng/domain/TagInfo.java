@@ -2,16 +2,14 @@ package com.six.chunfeng.domain;
 
 public class TagInfo {
 	private int id;
-	private String workYear;
-	private String salaryLeast;
-	private String salaryMost;
+	private int workYear;
+	private int salaryLeast;
+	private int salaryMost;
 	private String city;
 	private String capacity;
 	private String position;
 	private String welfare;
 	private String industry;
-	
-	
 	/**
 	 * @return id
 	 */
@@ -27,37 +25,37 @@ public class TagInfo {
 	/**
 	 * @return workYear
 	 */
-	public String getWorkYear() {
+	public int getWorkYear() {
 		return workYear;
 	}
 	/**
 	 * @param workYear 要设置的 workYear
 	 */
-	public void setWorkYear(String workYear) {
+	public void setWorkYear(int workYear) {
 		this.workYear = workYear;
 	}
 	/**
 	 * @return salaryLeast
 	 */
-	public String getSalaryLeast() {
+	public int getSalaryLeast() {
 		return salaryLeast;
 	}
 	/**
 	 * @param salaryLeast 要设置的 salaryLeast
 	 */
-	public void setSalaryLeast(String salaryLeast) {
+	public void setSalaryLeast(int salaryLeast) {
 		this.salaryLeast = salaryLeast;
 	}
 	/**
 	 * @return salaryMost
 	 */
-	public String getSalaryMost() {
+	public int getSalaryMost() {
 		return salaryMost;
 	}
 	/**
 	 * @param salaryMost 要设置的 salaryMost
 	 */
-	public void setSalaryMost(String salaryMost) {
+	public void setSalaryMost(int salaryMost) {
 		this.salaryMost = salaryMost;
 	}
 	/**
@@ -132,10 +130,10 @@ public class TagInfo {
 		result = prime * result + id;
 		result = prime * result + ((industry == null) ? 0 : industry.hashCode());
 		result = prime * result + ((position == null) ? 0 : position.hashCode());
-		result = prime * result + ((salaryLeast == null) ? 0 : salaryLeast.hashCode());
-		result = prime * result + ((salaryMost == null) ? 0 : salaryMost.hashCode());
+		result = prime * result + salaryLeast;
+		result = prime * result + salaryMost;
 		result = prime * result + ((welfare == null) ? 0 : welfare.hashCode());
-		result = prime * result + ((workYear == null) ? 0 : workYear.hashCode());
+		result = prime * result + workYear;
 		return result;
 	}
 	/* （非 Javadoc）
@@ -184,18 +182,10 @@ public class TagInfo {
 		} else if (!position.equals(other.position)) {
 			return false;
 		}
-		if (salaryLeast == null) {
-			if (other.salaryLeast != null) {
-				return false;
-			}
-		} else if (!salaryLeast.equals(other.salaryLeast)) {
+		if (salaryLeast != other.salaryLeast) {
 			return false;
 		}
-		if (salaryMost == null) {
-			if (other.salaryMost != null) {
-				return false;
-			}
-		} else if (!salaryMost.equals(other.salaryMost)) {
+		if (salaryMost != other.salaryMost) {
 			return false;
 		}
 		if (welfare == null) {
@@ -205,11 +195,7 @@ public class TagInfo {
 		} else if (!welfare.equals(other.welfare)) {
 			return false;
 		}
-		if (workYear == null) {
-			if (other.workYear != null) {
-				return false;
-			}
-		} else if (!workYear.equals(other.workYear)) {
+		if (workYear != other.workYear) {
 			return false;
 		}
 		return true;
@@ -223,6 +209,6 @@ public class TagInfo {
 				+ salaryMost + ", city=" + city + ", capacity=" + capacity + ", position=" + position + ", welfare="
 				+ welfare + ", industry=" + industry + "]";
 	}
-	
-	
 }
+	
+	
