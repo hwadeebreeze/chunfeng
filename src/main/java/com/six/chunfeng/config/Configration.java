@@ -10,7 +10,7 @@ public class Configration extends WebMvcConfigurerAdapter {
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		//registry.addResourceHandler("/user/**").addResourceLocations("file:D:/userfile/");
 		registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
-
+//		registry.addResourceHandler("classpath:templates/**").addResourceLocations("classpath:/resources");
 		super.addResourceHandlers(registry);
 	}
 }
