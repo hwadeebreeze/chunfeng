@@ -12,7 +12,7 @@ public class RecommendService {
 	List<JobInfo> list;
 
 	public void recommend(Integer id){
-
+		//gaybal
 	}
 
 	public List<JobInfo> changePage(Integer curPage){
