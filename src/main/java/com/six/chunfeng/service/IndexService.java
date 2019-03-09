@@ -8,15 +8,7 @@ import com.six.chunfeng.domain.JobInfo;
 
 @Service
 public class IndexService {
-	List<JobInfo> list;
 	
-	public void recommend(Integer id){
-		
-	}
-	
-	public List<JobInfo> changePage(Integer curPage){
-		return null;
-	}
 	
 	
 }
