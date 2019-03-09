@@ -36,9 +36,9 @@
                 $.ajax({
                     type: "get",
                     url: "/tagInfo?id=\""+id+"\"",
-                    success: function (data) {
+                    success: function (data) {  
                         console.log(data);
-                            document
+                        document.getElementById("worktime").innerText = data.workYear;
                     }
                 });
             }
@@ -401,7 +401,7 @@
 				<label id="familiar_Info" class="choose_result"></label>
 				</div>
 				
-				<input type="submit" value="提交">
+				<input type="button" value="提交">
 			</form>	
 		</div>
 	</div>
