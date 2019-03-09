@@ -13,6 +13,7 @@ public class RecommendService {
 
 	public void recommend(Integer id){
 		//noble
+
 	}
 
 	public List<JobInfo> changePage(Integer curPage){
