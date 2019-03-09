@@ -32,7 +32,8 @@ public class LoginController {
 		Map<String,Boolean> result = new HashMap<String,Boolean>();
 		result.put("result", loginService.login(user));
 		if(result.get("result")==true){
-			CookieUtil.setCookie(response, "phone", user.getPhone());
+			CookieUtil.setCookie(response, "id",
+					loginService.getIdByPhone(user.getPhone()).toString());
 		}
 		return result;
 	}
