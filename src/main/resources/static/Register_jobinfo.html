@@ -12,6 +12,8 @@
     <link href="./search/css/bootstrap-select.css" rel="stylesheet">
     <script src="./search/js/bootstrap-select.js"></script>
 
+    <script src="js/jquery.cookie.js"></script>
+
 	<!-- Header CSS -->
 	<link href="./css/header.css" rel="stylesheet">
 	<!-- Footer CSS -->
@@ -27,6 +29,21 @@
 
         init();
 
+
+        $(document).ready(function() {
+            var id = $.cookie("id");
+            if(id!=undefined){
+                $.ajax({
+                    type: "get",
+                    url: "/tagInfo?id=\""+id+"\"",
+                    success: function (data) {
+                        console.log(data);
+                            document
+                    }
+                });
+            }
+		
+	    });
         function init() {
             initInfo();
         }
@@ -299,7 +316,7 @@
 
 </head>
 <body>
-<header class="header">
+<!-- <header class="header">
 	<nav class="navbar navbar-default navbar-fixed-top box-shadow-10" style="height:60px;">
 		<div class="collapse navbar-collapse container top_head">
 			<ul class="nav navbar-nav navbar-right" style="margin-right:200px;">
@@ -308,21 +325,21 @@
 			</ul>				
 		</div>
 	</nav>
-</header>
+</header> -->
 <div class="register_cont container">
 	<div class="register">
-		<h2 style="font-size:30px; font-weight:900;">求职信息（选填）</h2>
+		<h2 style="font-size:30px; font-weight:900;">求职信息</h2>
 		<div class="register_form">
 			<form action="#" method="post">
-				<input type="text"  name="worktime" placeholder="工作年限" required="" />
-				<input type="text"  name="low_salary" placeholder="薪资下限" required="" />
-				<input type="text"  name="high_salary" placeholder="薪资上限" required="" />
+				<input type="text"  id="worktime" name="worktime" placeholder="工作年限" required="" />
+				<input type="text"  id="low_salary" name="low_salary" placeholder="薪资下限" required="" />
+				<input type="text"  id="high_salary" name="high_salary" placeholder="薪资上限" required="" />
 				<!--
 				<input type="email"  name="familiar" placeholder="熟悉行业" required="" />
 				<input type="text"  name="tendency_job" placeholder="倾向职业" required="" />
 				<input type="text"  name="tendency_wal" placeholder="倾向福利" required="" />
 				-->
-				<select class="city_select" style="color:#FFF">
+				<select id="city_select" class="city_select" style="color:#FFF">
 					<option>首选工作地</option>
 					<option>城市1</option>
 					<option>城市2</option>
