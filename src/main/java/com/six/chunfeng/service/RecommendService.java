@@ -12,6 +12,7 @@ public class RecommendService {
 	List<JobInfo> list;
 
 	public void recommend(Integer id){
+		//noble
 
 	}
 
