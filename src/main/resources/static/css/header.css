@@ -28,7 +28,11 @@
 .top_head{
 	height:100%;
 }
-
+.welcome{
+	font-size:10px;
+	font-weight:bold;
+	margin-top:10px !important;
+}
 .nav > li {
 	margin: 0px 2px;
 }
