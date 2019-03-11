@@ -1,18 +1,22 @@
 package com.six.chunfeng.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
+import com.six.chunfeng.domain.JobInfo;
+import com.six.chunfeng.domain.TagInfo;
 import com.six.chunfeng.domain.User;
 
 public interface RecommendMapper {
 
-	@Select("select pswd from user_info where tel=#{phone}")
-	public String getPassworkByphone(@Param("phone") String phone);
+	@Select("SELECT * FROM job_aim WHERE id=#{id}")
+	public TagInfo selectTagInfoById(int id);
 	
-	@Select("select * from user_info where user_id=#{id}")
-	public User getUserById(int id);
+	@Select("SELECT * FROM user_info WHERE id=#{id}")
+	public User selectUserInfoById(int id);
 	
-	@Select("select user_id from user_info where tel=#{phone}")
-	public Integer getIdByPhone(String phone);
+	@Select("SELECT id FROM job_info ORDER BY id LIMIT 0,#{limit}")
+	public List<JobInfo> selectJobInfoWithLimit(int limit);
 }
