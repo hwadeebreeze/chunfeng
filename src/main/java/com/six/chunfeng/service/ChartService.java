@@ -13,6 +13,7 @@ import com.six.chunfeng.mapper.LoginMapper;
 
 @Service
 public class ChartService {
+
 	private ChartMapper mapper;
 	private LoginMapper mapper1;
 	
@@ -25,5 +26,5 @@ public class ChartService {
 		List<JobInfo> jobList = mapper.getJobInfoByInfo(city, age, work_year);
 		
 	}
-	
+
 }
