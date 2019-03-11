@@ -4,12 +4,10 @@ public class User {
 	private int id;
 	private String name;
 	private String gender;
-	private int age;;
+	private int age;
 	private String education;
 	private String phone;
 	private String password;
-	
-	
 	
 	/**
 	 * @return id
@@ -170,10 +168,4 @@ public class User {
 			return false;
 		return true;
 	}
-	
-	
-
-	
-	
-	
 }
