@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.six.chunfeng.service.IndexService;
+import com.six.chunfeng.service.RecommendService;
 
 @Controller
 public class IndexController {
@@ -16,12 +17,15 @@ public class IndexController {
 	@Autowired
 	private IndexService indexService;
 	
-	@GetMapping("/")
-	public String index(){
-		return "Home.html";
+	@Autowired
+	private RecommendService recommendService;
+	
+	@GetMapping("/test")
+	@ResponseBody
+	public String test(){
+		recommendService.recommend(5);
+		return "sucess";
 	}
-	
-	
 
 
 }
