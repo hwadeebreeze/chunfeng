@@ -20,12 +20,10 @@ public class IndexController {
 	@Autowired
 	private RecommendService recommendService;
 	
-	@GetMapping("/test")
-	@ResponseBody
+	@GetMapping("/")
 	public String test(){
-		recommendService.recommend(5);
-		return "sucess";
+		return "Home.html";
 	}
-
+	
 
 }

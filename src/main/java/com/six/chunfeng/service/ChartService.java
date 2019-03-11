@@ -9,7 +9,6 @@ import com.six.chunfeng.domain.JobInfo;
 import com.six.chunfeng.domain.TagInfo;
 import com.six.chunfeng.domain.User;
 import com.six.chunfeng.mapper.ChartMapper;
-import com.six.chunfeng.mapper.LoginMapper;
 
 @Service
 public class ChartService {
@@ -105,18 +104,17 @@ public class ChartService {
 	
 }
 enum Scholar {
-    UNL("不限",1), SEC("中专",2), COL("大专",3), BAC("本科", 4), MAS("硕士", 5), DOC("博士",6);
-    // 成员变量
+    UNL("涓嶉檺",1), SEC("涓笓",2), COL("澶т笓",3), BAC("鏈", 4), MAS("纭曞＋", 5), DOC("鍗氬＋",6);
+
     private String name;
     private int index;
 
-    // 构造方法
+
     Scholar(String name,int index){
     	this.name = name;
     	this.index = index;
     }
 
-    // 普通方法
     public static int getIndex(String name) {
         for (Scholar c : Scholar.values()) {
         if (c.getName() == name) {
@@ -126,7 +124,7 @@ enum Scholar {
         return -1;
     }
 
-    // get set 方法
+   
     public String getName() {
         return name;
     }
