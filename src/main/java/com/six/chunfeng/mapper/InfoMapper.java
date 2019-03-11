@@ -9,4 +9,5 @@ public interface InfoMapper {
 
 	@Select("select * from job_info where id=#{id}")
 	public JobInfo getJobInfoById(@Param("id") int id);
+	
 }
