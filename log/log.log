@@ -592,3 +592,220 @@ java.io.EOFException: Can not read response from server. Expected to read 4 byte
 2019-03-11 10:40:06.237  INFO 7100 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
 2019-03-11 10:40:06.518  INFO 7100 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
 2019-03-11 10:40:06.521  INFO 7100 --- [main] com.six.chunfeng.ChunfengApplication     : Started ChunfengApplication in 4.118 seconds (JVM running for 4.562)
+2019-03-11 11:06:22.790  INFO 1604 --- [main] com.six.chunfeng.ChunfengApplication     : Starting ChunfengApplication on DESKTOP-7G22C3V with PID 1604 (E:\java\chunfeng\target\classes started by yyf in E:\java\chunfeng)
+2019-03-11 11:06:22.792 DEBUG 1604 --- [main] com.six.chunfeng.ChunfengApplication     : Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-03-11 11:06:22.792  INFO 1604 --- [main] com.six.chunfeng.ChunfengApplication     : No active profile set, falling back to default profiles: default
+2019-03-11 11:06:24.448  INFO 1604 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-03-11 11:06:24.478  INFO 1604 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-11 11:06:24.478  INFO 1604 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-11 11:06:24.488  INFO 1604 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.17] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+2019-03-11 11:06:24.489  INFO 1604 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+2019-03-11 11:06:24.489  INFO 1604 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-03-11 11:06:24.489  INFO 1604 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-03-11 11:06:25.545  INFO 1604 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+2019-03-11 11:06:25.654  INFO 1604 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-11 11:06:25.655  INFO 1604 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2811 ms
+2019-03-11 11:06:26.171  INFO 1604 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-11 11:06:26.486  INFO 1604 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-11 11:06:26.490  INFO 1604 --- [main] com.six.chunfeng.ChunfengApplication     : Started ChunfengApplication in 4.155 seconds (JVM running for 4.626)
+2019-03-11 11:06:30.830  INFO 1604 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-11 11:06:30.831  INFO 1604 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-11 11:06:30.840  INFO 1604 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2019-03-11 11:06:39.479  INFO 1604 --- [http-nio-8080-exec-3] c.s.chunfeng.controller.LoginController  : Gotten phone: 15664943037 gotten password: 123456
+2019-03-11 11:06:39.498  INFO 1604 --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-03-11 11:06:39.669  INFO 1604 --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-03-11 11:06:39.676 DEBUG 1604 --- [http-nio-8080-exec-3] c.s.c.m.LoginMapper.getPassworkByphone   : ==>  Preparing: select pswd from user_info where tel=? 
+2019-03-11 11:06:39.706 DEBUG 1604 --- [http-nio-8080-exec-3] c.s.c.m.LoginMapper.getPassworkByphone   : ==> Parameters: 15664943037(String)
+2019-03-11 11:06:39.730 DEBUG 1604 --- [http-nio-8080-exec-3] c.s.c.m.LoginMapper.getPassworkByphone   : <==      Total: 1
+2019-03-11 11:06:39.732 DEBUG 1604 --- [http-nio-8080-exec-3] com.six.chunfeng.service.LoginService    : Existed phone 15664943037 password: e10adc3949ba59abbe56e057f20f883e
+2019-03-11 11:06:39.734 DEBUG 1604 --- [http-nio-8080-exec-3] c.s.c.mapper.LoginMapper.getIdByPhone    : ==>  Preparing: select user_id from user_info where tel=? 
+2019-03-11 11:06:39.734 DEBUG 1604 --- [http-nio-8080-exec-3] c.s.c.mapper.LoginMapper.getIdByPhone    : ==> Parameters: 15664943037(String)
+2019-03-11 11:06:39.736 DEBUG 1604 --- [http-nio-8080-exec-3] c.s.c.mapper.LoginMapper.getIdByPhone    : <==      Total: 1
+2019-03-11 11:06:46.163  INFO 1604 --- [http-nio-8080-exec-8] c.six.chunfeng.controller.TagController  : Gotten userId: 3
+2019-03-11 11:06:46.165 DEBUG 1604 --- [http-nio-8080-exec-8] c.s.c.mapper.TagMapper.getTagInfoById    : ==>  Preparing: select * from job_aim where user_id=? 
+2019-03-11 11:06:46.166 DEBUG 1604 --- [http-nio-8080-exec-8] c.s.c.mapper.TagMapper.getTagInfoById    : ==> Parameters: 3(Integer)
+2019-03-11 11:06:46.169 DEBUG 1604 --- [http-nio-8080-exec-8] c.s.c.mapper.TagMapper.getTagInfoById    : <==      Total: 1
+2019-03-11 11:06:46.170 DEBUG 1604 --- [http-nio-8080-exec-8] com.six.chunfeng.service.TagService      : userId: 3 tagInfo: TagInfo [id=5, workYear=1, salaryLeast=3000, salaryMost=8000, city=test, capacity=test, position=test, welfare=test, industry=test]
+2019-03-11 11:10:53.943  INFO 1604 --- [http-nio-8080-exec-2] c.six.chunfeng.controller.TagController  : Gotten userId: 3
+2019-03-11 11:10:53.944 DEBUG 1604 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getTagInfoById    : ==>  Preparing: select * from job_aim where user_id=? 
+2019-03-11 11:10:53.944 DEBUG 1604 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getTagInfoById    : ==> Parameters: 3(Integer)
+2019-03-11 11:10:53.946 DEBUG 1604 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getTagInfoById    : <==      Total: 1
+2019-03-11 11:10:53.947 DEBUG 1604 --- [http-nio-8080-exec-2] com.six.chunfeng.service.TagService      : userId: 3 tagInfo: TagInfo [id=5, workYear=1, salaryLeast=3000, salaryMost=8000, city=test, capacity=test, position=test, welfare=test, industry=test]
+2019-03-11 11:12:28.830  INFO 1604 --- [http-nio-8080-exec-7] c.six.chunfeng.controller.TagController  : Gotten userId: 3
+2019-03-11 11:12:28.831 DEBUG 1604 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getTagInfoById    : ==>  Preparing: select * from job_aim where user_id=? 
+2019-03-11 11:12:28.831 DEBUG 1604 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getTagInfoById    : ==> Parameters: 3(Integer)
+2019-03-11 11:12:28.834 DEBUG 1604 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getTagInfoById    : <==      Total: 1
+2019-03-11 11:12:28.834 DEBUG 1604 --- [http-nio-8080-exec-7] com.six.chunfeng.service.TagService      : userId: 3 tagInfo: TagInfo [id=5, workYear=1, salaryLeast=3000, salaryMost=8000, city=test, capacity=test, position=test, welfare=test, industry=test]
+2019-03-11 11:12:33.214  INFO 1604 --- [http-nio-8080-exec-10] c.six.chunfeng.controller.TagController  : Gotten userId: 3
+2019-03-11 11:12:33.215 DEBUG 1604 --- [http-nio-8080-exec-10] c.s.c.mapper.TagMapper.getTagInfoById    : ==>  Preparing: select * from job_aim where user_id=? 
+2019-03-11 11:12:33.216 DEBUG 1604 --- [http-nio-8080-exec-10] c.s.c.mapper.TagMapper.getTagInfoById    : ==> Parameters: 3(Integer)
+2019-03-11 11:12:33.219 DEBUG 1604 --- [http-nio-8080-exec-10] c.s.c.mapper.TagMapper.getTagInfoById    : <==      Total: 1
+2019-03-11 11:12:33.219 DEBUG 1604 --- [http-nio-8080-exec-10] com.six.chunfeng.service.TagService      : userId: 3 tagInfo: TagInfo [id=5, workYear=1, salaryLeast=3000, salaryMost=8000, city=test, capacity=test, position=test, welfare=test, industry=test]
+2019-03-11 11:12:33.432  INFO 1604 --- [http-nio-8080-exec-3] c.six.chunfeng.controller.TagController  : Gotten userId: 3
+2019-03-11 11:12:33.433 DEBUG 1604 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getTagInfoById    : ==>  Preparing: select * from job_aim where user_id=? 
+2019-03-11 11:12:33.434 DEBUG 1604 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getTagInfoById    : ==> Parameters: 3(Integer)
+2019-03-11 11:12:33.436 DEBUG 1604 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getTagInfoById    : <==      Total: 1
+2019-03-11 11:12:33.437 DEBUG 1604 --- [http-nio-8080-exec-3] com.six.chunfeng.service.TagService      : userId: 3 tagInfo: TagInfo [id=5, workYear=1, salaryLeast=3000, salaryMost=8000, city=test, capacity=test, position=test, welfare=test, industry=test]
+2019-03-11 11:12:33.579  INFO 1604 --- [http-nio-8080-exec-6] c.six.chunfeng.controller.TagController  : Gotten userId: 3
+2019-03-11 11:12:33.580 DEBUG 1604 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getTagInfoById    : ==>  Preparing: select * from job_aim where user_id=? 
+2019-03-11 11:12:33.580 DEBUG 1604 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getTagInfoById    : ==> Parameters: 3(Integer)
+2019-03-11 11:12:33.583 DEBUG 1604 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getTagInfoById    : <==      Total: 1
+2019-03-11 11:12:33.584 DEBUG 1604 --- [http-nio-8080-exec-6] com.six.chunfeng.service.TagService      : userId: 3 tagInfo: TagInfo [id=5, workYear=1, salaryLeast=3000, salaryMost=8000, city=test, capacity=test, position=test, welfare=test, industry=test]
+2019-03-11 11:19:39.040  INFO 5400 --- [main] com.six.chunfeng.ChunfengApplication     : Starting ChunfengApplication on DESKTOP-7G22C3V with PID 5400 (E:\java\chunfeng\target\classes started by yyf in E:\java\chunfeng)
+2019-03-11 11:19:39.043 DEBUG 5400 --- [main] com.six.chunfeng.ChunfengApplication     : Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-03-11 11:19:39.043  INFO 5400 --- [main] com.six.chunfeng.ChunfengApplication     : No active profile set, falling back to default profiles: default
+2019-03-11 11:19:40.713  INFO 5400 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-03-11 11:19:40.749  INFO 5400 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-11 11:19:40.750  INFO 5400 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-11 11:19:40.762  INFO 5400 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.17] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+2019-03-11 11:19:40.762  INFO 5400 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+2019-03-11 11:19:40.762  INFO 5400 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-03-11 11:19:40.763  INFO 5400 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-03-11 11:19:41.819  INFO 5400 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+2019-03-11 11:19:41.928  INFO 5400 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-11 11:19:41.928  INFO 5400 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2839 ms
+2019-03-11 11:19:42.453  INFO 5400 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-11 11:19:42.779  INFO 5400 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-11 11:19:42.782  INFO 5400 --- [main] com.six.chunfeng.ChunfengApplication     : Started ChunfengApplication in 4.178 seconds (JVM running for 4.634)
+2019-03-11 11:19:48.293  INFO 5400 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-11 11:19:48.293  INFO 5400 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-11 11:19:48.303  INFO 5400 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2019-03-11 11:19:58.269  WARN 5400 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.beans.TypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; nested exception is java.lang.NumberFormatException: For input string: ""3""]
+2019-03-11 11:21:35.364  INFO 7388 --- [main] com.six.chunfeng.ChunfengApplication     : Starting ChunfengApplication on DESKTOP-7G22C3V with PID 7388 (E:\java\chunfeng\target\classes started by yyf in E:\java\chunfeng)
+2019-03-11 11:21:35.367 DEBUG 7388 --- [main] com.six.chunfeng.ChunfengApplication     : Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-03-11 11:21:35.367  INFO 7388 --- [main] com.six.chunfeng.ChunfengApplication     : No active profile set, falling back to default profiles: default
+2019-03-11 11:21:36.996  INFO 7388 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-03-11 11:21:37.025  INFO 7388 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-11 11:21:37.026  INFO 7388 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-11 11:21:37.036  INFO 7388 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.17] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+2019-03-11 11:21:37.037  INFO 7388 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+2019-03-11 11:21:37.037  INFO 7388 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-03-11 11:21:37.037  INFO 7388 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-03-11 11:21:38.082  INFO 7388 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+2019-03-11 11:21:38.223  INFO 7388 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-11 11:21:38.223  INFO 7388 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2805 ms
+2019-03-11 11:21:38.729  INFO 7388 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-11 11:21:39.110  INFO 7388 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-11 11:21:39.113  INFO 7388 --- [main] com.six.chunfeng.ChunfengApplication     : Started ChunfengApplication in 4.174 seconds (JVM running for 4.625)
+2019-03-11 11:21:50.098  INFO 7388 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-11 11:21:50.098  INFO 7388 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-11 11:21:50.108  INFO 7388 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2019-03-11 11:21:50.265  INFO 7388 --- [http-nio-8080-exec-6] c.six.chunfeng.controller.TagController  : Gotten userId: 3
+2019-03-11 11:21:50.283  INFO 7388 --- [http-nio-8080-exec-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-03-11 11:21:50.435  INFO 7388 --- [http-nio-8080-exec-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-03-11 11:21:50.442 DEBUG 7388 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getTagInfoById    : ==>  Preparing: select * from job_aim where user_id=? 
+2019-03-11 11:21:50.469 DEBUG 7388 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getTagInfoById    : ==> Parameters: 3(Integer)
+2019-03-11 11:21:50.502 DEBUG 7388 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getTagInfoById    : <==      Total: 1
+2019-03-11 11:21:50.505 DEBUG 7388 --- [http-nio-8080-exec-6] com.six.chunfeng.service.TagService      : userId: 3 tagInfo: TagInfo [id=5, workYear=1, salaryLeast=3000, salaryMost=8000, city=test, capacity=test, position=test, welfare=test, industry=test]
+2019-03-11 11:22:52.031  INFO 14032 --- [main] com.six.chunfeng.ChunfengApplication     : Starting ChunfengApplication on DESKTOP-7G22C3V with PID 14032 (E:\java\chunfeng\target\classes started by yyf in E:\java\chunfeng)
+2019-03-11 11:22:52.033 DEBUG 14032 --- [main] com.six.chunfeng.ChunfengApplication     : Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-03-11 11:22:52.034  INFO 14032 --- [main] com.six.chunfeng.ChunfengApplication     : No active profile set, falling back to default profiles: default
+2019-03-11 11:22:53.649  INFO 14032 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-03-11 11:22:53.683  INFO 14032 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-11 11:22:53.684  INFO 14032 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-11 11:22:53.697  INFO 14032 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.17] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+2019-03-11 11:22:53.697  INFO 14032 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+2019-03-11 11:22:53.697  INFO 14032 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-03-11 11:22:53.697  INFO 14032 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-03-11 11:22:54.750  INFO 14032 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+2019-03-11 11:22:54.917  INFO 14032 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-11 11:22:54.917  INFO 14032 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2831 ms
+2019-03-11 11:22:55.621  INFO 14032 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-11 11:22:55.971  INFO 14032 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-11 11:22:55.976  INFO 14032 --- [main] com.six.chunfeng.ChunfengApplication     : Started ChunfengApplication in 4.426 seconds (JVM running for 4.879)
+2019-03-11 11:22:57.046  INFO 14032 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-11 11:22:57.047  INFO 14032 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-11 11:22:57.061  INFO 14032 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+2019-03-11 11:23:05.181  INFO 14032 --- [http-nio-8080-exec-3] c.six.chunfeng.controller.TagController  : Gotten userId: 3
+2019-03-11 11:23:05.207  INFO 14032 --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-03-11 11:23:05.381  INFO 14032 --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-03-11 11:23:05.387 DEBUG 14032 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getTagInfoById    : ==>  Preparing: select * from job_aim where user_id=? 
+2019-03-11 11:23:05.415 DEBUG 14032 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getTagInfoById    : ==> Parameters: 3(Integer)
+2019-03-11 11:23:05.446 DEBUG 14032 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getTagInfoById    : <==      Total: 1
+2019-03-11 11:23:05.449 DEBUG 14032 --- [http-nio-8080-exec-3] com.six.chunfeng.service.TagService      : userId: 3 tagInfo: TagInfo [id=5, workYear=1, salaryLeast=3000, salaryMost=8000, city=test, capacity=test, position=test, welfare=test, industry=test]
+2019-03-11 11:34:23.781  INFO 13852 --- [main] com.six.chunfeng.ChunfengApplication     : Starting ChunfengApplication on DESKTOP-7G22C3V with PID 13852 (E:\java\chunfeng\target\classes started by yyf in E:\java\chunfeng)
+2019-03-11 11:34:23.784 DEBUG 13852 --- [main] com.six.chunfeng.ChunfengApplication     : Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-03-11 11:34:23.784  INFO 13852 --- [main] com.six.chunfeng.ChunfengApplication     : No active profile set, falling back to default profiles: default
+2019-03-11 11:34:25.602  INFO 13852 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-03-11 11:34:25.632  INFO 13852 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-11 11:34:25.632  INFO 13852 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-11 11:34:25.644  INFO 13852 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.17] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+2019-03-11 11:34:25.644  INFO 13852 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+2019-03-11 11:34:25.645  INFO 13852 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-03-11 11:34:25.645  INFO 13852 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-03-11 11:34:26.724  INFO 13852 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+2019-03-11 11:34:26.844  INFO 13852 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-11 11:34:26.845  INFO 13852 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3015 ms
+2019-03-11 11:34:27.360  INFO 13852 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-11 11:34:27.643  INFO 13852 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-11 11:34:27.648  INFO 13852 --- [main] com.six.chunfeng.ChunfengApplication     : Started ChunfengApplication in 4.341 seconds (JVM running for 4.789)
+2019-03-11 11:34:34.382  INFO 13852 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-11 11:34:34.382  INFO 13852 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-11 11:34:34.393  INFO 13852 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2019-03-11 11:34:43.507  INFO 13852 --- [http-nio-8080-exec-7] c.s.chunfeng.controller.LoginController  : Gotten phone: 15664943037 gotten password: 123456
+2019-03-11 11:34:43.522  INFO 13852 --- [http-nio-8080-exec-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-03-11 11:34:43.679  INFO 13852 --- [http-nio-8080-exec-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-03-11 11:34:43.686 DEBUG 13852 --- [http-nio-8080-exec-7] c.s.c.m.LoginMapper.getPassworkByphone   : ==>  Preparing: select pswd from user_info where tel=? 
+2019-03-11 11:34:43.715 DEBUG 13852 --- [http-nio-8080-exec-7] c.s.c.m.LoginMapper.getPassworkByphone   : ==> Parameters: 15664943037(String)
+2019-03-11 11:34:43.743 DEBUG 13852 --- [http-nio-8080-exec-7] c.s.c.m.LoginMapper.getPassworkByphone   : <==      Total: 1
+2019-03-11 11:34:43.746 DEBUG 13852 --- [http-nio-8080-exec-7] com.six.chunfeng.service.LoginService    : Existed phone 15664943037 password: e10adc3949ba59abbe56e057f20f883e
+2019-03-11 11:34:43.748 DEBUG 13852 --- [http-nio-8080-exec-7] c.s.c.mapper.LoginMapper.getIdByPhone    : ==>  Preparing: select user_id from user_info where tel=? 
+2019-03-11 11:34:43.749 DEBUG 13852 --- [http-nio-8080-exec-7] c.s.c.mapper.LoginMapper.getIdByPhone    : ==> Parameters: 15664943037(String)
+2019-03-11 11:34:43.751 DEBUG 13852 --- [http-nio-8080-exec-7] c.s.c.mapper.LoginMapper.getIdByPhone    : <==      Total: 1
+2019-03-11 11:34:47.741  INFO 13852 --- [http-nio-8080-exec-6] c.six.chunfeng.controller.TagController  : Gotten userId: 3
+2019-03-11 11:34:47.744 DEBUG 13852 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getTagInfoById    : ==>  Preparing: select * from job_aim where user_id=? 
+2019-03-11 11:34:47.745 DEBUG 13852 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getTagInfoById    : ==> Parameters: 3(Integer)
+2019-03-11 11:34:47.749 DEBUG 13852 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getTagInfoById    : <==      Total: 1
+2019-03-11 11:34:47.749 DEBUG 13852 --- [http-nio-8080-exec-6] com.six.chunfeng.service.TagService      : userId: 3 tagInfo: TagInfo [id=5, workYear=1, salaryLeast=3000, salaryMost=8000, city=test, capacity=test, position=test, welfare=test, industry=test]
+2019-03-11 11:35:58.818  INFO 6004 --- [main] com.six.chunfeng.ChunfengApplication     : Starting ChunfengApplication on DESKTOP-7G22C3V with PID 6004 (E:\java\chunfeng\target\classes started by yyf in E:\java\chunfeng)
+2019-03-11 11:35:58.820 DEBUG 6004 --- [main] com.six.chunfeng.ChunfengApplication     : Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-03-11 11:35:58.820  INFO 6004 --- [main] com.six.chunfeng.ChunfengApplication     : No active profile set, falling back to default profiles: default
+2019-03-11 11:36:00.438  INFO 6004 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-03-11 11:36:00.480  INFO 6004 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-11 11:36:00.481  INFO 6004 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-11 11:36:00.495  INFO 6004 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.17] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+2019-03-11 11:36:00.495  INFO 6004 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+2019-03-11 11:36:00.495  INFO 6004 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-03-11 11:36:00.496  INFO 6004 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-03-11 11:36:01.538  INFO 6004 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+2019-03-11 11:36:01.647  INFO 6004 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-11 11:36:01.648  INFO 6004 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2778 ms
+2019-03-11 11:36:02.136  INFO 6004 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-11 11:36:02.427  INFO 6004 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-11 11:36:02.429  INFO 6004 --- [main] com.six.chunfeng.ChunfengApplication     : Started ChunfengApplication in 4.061 seconds (JVM running for 4.524)
+2019-03-11 11:36:05.262  INFO 6004 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-11 11:36:05.262  INFO 6004 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-11 11:36:05.270  INFO 6004 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2019-03-11 11:36:05.403  INFO 6004 --- [http-nio-8080-exec-2] c.six.chunfeng.controller.TagController  : Gotten userId: 3
+2019-03-11 11:36:05.433  INFO 6004 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-03-11 11:36:05.616  INFO 6004 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-03-11 11:36:05.622 DEBUG 6004 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getTagInfoById    : ==>  Preparing: select * from job_aim where user_id=? 
+2019-03-11 11:36:05.648 DEBUG 6004 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getTagInfoById    : ==> Parameters: 3(Integer)
+2019-03-11 11:36:05.673 DEBUG 6004 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getTagInfoById    : <==      Total: 1
+2019-03-11 11:36:05.676 DEBUG 6004 --- [http-nio-8080-exec-2] com.six.chunfeng.service.TagService      : userId: 3 tagInfo: TagInfo [id=5, workYear=1, salaryLeast=3000, salaryMost=8000, city=test, capacity=test, position=test, welfare=test, industry=test]
+2019-03-11 11:37:05.021  INFO 12756 --- [main] com.six.chunfeng.ChunfengApplication     : Starting ChunfengApplication on DESKTOP-7G22C3V with PID 12756 (E:\java\chunfeng\target\classes started by yyf in E:\java\chunfeng)
+2019-03-11 11:37:05.024 DEBUG 12756 --- [main] com.six.chunfeng.ChunfengApplication     : Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-03-11 11:37:05.025  INFO 12756 --- [main] com.six.chunfeng.ChunfengApplication     : No active profile set, falling back to default profiles: default
+2019-03-11 11:37:06.649  INFO 12756 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-03-11 11:37:06.678  INFO 12756 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-11 11:37:06.678  INFO 12756 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-11 11:37:06.688  INFO 12756 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.17] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+2019-03-11 11:37:06.689  INFO 12756 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+2019-03-11 11:37:06.689  INFO 12756 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-03-11 11:37:06.689  INFO 12756 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-03-11 11:37:07.737  INFO 12756 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+2019-03-11 11:37:07.843  INFO 12756 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-11 11:37:07.843  INFO 12756 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2773 ms
+2019-03-11 11:37:08.332  INFO 12756 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-11 11:37:08.620  INFO 12756 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-11 11:37:08.623  INFO 12756 --- [main] com.six.chunfeng.ChunfengApplication     : Started ChunfengApplication in 4.109 seconds (JVM running for 4.566)
+2019-03-11 11:37:15.712  INFO 12756 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-11 11:37:15.712  INFO 12756 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-11 11:37:15.718  INFO 12756 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2019-03-11 11:37:15.846  INFO 12756 --- [http-nio-8080-exec-2] c.six.chunfeng.controller.TagController  : Gotten userId: 3
+2019-03-11 11:37:15.871  INFO 12756 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-03-11 11:37:16.045  INFO 12756 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-03-11 11:37:16.051 DEBUG 12756 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getTagInfoById    : ==>  Preparing: select * from job_aim where user_id=? 
+2019-03-11 11:37:16.080 DEBUG 12756 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getTagInfoById    : ==> Parameters: 3(Integer)
+2019-03-11 11:37:16.108 DEBUG 12756 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getTagInfoById    : <==      Total: 1
+2019-03-11 11:37:16.110 DEBUG 12756 --- [http-nio-8080-exec-2] com.six.chunfeng.service.TagService      : userId: 3 tagInfo: TagInfo [id=5, workYear=1, salaryLeast=3000, salaryMost=8000, city=test, capacity=test, position=test, welfare=test, industry=test]

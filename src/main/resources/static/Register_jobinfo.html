@@ -27,20 +27,30 @@
 	
     <script type="text/javascript">
 
+        init();
+
+
         $(document).ready(function() {
             var id = $.cookie("id");
-            
             if(id!=undefined){
                 $.ajax({
                     type: "get",
                     url: "/tagInfo?id="+id,
-                    success: function (data) {  
+                    success: function (data) {
                         console.log(data);
                         document.getElementById("worktime").placeholder = data.workYear;
                         document.getElementById("low_salary").placeholder = data.salaryLeast;
                         document.getElementById("high_salary").placeholder = data.salaryMost;
-                        document.getElementById("city_first_index").innerText = data.city;
-                        document.getElementById("city_first_index").value = data.city;
+                        
+                        var city_selector = document.getElementById("city_select");
+                        console.log(city_selector.length);
+                        for(var i=0;i<city_selector.length;i++){
+                            if(city_selector[i].innerText==data.city){
+                                city_selector[i].selected = true;
+                                city_selector.options[0].remove(0);
+                                break;
+                            }
+                        }
                     }
                 });
             }
@@ -342,13 +352,13 @@
 				<input type="text"  name="tendency_wal" placeholder="倾向福利" required="" />
 				-->
 				<select id="city_select" class="city_select" style="color:#FFF">
-					<option id="city_first_index" value="">首选工作地</option>
-					<option value="">城市1</option>
-					<option value="">城市2</option>
-					<option value="">城市3</option>
-					<option value="">城市4</option>
-					<option value="">城市5</option>
-					<option value="">城市6</option>
+					<option id="city_first_index">首选工作地</option>
+					<option>城市1</option>
+					<option>城市2</option>
+					<option>城市3</option>
+					<option>test</option>
+					<option>城市5</option>
+					<option>城市6</option>
 				</select>
 				
 				<div class="search_cont">
@@ -403,7 +413,7 @@
 				<label id="familiar_Info" class="choose_result"></label>
 				</div>
 				
-				<input type="button" value="提交">
+				<input type="button" value="Submit" onclick="login()">
 			</form>	
 		</div>
 	</div>
