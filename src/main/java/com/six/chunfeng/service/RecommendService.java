@@ -14,15 +14,16 @@ public class RecommendService {
 	
 	@Autowired
 	private InfoMapper infoMapper;
+	
 	public void recommend(int id)
 	{
 		JobInfo info = infoMapper.getJobInfoById(id);
 		System.out.println(info);
 	}
 
-	public List<JobInfo> changePage(Integer curPage)
+	public int changePage(Integer curPage)
 	{
-		return null;
+		return 1;
 	}
 	
 
