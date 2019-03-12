@@ -1,5 +1,8 @@
 package com.six.chunfeng.mapper;
 
+import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Param;
@@ -19,9 +22,6 @@ public interface TagMapper {
 			+ "where user_id=#{id}")
 	public void setTagInfoById(@Param("info") TagInfo info, @Param("id") int id);
 	
-	@Update("update job_aim set last_change_time=#{lastChangeTime} where user_id=#{id}")
-	public void setLastChangeTimeById(@Param("lastChangeTime") String lastChangeTime, @Param("id") int id);
-	
 	@Select("select count(*) from job_aim where user_id=#{id}")
 	public Integer getTagInfoCountById(@Param("id") int id);
 	
@@ -29,4 +29,16 @@ public interface TagMapper {
 			+ "user_id) values(#{info.workYear},#{info.salaryLeast},#{info.salaryMost},#{info.city},#{info.capacity},#{info.position},"
 			+ "#{info.welfare},#{info.industry},#{id})")
 	public void insertTagInfo(@Param("info") TagInfo info, @Param("id") int id);
+	
+	@Select("select * from capacity_dic")
+	public List<Map<Integer,String>> getCapacityDic();
+	
+	@Select("select id,name from industry_dic")
+	public List<Map<Integer,String>> getIndustryDic();
+	
+	@Select("select id,name from position_dic")
+	public List<Map<Integer,String>> getPositionDic();
+	
+	@Select("select id,name from welfare_dic")
+	public List<Map<Integer,String>> getwelfareDic();
 }

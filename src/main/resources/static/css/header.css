@@ -29,9 +29,10 @@
 	height:100%;
 }
 .welcome{
-	font-size:10px;
+	font-size:15px;
 	font-weight:bold;
 	margin-top:10px !important;
+	margin-right:5px !important;
 }
 .nav > li {
 	margin: 0px 2px;
@@ -61,18 +62,21 @@
 }
 
 .navbar-default .navbar-nav > li > a {
-	 -webkit-transition:none !important;
-  -moz-transition:none !important;
-  transition:none !important;
+	transition:.2s ease-in;
+	-webkit-transition:.2s ease-in;
+	-moz-transition:.2s ease-in;
 }
 
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a.active {
-    background:#00BFFF;
+    background:#5CACEE;
 	color:#fff;
 	-webkit-border-radius:20px;
 	-moz-border-radius:20px;
 	border-radius: 20px;
+	transition:.2s ease-in;
+	-webkit-transition:.2s ease-in;
+	-moz-transition:.2s ease-in;
 }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover{

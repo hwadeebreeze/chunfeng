@@ -1,0 +1,1398 @@
+2019-03-12 09:57:34.034  INFO 5600 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : Starting ChunfengApplication on DESKTOP-7G22C3V with PID 5600 (E:\java\chunfeng\target\classes started by yyf in E:\java\chunfeng)
+2019-03-12 09:57:34.041 DEBUG 5600 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-03-12 09:57:34.042  INFO 5600 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : No active profile set, falling back to default profiles: default
+2019-03-12 09:57:34.096  INFO 5600 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-12 09:57:34.100  INFO 5600 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-03-12 09:57:36.005  INFO 5600 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-03-12 09:57:36.037  INFO 5600 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-12 09:57:36.038  INFO 5600 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-12 09:57:36.053  INFO 5600 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.17] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+2019-03-12 09:57:36.054  INFO 5600 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+2019-03-12 09:57:36.054  INFO 5600 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-03-12 09:57:36.054  INFO 5600 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-03-12 09:57:37.090  INFO 5600 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+2019-03-12 09:57:37.197  INFO 5600 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-12 09:57:37.198  INFO 5600 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3098 ms
+2019-03-12 09:57:37.676  INFO 5600 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-12 09:57:37.922  INFO 5600 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-03-12 09:57:38.004  INFO 5600 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-12 09:57:38.008  INFO 5600 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : Started ChunfengApplication in 4.389 seconds (JVM running for 4.956)
+2019-03-12 09:57:45.384  INFO 5600 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-12 09:57:45.384  INFO 5600 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-12 09:57:45.397  INFO 5600 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
+2019-03-12 10:05:28.430  INFO 5600 --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-03-12 10:05:50.603 ERROR 5600 --- [http-nio-8080-exec-3] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:835) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:455) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:240) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) [HikariCP-3.2.0.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:157) [spring-jdbc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) [spring-jdbc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78) [spring-jdbc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:82) [mybatis-spring-2.0.0.jar:2.0.0]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:68) [mybatis-spring-2.0.0.jar:2.0.0]
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:337) [mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:84) [mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62) [mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325) [mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) [mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109) [mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83) [mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148) [mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141) [mybatis-3.4.0.jar:3.4.0]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_40]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_40]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_40]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_40]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433) [mybatis-spring-2.0.0.jar:2.0.0]
+	at com.sun.proxy.$Proxy60.selectList(Unknown Source) [na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230) [mybatis-spring-2.0.0.jar:2.0.0]
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:128) [mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:68) [mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:53) [mybatis-3.4.0.jar:3.4.0]
+	at com.sun.proxy.$Proxy71.getIndustryDic(Unknown Source) [na:na]
+	at com.six.chunfeng.service.TagService.getIndustryDic(TagService.java:45) [classes/:na]
+	at com.six.chunfeng.controller.TagController.getIndustryDic(TagController.java:39) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_40]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_40]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_40]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_40]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_40]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_40]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_40]
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_40]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_40]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_40]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422) ~[na:1.8.0_40]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:152) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:955) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	... 91 common frames omitted
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method) ~[na:1.8.0_40]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85) ~[na:1.8.0_40]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345) ~[na:1.8.0_40]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_40]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_40]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[na:1.8.0_40]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_40]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_40]
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:155) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	... 94 common frames omitted
+
+2019-03-12 10:05:50.607  INFO 5600 --- [http-nio-8080-exec-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-03-12 10:05:50.616 ERROR 5600 --- [http-nio-8080-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+### The error may exist in com/six/chunfeng/mapper/TagMapper.java (best guess)
+### The error may involve com.six.chunfeng.mapper.TagMapper.getIndustryDic
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.] with root cause
+
+java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method) ~[na:1.8.0_40]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85) ~[na:1.8.0_40]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345) ~[na:1.8.0_40]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_40]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_40]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[na:1.8.0_40]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_40]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_40]
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:155) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:152) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:955) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:455) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:240) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.2.0.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:157) ~[spring-jdbc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) ~[spring-jdbc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78) ~[spring-jdbc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:82) ~[mybatis-spring-2.0.0.jar:2.0.0]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:68) ~[mybatis-spring-2.0.0.jar:2.0.0]
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:337) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:84) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141) ~[mybatis-3.4.0.jar:3.4.0]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_40]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_40]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_40]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_40]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433) ~[mybatis-spring-2.0.0.jar:2.0.0]
+	at com.sun.proxy.$Proxy60.selectList(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230) ~[mybatis-spring-2.0.0.jar:2.0.0]
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:128) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:68) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:53) ~[mybatis-3.4.0.jar:3.4.0]
+	at com.sun.proxy.$Proxy71.getIndustryDic(Unknown Source) ~[na:na]
+	at com.six.chunfeng.service.TagService.getIndustryDic(TagService.java:45) ~[classes/:na]
+	at com.six.chunfeng.controller.TagController.getIndustryDic(TagController.java:39) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_40]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_40]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_40]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_40]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_40]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_40]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_40]
+
+2019-03-12 10:06:12.628 ERROR 5600 --- [http-nio-8080-exec-6] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:835) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:455) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:240) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) [HikariCP-3.2.0.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:157) [spring-jdbc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) [spring-jdbc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78) [spring-jdbc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:82) [mybatis-spring-2.0.0.jar:2.0.0]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:68) [mybatis-spring-2.0.0.jar:2.0.0]
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:337) [mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:84) [mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62) [mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325) [mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) [mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109) [mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83) [mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148) [mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141) [mybatis-3.4.0.jar:3.4.0]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_40]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_40]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_40]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_40]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433) [mybatis-spring-2.0.0.jar:2.0.0]
+	at com.sun.proxy.$Proxy60.selectList(Unknown Source) [na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230) [mybatis-spring-2.0.0.jar:2.0.0]
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:128) [mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:68) [mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:53) [mybatis-3.4.0.jar:3.4.0]
+	at com.sun.proxy.$Proxy71.getwelfareDic(Unknown Source) [na:na]
+	at com.six.chunfeng.service.TagService.getwelfareDic(TagService.java:53) [classes/:na]
+	at com.six.chunfeng.controller.TagController.getwelfareDic(TagController.java:49) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_40]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_40]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_40]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_40]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_40]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_40]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_40]
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_40]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_40]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_40]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422) ~[na:1.8.0_40]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:152) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:955) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	... 91 common frames omitted
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method) ~[na:1.8.0_40]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85) ~[na:1.8.0_40]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345) ~[na:1.8.0_40]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_40]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_40]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[na:1.8.0_40]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_40]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_40]
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:155) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	... 94 common frames omitted
+
+2019-03-12 10:06:12.633  INFO 5600 --- [http-nio-8080-exec-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-03-12 10:06:12.637 ERROR 5600 --- [http-nio-8080-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+### The error may exist in com/six/chunfeng/mapper/TagMapper.java (best guess)
+### The error may involve com.six.chunfeng.mapper.TagMapper.getwelfareDic
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.] with root cause
+
+java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method) ~[na:1.8.0_40]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85) ~[na:1.8.0_40]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345) ~[na:1.8.0_40]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_40]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_40]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[na:1.8.0_40]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_40]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_40]
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:155) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:152) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:955) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:455) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:240) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.2.0.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:157) ~[spring-jdbc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) ~[spring-jdbc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78) ~[spring-jdbc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:82) ~[mybatis-spring-2.0.0.jar:2.0.0]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:68) ~[mybatis-spring-2.0.0.jar:2.0.0]
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:337) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:84) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141) ~[mybatis-3.4.0.jar:3.4.0]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_40]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_40]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_40]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_40]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433) ~[mybatis-spring-2.0.0.jar:2.0.0]
+	at com.sun.proxy.$Proxy60.selectList(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230) ~[mybatis-spring-2.0.0.jar:2.0.0]
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:128) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:68) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:53) ~[mybatis-3.4.0.jar:3.4.0]
+	at com.sun.proxy.$Proxy71.getwelfareDic(Unknown Source) ~[na:na]
+	at com.six.chunfeng.service.TagService.getwelfareDic(TagService.java:53) ~[classes/:na]
+	at com.six.chunfeng.controller.TagController.getwelfareDic(TagController.java:49) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_40]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_40]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_40]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_40]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_40]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_40]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_40]
+
+2019-03-12 10:06:34.644 ERROR 5600 --- [http-nio-8080-exec-4] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:835) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:455) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:240) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) [HikariCP-3.2.0.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:157) [spring-jdbc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) [spring-jdbc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78) [spring-jdbc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:82) [mybatis-spring-2.0.0.jar:2.0.0]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:68) [mybatis-spring-2.0.0.jar:2.0.0]
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:337) [mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:84) [mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62) [mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325) [mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) [mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109) [mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83) [mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148) [mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141) [mybatis-3.4.0.jar:3.4.0]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_40]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_40]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_40]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_40]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433) [mybatis-spring-2.0.0.jar:2.0.0]
+	at com.sun.proxy.$Proxy60.selectList(Unknown Source) [na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230) [mybatis-spring-2.0.0.jar:2.0.0]
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:128) [mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:68) [mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:53) [mybatis-3.4.0.jar:3.4.0]
+	at com.sun.proxy.$Proxy71.getCapacityDic(Unknown Source) [na:na]
+	at com.six.chunfeng.service.TagService.getCapacityDic(TagService.java:41) [classes/:na]
+	at com.six.chunfeng.controller.TagController.getCapacityDic(TagController.java:34) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_40]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_40]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_40]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_40]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_40]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_40]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_40]
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_40]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_40]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_40]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422) ~[na:1.8.0_40]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:152) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:955) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	... 91 common frames omitted
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method) ~[na:1.8.0_40]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85) ~[na:1.8.0_40]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345) ~[na:1.8.0_40]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_40]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_40]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[na:1.8.0_40]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_40]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_40]
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:155) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	... 94 common frames omitted
+
+2019-03-12 10:06:34.646  INFO 5600 --- [http-nio-8080-exec-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-03-12 10:06:34.654 ERROR 5600 --- [http-nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+### The error may exist in com/six/chunfeng/mapper/TagMapper.java (best guess)
+### The error may involve com.six.chunfeng.mapper.TagMapper.getCapacityDic
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.] with root cause
+
+java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method) ~[na:1.8.0_40]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85) ~[na:1.8.0_40]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345) ~[na:1.8.0_40]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_40]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_40]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[na:1.8.0_40]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_40]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_40]
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:155) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:152) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:955) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:455) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:240) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.2.0.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:157) ~[spring-jdbc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) ~[spring-jdbc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78) ~[spring-jdbc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:82) ~[mybatis-spring-2.0.0.jar:2.0.0]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:68) ~[mybatis-spring-2.0.0.jar:2.0.0]
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:337) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:84) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141) ~[mybatis-3.4.0.jar:3.4.0]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_40]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_40]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_40]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_40]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433) ~[mybatis-spring-2.0.0.jar:2.0.0]
+	at com.sun.proxy.$Proxy60.selectList(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230) ~[mybatis-spring-2.0.0.jar:2.0.0]
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:128) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:68) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:53) ~[mybatis-3.4.0.jar:3.4.0]
+	at com.sun.proxy.$Proxy71.getCapacityDic(Unknown Source) ~[na:na]
+	at com.six.chunfeng.service.TagService.getCapacityDic(TagService.java:41) ~[classes/:na]
+	at com.six.chunfeng.controller.TagController.getCapacityDic(TagController.java:34) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_40]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_40]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_40]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_40]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_40]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_40]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_40]
+
+2019-03-12 10:06:35.007  INFO 5600 --- [http-nio-8080-exec-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-03-12 10:06:35.016 DEBUG 5600 --- [http-nio-8080-exec-8] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:06:35.050 DEBUG 5600 --- [http-nio-8080-exec-8] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:06:35.111 DEBUG 5600 --- [http-nio-8080-exec-8] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 76
+2019-03-12 10:06:35.114 DEBUG 5600 --- [http-nio-8080-exec-8] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:06:35.114 DEBUG 5600 --- [http-nio-8080-exec-8] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:06:35.379 DEBUG 5600 --- [http-nio-8080-exec-8] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 76
+2019-03-12 10:06:41.715  INFO 14080 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : Starting ChunfengApplication on DESKTOP-7G22C3V with PID 14080 (E:\java\chunfeng\target\classes started by yyf in E:\java\chunfeng)
+2019-03-12 10:06:41.717 DEBUG 14080 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-03-12 10:06:41.718  INFO 14080 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : No active profile set, falling back to default profiles: default
+2019-03-12 10:06:41.764  INFO 14080 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-12 10:06:41.764  INFO 14080 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-03-12 10:06:43.572  INFO 14080 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-03-12 10:06:43.600  INFO 14080 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-12 10:06:43.601  INFO 14080 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-12 10:06:43.611  INFO 14080 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.17] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+2019-03-12 10:06:43.611  INFO 14080 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+2019-03-12 10:06:43.611  INFO 14080 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-03-12 10:06:43.611  INFO 14080 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-03-12 10:06:44.674  INFO 14080 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+2019-03-12 10:06:44.773  INFO 14080 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-12 10:06:44.774  INFO 14080 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3010 ms
+2019-03-12 10:06:45.248  INFO 14080 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-12 10:06:45.528  INFO 14080 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-03-12 10:06:45.587  INFO 14080 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-12 10:06:45.591  INFO 14080 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : Started ChunfengApplication in 4.257 seconds (JVM running for 4.796)
+2019-03-12 10:06:56.908  INFO 14080 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-12 10:06:56.908  INFO 14080 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-12 10:06:56.918  INFO 14080 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2019-03-12 10:06:57.111  INFO 14080 --- [http-nio-8080-exec-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-03-12 10:06:57.381  INFO 14080 --- [http-nio-8080-exec-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-03-12 10:06:57.403 DEBUG 14080 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:06:57.464 DEBUG 14080 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:06:57.479 DEBUG 14080 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getIndustryDic    : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:06:57.480 DEBUG 14080 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getIndustryDic    : ==> Parameters: 
+2019-03-12 10:06:57.516 DEBUG 14080 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getIndustryDic    : <==      Total: 76
+2019-03-12 10:06:57.517 DEBUG 14080 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 76
+2019-03-12 10:06:57.520 DEBUG 14080 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getCapacityDic    : ==>  Preparing: select * from capacity_dic 
+2019-03-12 10:06:57.520 DEBUG 14080 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getCapacityDic    : ==> Parameters: 
+2019-03-12 10:06:57.521 DEBUG 14080 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:06:57.521 DEBUG 14080 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:06:57.544 DEBUG 14080 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 76
+2019-03-12 10:06:57.547 DEBUG 14080 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getCapacityDic    : <==      Total: 117
+2019-03-12 10:06:57.585 DEBUG 14080 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:06:57.585 DEBUG 14080 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:06:57.598 DEBUG 14080 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 76
+2019-03-12 10:06:57.599 DEBUG 14080 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:06:57.599 DEBUG 14080 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:06:57.611 DEBUG 14080 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 76
+2019-03-12 10:08:12.973 DEBUG 14080 --- [http-nio-8080-exec-1] c.s.c.mapper.TagMapper.getCapacityDic    : ==>  Preparing: select * from capacity_dic 
+2019-03-12 10:08:12.974 DEBUG 14080 --- [http-nio-8080-exec-1] c.s.c.mapper.TagMapper.getCapacityDic    : ==> Parameters: 
+2019-03-12 10:08:12.975 DEBUG 14080 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:08:12.976 DEBUG 14080 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:08:12.977 DEBUG 14080 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getIndustryDic    : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:08:12.978 DEBUG 14080 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getIndustryDic    : ==> Parameters: 
+2019-03-12 10:08:13.079 DEBUG 14080 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 76
+2019-03-12 10:08:13.079 DEBUG 14080 --- [http-nio-8080-exec-1] c.s.c.mapper.TagMapper.getCapacityDic    : <==      Total: 117
+2019-03-12 10:08:13.081 DEBUG 14080 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:08:13.082 DEBUG 14080 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:08:13.089 DEBUG 14080 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getIndustryDic    : <==      Total: 76
+2019-03-12 10:08:13.202 DEBUG 14080 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 76
+2019-03-12 10:08:13.211 DEBUG 14080 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:08:13.212 DEBUG 14080 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:08:13.267 DEBUG 14080 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 76
+2019-03-12 10:08:13.267 DEBUG 14080 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:08:13.268 DEBUG 14080 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:08:13.280 DEBUG 14080 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 76
+2019-03-12 10:09:09.021 DEBUG 14080 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getCapacityDic    : ==>  Preparing: select * from capacity_dic 
+2019-03-12 10:09:09.021 DEBUG 14080 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getCapacityDic    : ==> Parameters: 
+2019-03-12 10:09:09.055 DEBUG 14080 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getCapacityDic    : <==      Total: 117
+2019-03-12 10:09:09.056 DEBUG 14080 --- [http-nio-8080-exec-8] c.s.c.mapper.TagMapper.getIndustryDic    : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:09:09.056 DEBUG 14080 --- [http-nio-8080-exec-8] c.s.c.mapper.TagMapper.getIndustryDic    : ==> Parameters: 
+2019-03-12 10:09:09.070 DEBUG 14080 --- [http-nio-8080-exec-8] c.s.c.mapper.TagMapper.getIndustryDic    : <==      Total: 76
+2019-03-12 10:09:09.284 DEBUG 14080 --- [http-nio-8080-exec-9] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:09:09.284 DEBUG 14080 --- [http-nio-8080-exec-9] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:09:09.298 DEBUG 14080 --- [http-nio-8080-exec-9] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 76
+2019-03-12 10:09:09.298 DEBUG 14080 --- [http-nio-8080-exec-9] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:09:09.299 DEBUG 14080 --- [http-nio-8080-exec-9] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:09:09.322 DEBUG 14080 --- [http-nio-8080-exec-9] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 76
+2019-03-12 10:09:09.329 DEBUG 14080 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:09:09.330 DEBUG 14080 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:09:09.360 DEBUG 14080 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 76
+2019-03-12 10:09:09.362 DEBUG 14080 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:09:09.362 DEBUG 14080 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:09:09.366 DEBUG 14080 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 76
+2019-03-12 10:09:34.963 DEBUG 14080 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getCapacityDic    : ==>  Preparing: select * from capacity_dic 
+2019-03-12 10:09:34.964 DEBUG 14080 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getCapacityDic    : ==> Parameters: 
+2019-03-12 10:09:34.964 DEBUG 14080 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:09:34.965 DEBUG 14080 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:09:34.967 DEBUG 14080 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getIndustryDic    : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:09:34.967 DEBUG 14080 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getIndustryDic    : ==> Parameters: 
+2019-03-12 10:09:34.973 DEBUG 14080 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getCapacityDic    : <==      Total: 117
+2019-03-12 10:09:34.985 DEBUG 14080 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 76
+2019-03-12 10:09:34.986 DEBUG 14080 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:09:34.987 DEBUG 14080 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:09:34.988 DEBUG 14080 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getIndustryDic    : <==      Total: 76
+2019-03-12 10:09:35.110 DEBUG 14080 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 76
+2019-03-12 10:09:35.115 DEBUG 14080 --- [http-nio-8080-exec-10] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:09:35.115 DEBUG 14080 --- [http-nio-8080-exec-10] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:09:35.120 DEBUG 14080 --- [http-nio-8080-exec-10] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 76
+2019-03-12 10:09:35.120 DEBUG 14080 --- [http-nio-8080-exec-10] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:09:35.121 DEBUG 14080 --- [http-nio-8080-exec-10] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:09:35.267 DEBUG 14080 --- [http-nio-8080-exec-10] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 76
+2019-03-12 10:10:14.709 DEBUG 14080 --- [http-nio-8080-exec-8] c.s.c.mapper.TagMapper.getCapacityDic    : ==>  Preparing: select * from capacity_dic 
+2019-03-12 10:10:14.710 DEBUG 14080 --- [http-nio-8080-exec-8] c.s.c.mapper.TagMapper.getCapacityDic    : ==> Parameters: 
+2019-03-12 10:10:14.710 DEBUG 14080 --- [http-nio-8080-exec-9] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:10:14.710 DEBUG 14080 --- [http-nio-8080-exec-9] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:10:14.714 DEBUG 14080 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getIndustryDic    : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:10:14.715 DEBUG 14080 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getIndustryDic    : ==> Parameters: 
+2019-03-12 10:10:14.731 DEBUG 14080 --- [http-nio-8080-exec-9] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 76
+2019-03-12 10:10:14.732 DEBUG 14080 --- [http-nio-8080-exec-9] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:10:14.732 DEBUG 14080 --- [http-nio-8080-exec-9] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:10:14.737 DEBUG 14080 --- [http-nio-8080-exec-8] c.s.c.mapper.TagMapper.getCapacityDic    : <==      Total: 117
+2019-03-12 10:10:14.744 DEBUG 14080 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getIndustryDic    : <==      Total: 76
+2019-03-12 10:10:14.757 DEBUG 14080 --- [http-nio-8080-exec-9] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 76
+2019-03-12 10:10:14.761 DEBUG 14080 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:10:14.761 DEBUG 14080 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:10:14.804 DEBUG 14080 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 76
+2019-03-12 10:10:14.805 DEBUG 14080 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:10:14.805 DEBUG 14080 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:10:14.814 DEBUG 14080 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 76
+2019-03-12 10:14:41.073 DEBUG 14080 --- [http-nio-8080-exec-1] c.s.c.mapper.TagMapper.getCapacityDic    : ==>  Preparing: select * from capacity_dic 
+2019-03-12 10:14:41.074 DEBUG 14080 --- [http-nio-8080-exec-1] c.s.c.mapper.TagMapper.getCapacityDic    : ==> Parameters: 
+2019-03-12 10:14:41.075 DEBUG 14080 --- [http-nio-8080-exec-8] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:14:41.076 DEBUG 14080 --- [http-nio-8080-exec-8] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:14:41.083 DEBUG 14080 --- [http-nio-8080-exec-1] c.s.c.mapper.TagMapper.getCapacityDic    : <==      Total: 117
+2019-03-12 10:14:41.088 DEBUG 14080 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getIndustryDic    : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:14:41.089 DEBUG 14080 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getIndustryDic    : ==> Parameters: 
+2019-03-12 10:14:41.089 DEBUG 14080 --- [http-nio-8080-exec-8] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 76
+2019-03-12 10:14:41.090 DEBUG 14080 --- [http-nio-8080-exec-8] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:14:41.090 DEBUG 14080 --- [http-nio-8080-exec-8] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:14:41.093 DEBUG 14080 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getIndustryDic    : <==      Total: 76
+2019-03-12 10:14:41.105 DEBUG 14080 --- [http-nio-8080-exec-8] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 76
+2019-03-12 10:14:41.112 DEBUG 14080 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:14:41.112 DEBUG 14080 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:14:41.143 DEBUG 14080 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 76
+2019-03-12 10:14:41.144 DEBUG 14080 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:14:41.144 DEBUG 14080 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:14:41.153 DEBUG 14080 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 76
+2019-03-12 10:28:33.796  INFO 5656 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : Starting ChunfengApplication on DESKTOP-7G22C3V with PID 5656 (E:\java\chunfeng\target\classes started by yyf in E:\java\chunfeng)
+2019-03-12 10:28:33.798 DEBUG 5656 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-03-12 10:28:33.799  INFO 5656 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : No active profile set, falling back to default profiles: default
+2019-03-12 10:28:33.845  INFO 5656 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-12 10:28:33.846  INFO 5656 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-03-12 10:28:35.628  INFO 5656 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-03-12 10:28:35.656  INFO 5656 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-12 10:28:35.656  INFO 5656 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-12 10:28:35.669  INFO 5656 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.17] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+2019-03-12 10:28:35.669  INFO 5656 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+2019-03-12 10:28:35.669  INFO 5656 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-03-12 10:28:35.670  INFO 5656 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-03-12 10:28:36.719  INFO 5656 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+2019-03-12 10:28:36.829  INFO 5656 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-12 10:28:36.829  INFO 5656 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2983 ms
+2019-03-12 10:28:37.302  INFO 5656 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-12 10:28:37.578  INFO 5656 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-03-12 10:28:37.645  INFO 5656 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-12 10:28:37.649  INFO 5656 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : Started ChunfengApplication in 4.223 seconds (JVM running for 4.773)
+2019-03-12 10:28:41.450  INFO 5656 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-12 10:28:41.451  INFO 5656 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-12 10:28:41.460  INFO 5656 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2019-03-12 10:28:41.768  INFO 5656 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-03-12 10:28:42.085  INFO 5656 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-03-12 10:28:42.092 DEBUG 5656 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getCapacityDic    : ==>  Preparing: select * from capacity_dic 
+2019-03-12 10:28:42.117 DEBUG 5656 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getIndustryDic    : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:28:42.118 DEBUG 5656 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getIndustryDic    : ==> Parameters: 
+2019-03-12 10:28:42.118 DEBUG 5656 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getCapacityDic    : ==> Parameters: 
+2019-03-12 10:28:42.185 DEBUG 5656 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getIndustryDic    : <==      Total: 76
+2019-03-12 10:28:42.188 DEBUG 5656 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getCapacityDic    : <==      Total: 117
+2019-03-12 10:28:42.190 DEBUG 5656 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:28:42.191 DEBUG 5656 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:28:42.211 DEBUG 5656 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 76
+2019-03-12 10:28:42.212 DEBUG 5656 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:28:42.212 DEBUG 5656 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:28:42.219 DEBUG 5656 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 76
+2019-03-12 10:28:42.251 DEBUG 5656 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:28:42.251 DEBUG 5656 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:28:42.282 DEBUG 5656 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 76
+2019-03-12 10:28:42.283 DEBUG 5656 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:28:42.284 DEBUG 5656 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:28:42.355 DEBUG 5656 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 76
+2019-03-12 10:29:14.857  INFO 5656 --- [Thread-6] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-03-12 10:29:14.861  INFO 5656 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-03-12 10:29:14.866  INFO 5656 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-03-12 10:29:15.337  INFO 5656 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : Starting ChunfengApplication on DESKTOP-7G22C3V with PID 5656 (E:\java\chunfeng\target\classes started by yyf in E:\java\chunfeng)
+2019-03-12 10:29:15.338 DEBUG 5656 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-03-12 10:29:15.338  INFO 5656 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : No active profile set, falling back to default profiles: default
+2019-03-12 10:29:15.734  INFO 5656 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-03-12 10:29:15.735  INFO 5656 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-12 10:29:15.735  INFO 5656 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-12 10:29:15.736  INFO 5656 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.17] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+2019-03-12 10:29:15.736  INFO 5656 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+2019-03-12 10:29:15.736  INFO 5656 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-03-12 10:29:15.737  INFO 5656 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-03-12 10:29:15.737  INFO 5656 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+2019-03-12 10:29:15.754  INFO 5656 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-12 10:29:15.755  INFO 5656 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 415 ms
+2019-03-12 10:29:15.895  INFO 5656 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-12 10:29:15.968  INFO 5656 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-03-12 10:29:15.991  INFO 5656 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-12 10:29:15.992  INFO 5656 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : Started ChunfengApplication in 0.683 seconds (JVM running for 43.116)
+2019-03-12 10:29:15.995  INFO 5656 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-03-12 10:29:19.457  INFO 5656 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-12 10:29:19.458  INFO 5656 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-12 10:29:19.464  INFO 5656 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2019-03-12 10:29:19.582  INFO 5656 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2019-03-12 10:29:19.685  INFO 5656 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2019-03-12 10:29:19.685 DEBUG 5656 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getCapacityDic    : ==>  Preparing: select * from capacity_dic 
+2019-03-12 10:29:19.686 DEBUG 5656 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getCapacityDic    : ==> Parameters: 
+2019-03-12 10:29:19.699 DEBUG 5656 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getCapacityDic    : <==      Total: 117
+2019-03-12 10:29:19.700 DEBUG 5656 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 10:29:19.701 DEBUG 5656 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:29:19.732 DEBUG 5656 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 10:29:19.733 DEBUG 5656 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getIndustryDic    : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:29:19.733 DEBUG 5656 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getIndustryDic    : ==> Parameters: 
+2019-03-12 10:29:19.743 DEBUG 5656 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getIndustryDic    : <==      Total: 76
+2019-03-12 10:29:19.744 DEBUG 5656 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 10:29:19.745 DEBUG 5656 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:29:19.749 DEBUG 5656 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 10:29:19.756 DEBUG 5656 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 10:29:19.757 DEBUG 5656 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:29:19.767 DEBUG 5656 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 10:29:19.768 DEBUG 5656 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 10:29:19.768 DEBUG 5656 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:29:19.772 DEBUG 5656 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 10:35:52.979 DEBUG 5656 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getCapacityDic    : ==>  Preparing: select * from capacity_dic 
+2019-03-12 10:35:52.979 DEBUG 5656 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getCapacityDic    : ==> Parameters: 
+2019-03-12 10:35:52.982 DEBUG 5656 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 10:35:52.983 DEBUG 5656 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:35:52.995 DEBUG 5656 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getCapacityDic    : <==      Total: 117
+2019-03-12 10:35:52.999 DEBUG 5656 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getIndustryDic    : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:35:52.999 DEBUG 5656 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getIndustryDic    : ==> Parameters: 
+2019-03-12 10:35:53.005 DEBUG 5656 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 10:35:53.006 DEBUG 5656 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 10:35:53.008 DEBUG 5656 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:35:53.010 DEBUG 5656 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getIndustryDic    : <==      Total: 76
+2019-03-12 10:35:53.013 DEBUG 5656 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 10:35:53.017 DEBUG 5656 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 10:35:53.018 DEBUG 5656 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:35:53.041 DEBUG 5656 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 10:35:53.042 DEBUG 5656 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 10:35:53.043 DEBUG 5656 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:35:53.047 DEBUG 5656 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 10:37:35.286 DEBUG 5656 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getCapacityDic    : ==>  Preparing: select * from capacity_dic 
+2019-03-12 10:37:35.287 DEBUG 5656 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getCapacityDic    : ==> Parameters: 
+2019-03-12 10:37:35.293 DEBUG 5656 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getPositionDic    : ==>  Preparing: select id,name from position_dic 
+2019-03-12 10:37:35.294 DEBUG 5656 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getPositionDic    : ==> Parameters: 
+2019-03-12 10:37:35.298 DEBUG 5656 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 10:37:35.299 DEBUG 5656 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:37:35.299 DEBUG 5656 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getCapacityDic    : <==      Total: 117
+2019-03-12 10:37:35.302 DEBUG 5656 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getIndustryDic    : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:37:35.302 DEBUG 5656 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getIndustryDic    : ==> Parameters: 
+2019-03-12 10:37:35.309 DEBUG 5656 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 10:37:35.310 DEBUG 5656 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 10:37:35.311 DEBUG 5656 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:37:35.311 DEBUG 5656 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getPositionDic    : <==      Total: 115
+2019-03-12 10:37:35.355 DEBUG 5656 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getIndustryDic    : <==      Total: 76
+2019-03-12 10:37:35.355 DEBUG 5656 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 10:38:26.612 DEBUG 5656 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getCapacityDic    : ==>  Preparing: select * from capacity_dic 
+2019-03-12 10:38:26.613 DEBUG 5656 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getCapacityDic    : ==> Parameters: 
+2019-03-12 10:38:26.685 DEBUG 5656 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getCapacityDic    : <==      Total: 117
+2019-03-12 10:38:26.875 DEBUG 5656 --- [http-nio-8080-exec-9] c.s.c.mapper.TagMapper.getPositionDic    : ==>  Preparing: select id,name from position_dic 
+2019-03-12 10:38:26.875 DEBUG 5656 --- [http-nio-8080-exec-10] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 10:38:26.875 DEBUG 5656 --- [http-nio-8080-exec-1] c.s.c.mapper.TagMapper.getIndustryDic    : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 10:38:26.876 DEBUG 5656 --- [http-nio-8080-exec-9] c.s.c.mapper.TagMapper.getPositionDic    : ==> Parameters: 
+2019-03-12 10:38:26.876 DEBUG 5656 --- [http-nio-8080-exec-1] c.s.c.mapper.TagMapper.getIndustryDic    : ==> Parameters: 
+2019-03-12 10:38:26.876 DEBUG 5656 --- [http-nio-8080-exec-10] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:38:26.903 DEBUG 5656 --- [http-nio-8080-exec-1] c.s.c.mapper.TagMapper.getIndustryDic    : <==      Total: 76
+2019-03-12 10:38:26.903 DEBUG 5656 --- [http-nio-8080-exec-10] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 10:38:26.904 DEBUG 5656 --- [http-nio-8080-exec-9] c.s.c.mapper.TagMapper.getPositionDic    : <==      Total: 115
+2019-03-12 10:38:26.906 DEBUG 5656 --- [http-nio-8080-exec-10] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 10:38:26.907 DEBUG 5656 --- [http-nio-8080-exec-10] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 10:38:26.913 DEBUG 5656 --- [http-nio-8080-exec-10] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 11:05:52.386  INFO 2676 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : Starting ChunfengApplication on DESKTOP-7G22C3V with PID 2676 (E:\java\chunfeng\target\classes started by yyf in E:\java\chunfeng)
+2019-03-12 11:05:52.388 DEBUG 2676 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-03-12 11:05:52.388  INFO 2676 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : No active profile set, falling back to default profiles: default
+2019-03-12 11:05:52.433  INFO 2676 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-12 11:05:52.433  INFO 2676 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-03-12 11:05:54.262  INFO 2676 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-03-12 11:05:54.292  INFO 2676 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-12 11:05:54.293  INFO 2676 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-12 11:05:54.306  INFO 2676 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.17] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+2019-03-12 11:05:54.306  INFO 2676 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+2019-03-12 11:05:54.307  INFO 2676 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-03-12 11:05:54.307  INFO 2676 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-03-12 11:05:55.365  INFO 2676 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+2019-03-12 11:05:55.481  INFO 2676 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-12 11:05:55.481  INFO 2676 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3048 ms
+2019-03-12 11:05:55.967  INFO 2676 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-12 11:05:56.231  INFO 2676 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-03-12 11:05:56.297  INFO 2676 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-12 11:05:56.301  INFO 2676 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : Started ChunfengApplication in 4.306 seconds (JVM running for 4.838)
+2019-03-12 11:06:06.996  INFO 2676 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-12 11:06:06.997  INFO 2676 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-12 11:06:07.008  INFO 2676 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2019-03-12 11:06:09.049  INFO 2676 --- [http-nio-8080-exec-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-03-12 11:06:09.561  INFO 2676 --- [http-nio-8080-exec-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-03-12 11:06:09.582 DEBUG 2676 --- [http-nio-8080-exec-8] c.s.c.mapper.TagMapper.getIndustryDic    : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 11:06:09.623 DEBUG 2676 --- [http-nio-8080-exec-8] c.s.c.mapper.TagMapper.getIndustryDic    : ==> Parameters: 
+2019-03-12 11:06:09.629 DEBUG 2676 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 11:06:09.629 DEBUG 2676 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 11:06:09.660 DEBUG 2676 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 11:06:09.662 DEBUG 2676 --- [http-nio-8080-exec-8] c.s.c.mapper.TagMapper.getIndustryDic    : <==      Total: 76
+2019-03-12 11:06:09.662 DEBUG 2676 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getPositionDic    : ==>  Preparing: select id,name from position_dic 
+2019-03-12 11:06:09.662 DEBUG 2676 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getPositionDic    : ==> Parameters: 
+2019-03-12 11:06:09.663 DEBUG 2676 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getCapacityDic    : ==>  Preparing: select * from capacity_dic 
+2019-03-12 11:06:09.663 DEBUG 2676 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getCapacityDic    : ==> Parameters: 
+2019-03-12 11:06:09.665 DEBUG 2676 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 11:06:09.665 DEBUG 2676 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 11:06:09.673 DEBUG 2676 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 11:06:09.681 DEBUG 2676 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getPositionDic    : <==      Total: 115
+2019-03-12 11:06:09.681 DEBUG 2676 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getCapacityDic    : <==      Total: 117
+2019-03-12 11:08:28.164  INFO 7360 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : Starting ChunfengApplication on DESKTOP-7G22C3V with PID 7360 (E:\java\chunfeng\target\classes started by yyf in E:\java\chunfeng)
+2019-03-12 11:08:28.166 DEBUG 7360 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-03-12 11:08:28.167  INFO 7360 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : No active profile set, falling back to default profiles: default
+2019-03-12 11:08:28.216  INFO 7360 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-12 11:08:28.217  INFO 7360 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-03-12 11:08:29.952  INFO 7360 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-03-12 11:08:29.985  INFO 7360 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-12 11:08:29.985  INFO 7360 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-12 11:08:30.002  INFO 7360 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.17] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+2019-03-12 11:08:30.002  INFO 7360 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+2019-03-12 11:08:30.003  INFO 7360 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-03-12 11:08:30.003  INFO 7360 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-03-12 11:08:31.054  INFO 7360 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+2019-03-12 11:08:31.190  INFO 7360 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-12 11:08:31.191  INFO 7360 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2973 ms
+2019-03-12 11:08:31.688  INFO 7360 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-12 11:08:31.952  INFO 7360 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-03-12 11:08:32.017  INFO 7360 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-12 11:08:32.019  INFO 7360 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : Started ChunfengApplication in 4.286 seconds (JVM running for 4.815)
+2019-03-12 11:08:35.257  INFO 7360 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-12 11:08:35.258  INFO 7360 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-12 11:08:35.266  INFO 7360 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2019-03-12 11:08:35.489  INFO 7360 --- [http-nio-8080-exec-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-03-12 11:08:35.799  INFO 7360 --- [http-nio-8080-exec-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-03-12 11:08:35.814 DEBUG 7360 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getCapacityDic    : ==>  Preparing: select * from capacity_dic 
+2019-03-12 11:08:35.851 DEBUG 7360 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getCapacityDic    : ==> Parameters: 
+2019-03-12 11:08:35.890 DEBUG 7360 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 11:08:35.890 DEBUG 7360 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 11:08:35.897 DEBUG 7360 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getCapacityDic    : <==      Total: 117
+2019-03-12 11:08:35.897 DEBUG 7360 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 11:08:35.900 DEBUG 7360 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getPositionDic    : ==>  Preparing: select id,name from position_dic 
+2019-03-12 11:08:35.900 DEBUG 7360 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getIndustryDic    : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 11:08:35.901 DEBUG 7360 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getPositionDic    : ==> Parameters: 
+2019-03-12 11:08:35.901 DEBUG 7360 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getIndustryDic    : ==> Parameters: 
+2019-03-12 11:08:35.917 DEBUG 7360 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getIndustryDic    : <==      Total: 76
+2019-03-12 11:08:35.917 DEBUG 7360 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 11:08:35.918 DEBUG 7360 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 11:08:35.920 DEBUG 7360 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getPositionDic    : <==      Total: 115
+2019-03-12 11:08:35.951 DEBUG 7360 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 11:13:45.499 DEBUG 7360 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getCapacityDic    : ==>  Preparing: select * from capacity_dic 
+2019-03-12 11:13:45.499 DEBUG 7360 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getCapacityDic    : ==> Parameters: 
+2019-03-12 11:13:45.505 DEBUG 7360 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getPositionDic    : ==>  Preparing: select id,name from position_dic 
+2019-03-12 11:13:45.506 DEBUG 7360 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getPositionDic    : ==> Parameters: 
+2019-03-12 11:13:45.507 DEBUG 7360 --- [http-nio-8080-exec-10] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 11:13:45.508 DEBUG 7360 --- [http-nio-8080-exec-10] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 11:13:45.512 DEBUG 7360 --- [http-nio-8080-exec-9] c.s.c.mapper.TagMapper.getIndustryDic    : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 11:13:45.512 DEBUG 7360 --- [http-nio-8080-exec-9] c.s.c.mapper.TagMapper.getIndustryDic    : ==> Parameters: 
+2019-03-12 11:13:45.523 DEBUG 7360 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getCapacityDic    : <==      Total: 117
+2019-03-12 11:13:45.530 DEBUG 7360 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getPositionDic    : <==      Total: 115
+2019-03-12 11:13:45.547 DEBUG 7360 --- [http-nio-8080-exec-10] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 11:13:45.548 DEBUG 7360 --- [http-nio-8080-exec-10] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 11:13:45.548 DEBUG 7360 --- [http-nio-8080-exec-10] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 11:13:45.577 DEBUG 7360 --- [http-nio-8080-exec-10] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 11:13:45.579 DEBUG 7360 --- [http-nio-8080-exec-9] c.s.c.mapper.TagMapper.getIndustryDic    : <==      Total: 76
+2019-03-12 11:17:12.765 DEBUG 7360 --- [http-nio-8080-exec-10] c.s.c.mapper.TagMapper.getCapacityDic    : ==>  Preparing: select * from capacity_dic 
+2019-03-12 11:17:12.766 DEBUG 7360 --- [http-nio-8080-exec-10] c.s.c.mapper.TagMapper.getCapacityDic    : ==> Parameters: 
+2019-03-12 11:17:12.771 DEBUG 7360 --- [http-nio-8080-exec-9] c.s.c.mapper.TagMapper.getPositionDic    : ==>  Preparing: select id,name from position_dic 
+2019-03-12 11:17:12.771 DEBUG 7360 --- [http-nio-8080-exec-9] c.s.c.mapper.TagMapper.getPositionDic    : ==> Parameters: 
+2019-03-12 11:17:12.786 DEBUG 7360 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 11:17:12.786 DEBUG 7360 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 11:17:12.830 DEBUG 7360 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getIndustryDic    : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 11:17:12.832 DEBUG 7360 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getIndustryDic    : ==> Parameters: 
+2019-03-12 11:17:12.833 DEBUG 7360 --- [http-nio-8080-exec-10] c.s.c.mapper.TagMapper.getCapacityDic    : <==      Total: 117
+2019-03-12 11:17:12.865 DEBUG 7360 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 11:17:12.866 DEBUG 7360 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 11:17:12.867 DEBUG 7360 --- [http-nio-8080-exec-9] c.s.c.mapper.TagMapper.getPositionDic    : <==      Total: 115
+2019-03-12 11:17:12.867 DEBUG 7360 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 11:17:12.898 DEBUG 7360 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getIndustryDic    : <==      Total: 76
+2019-03-12 11:17:12.901 DEBUG 7360 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 11:17:13.616 DEBUG 7360 --- [http-nio-8080-exec-8] c.s.c.mapper.TagMapper.getCapacityDic    : ==>  Preparing: select * from capacity_dic 
+2019-03-12 11:17:13.616 DEBUG 7360 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getPositionDic    : ==>  Preparing: select id,name from position_dic 
+2019-03-12 11:17:13.616 DEBUG 7360 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 11:17:13.616 DEBUG 7360 --- [http-nio-8080-exec-1] c.s.c.mapper.TagMapper.getIndustryDic    : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 11:17:13.617 DEBUG 7360 --- [http-nio-8080-exec-1] c.s.c.mapper.TagMapper.getIndustryDic    : ==> Parameters: 
+2019-03-12 11:17:13.617 DEBUG 7360 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getPositionDic    : ==> Parameters: 
+2019-03-12 11:17:13.617 DEBUG 7360 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 11:17:13.617 DEBUG 7360 --- [http-nio-8080-exec-8] c.s.c.mapper.TagMapper.getCapacityDic    : ==> Parameters: 
+2019-03-12 11:17:13.706 DEBUG 7360 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 11:17:13.707 DEBUG 7360 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getPositionDic    : <==      Total: 115
+2019-03-12 11:17:13.707 DEBUG 7360 --- [http-nio-8080-exec-8] c.s.c.mapper.TagMapper.getCapacityDic    : <==      Total: 117
+2019-03-12 11:17:13.707 DEBUG 7360 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 11:17:13.708 DEBUG 7360 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 11:17:13.788 DEBUG 7360 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 11:17:13.788 DEBUG 7360 --- [http-nio-8080-exec-1] c.s.c.mapper.TagMapper.getIndustryDic    : <==      Total: 76
+2019-03-12 11:17:18.827 DEBUG 7360 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getCapacityDic    : ==>  Preparing: select * from capacity_dic 
+2019-03-12 11:17:18.828 DEBUG 7360 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getCapacityDic    : ==> Parameters: 
+2019-03-12 11:17:18.828 DEBUG 7360 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getPositionDic    : ==>  Preparing: select id,name from position_dic 
+2019-03-12 11:17:18.828 DEBUG 7360 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getPositionDic    : ==> Parameters: 
+2019-03-12 11:17:18.829 DEBUG 7360 --- [http-nio-8080-exec-10] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 11:17:18.830 DEBUG 7360 --- [http-nio-8080-exec-10] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 11:17:18.830 DEBUG 7360 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getIndustryDic    : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 11:17:18.831 DEBUG 7360 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getIndustryDic    : ==> Parameters: 
+2019-03-12 11:17:18.840 DEBUG 7360 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getCapacityDic    : <==      Total: 117
+2019-03-12 11:17:19.126 DEBUG 7360 --- [http-nio-8080-exec-10] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 11:17:19.127 DEBUG 7360 --- [http-nio-8080-exec-10] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 11:17:19.128 DEBUG 7360 --- [http-nio-8080-exec-10] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 11:17:19.138 DEBUG 7360 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getPositionDic    : <==      Total: 115
+2019-03-12 11:17:19.150 DEBUG 7360 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getIndustryDic    : <==      Total: 76
+2019-03-12 11:17:19.250 DEBUG 7360 --- [http-nio-8080-exec-10] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 11:17:58.955  INFO 10848 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : Starting ChunfengApplication on DESKTOP-7G22C3V with PID 10848 (E:\java\chunfeng\target\classes started by yyf in E:\java\chunfeng)
+2019-03-12 11:17:58.957 DEBUG 10848 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-03-12 11:17:58.957  INFO 10848 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : No active profile set, falling back to default profiles: default
+2019-03-12 11:17:59.004  INFO 10848 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-12 11:17:59.004  INFO 10848 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-03-12 11:18:00.797  INFO 10848 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-03-12 11:18:00.827  INFO 10848 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-12 11:18:00.828  INFO 10848 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-12 11:18:00.841  INFO 10848 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.17] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+2019-03-12 11:18:00.842  INFO 10848 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+2019-03-12 11:18:00.842  INFO 10848 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-03-12 11:18:00.842  INFO 10848 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-03-12 11:18:01.922  INFO 10848 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+2019-03-12 11:18:02.062  INFO 10848 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-12 11:18:02.062  INFO 10848 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3057 ms
+2019-03-12 11:18:02.571  INFO 10848 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-12 11:18:02.913  INFO 10848 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-03-12 11:18:02.982  INFO 10848 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-12 11:18:02.985  INFO 10848 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : Started ChunfengApplication in 4.421 seconds (JVM running for 4.953)
+2019-03-12 11:18:04.685  INFO 10848 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-12 11:18:04.685  INFO 10848 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-12 11:18:04.694  INFO 10848 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2019-03-12 11:18:04.877  INFO 10848 --- [http-nio-8080-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-03-12 11:18:05.262  INFO 10848 --- [http-nio-8080-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-03-12 11:18:05.270 DEBUG 10848 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getIndustryDic    : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 11:18:05.300 DEBUG 10848 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getIndustryDic    : ==> Parameters: 
+2019-03-12 11:18:05.341 DEBUG 10848 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getIndustryDic    : <==      Total: 76
+2019-03-12 11:18:05.343 DEBUG 10848 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getCapacityDic    : ==>  Preparing: select * from capacity_dic 
+2019-03-12 11:18:05.344 DEBUG 10848 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getCapacityDic    : ==> Parameters: 
+2019-03-12 11:18:05.450 DEBUG 10848 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 11:18:05.450 DEBUG 10848 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 11:18:05.459 DEBUG 10848 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 11:18:05.460 DEBUG 10848 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getPositionDic    : ==>  Preparing: select id,name from position_dic 
+2019-03-12 11:18:05.460 DEBUG 10848 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getPositionDic    : ==> Parameters: 
+2019-03-12 11:18:05.464 DEBUG 10848 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getCapacityDic    : <==      Total: 117
+2019-03-12 11:18:05.464 DEBUG 10848 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 11:18:05.465 DEBUG 10848 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 11:18:05.515 DEBUG 10848 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 11:18:05.519 DEBUG 10848 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getPositionDic    : <==      Total: 115
+2019-03-12 11:20:23.428  INFO 9212 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : Starting ChunfengApplication on DESKTOP-7G22C3V with PID 9212 (E:\java\chunfeng\target\classes started by yyf in E:\java\chunfeng)
+2019-03-12 11:20:23.430 DEBUG 9212 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-03-12 11:20:23.430  INFO 9212 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : No active profile set, falling back to default profiles: default
+2019-03-12 11:20:23.492  INFO 9212 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-12 11:20:23.492  INFO 9212 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-03-12 11:20:25.473  INFO 9212 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-03-12 11:20:25.503  INFO 9212 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-12 11:20:25.503  INFO 9212 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-12 11:20:25.516  INFO 9212 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.17] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+2019-03-12 11:20:25.517  INFO 9212 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+2019-03-12 11:20:25.517  INFO 9212 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-03-12 11:20:25.517  INFO 9212 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-03-12 11:20:26.573  INFO 9212 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+2019-03-12 11:20:26.759  INFO 9212 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-12 11:20:26.759  INFO 9212 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3267 ms
+2019-03-12 11:20:27.357  INFO 9212 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-12 11:20:27.641  INFO 9212 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-03-12 11:20:27.718  INFO 9212 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-12 11:20:27.722  INFO 9212 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : Started ChunfengApplication in 4.719 seconds (JVM running for 5.277)
+2019-03-12 11:20:40.260  INFO 9212 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-12 11:20:40.260  INFO 9212 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-12 11:20:40.269  INFO 9212 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2019-03-12 11:20:40.435  INFO 9212 --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-03-12 11:20:40.685  INFO 9212 --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-03-12 11:20:40.694 DEBUG 9212 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getCapacityDic    : ==>  Preparing: select * from capacity_dic 
+2019-03-12 11:20:40.723 DEBUG 9212 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getCapacityDic    : ==> Parameters: 
+2019-03-12 11:20:40.853 DEBUG 9212 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 11:20:40.854 DEBUG 9212 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 11:20:40.862 DEBUG 9212 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 11:20:40.865 DEBUG 9212 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getIndustryDic    : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 11:20:40.865 DEBUG 9212 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getIndustryDic    : ==> Parameters: 
+2019-03-12 11:20:40.867 DEBUG 9212 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getCapacityDic    : <==      Total: 117
+2019-03-12 11:20:40.867 DEBUG 9212 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getPositionDic    : ==>  Preparing: select id,name from position_dic 
+2019-03-12 11:20:40.868 DEBUG 9212 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getPositionDic    : ==> Parameters: 
+2019-03-12 11:20:40.893 DEBUG 9212 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getPositionDic    : <==      Total: 115
+2019-03-12 11:20:40.894 DEBUG 9212 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 11:20:40.895 DEBUG 9212 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 11:20:40.896 DEBUG 9212 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getIndustryDic    : <==      Total: 76
+2019-03-12 11:20:40.906 DEBUG 9212 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 11:21:11.536  INFO 13504 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : Starting ChunfengApplication on DESKTOP-7G22C3V with PID 13504 (E:\java\chunfeng\target\classes started by yyf in E:\java\chunfeng)
+2019-03-12 11:21:11.539 DEBUG 13504 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-03-12 11:21:11.539  INFO 13504 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : No active profile set, falling back to default profiles: default
+2019-03-12 11:21:11.593  INFO 13504 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-12 11:21:11.593  INFO 13504 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-03-12 11:21:13.558  INFO 13504 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-03-12 11:21:13.592  INFO 13504 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-12 11:21:13.593  INFO 13504 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-12 11:21:13.608  INFO 13504 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.17] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+2019-03-12 11:21:13.609  INFO 13504 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+2019-03-12 11:21:13.609  INFO 13504 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-03-12 11:21:13.609  INFO 13504 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-03-12 11:21:14.672  INFO 13504 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+2019-03-12 11:21:14.811  INFO 13504 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-12 11:21:14.812  INFO 13504 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3219 ms
+2019-03-12 11:21:15.573  INFO 13504 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-12 11:21:15.915  INFO 13504 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-03-12 11:21:15.968  INFO 13504 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-12 11:21:15.971  INFO 13504 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : Started ChunfengApplication in 4.843 seconds (JVM running for 5.385)
+2019-03-12 11:21:21.609  INFO 13504 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-12 11:21:21.610  INFO 13504 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-12 11:21:21.624  INFO 13504 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2019-03-12 11:21:21.795  INFO 13504 --- [http-nio-8080-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-03-12 11:21:22.425  INFO 13504 --- [http-nio-8080-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-03-12 11:21:22.448 DEBUG 13504 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getCapacityDic    : ==>  Preparing: select * from capacity_dic 
+2019-03-12 11:21:22.481 DEBUG 13504 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getCapacityDic    : ==> Parameters: 
+2019-03-12 11:21:22.581 DEBUG 13504 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getPositionDic    : ==>  Preparing: select id,name from position_dic 
+2019-03-12 11:21:22.582 DEBUG 13504 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getPositionDic    : ==> Parameters: 
+2019-03-12 11:21:22.595 DEBUG 13504 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getCapacityDic    : <==      Total: 117
+2019-03-12 11:21:22.598 DEBUG 13504 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 11:21:22.598 DEBUG 13504 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 11:21:22.632 DEBUG 13504 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 11:21:22.633 DEBUG 13504 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getIndustryDic    : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 11:21:22.634 DEBUG 13504 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getIndustryDic    : ==> Parameters: 
+2019-03-12 11:21:22.637 DEBUG 13504 --- [http-nio-8080-exec-3] c.s.c.mapper.TagMapper.getPositionDic    : <==      Total: 115
+2019-03-12 11:21:22.638 DEBUG 13504 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 11:21:22.638 DEBUG 13504 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 11:21:22.858 DEBUG 13504 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getIndustryDic    : <==      Total: 76
+2019-03-12 11:21:22.860 DEBUG 13504 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 11:43:53.344  INFO 812 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : Starting ChunfengApplication on DESKTOP-7G22C3V with PID 812 (E:\java\chunfeng\target\classes started by yyf in E:\java\chunfeng)
+2019-03-12 11:43:53.347 DEBUG 812 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-03-12 11:43:53.348  INFO 812 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : No active profile set, falling back to default profiles: default
+2019-03-12 11:43:53.416  INFO 812 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-12 11:43:53.416  INFO 812 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-03-12 11:43:55.425  INFO 812 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-03-12 11:43:55.456  INFO 812 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-12 11:43:55.457  INFO 812 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-12 11:43:55.469  INFO 812 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.17] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+2019-03-12 11:43:55.470  INFO 812 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+2019-03-12 11:43:55.470  INFO 812 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-03-12 11:43:55.470  INFO 812 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-03-12 11:43:56.519  INFO 812 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+2019-03-12 11:43:56.649  INFO 812 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-12 11:43:56.649  INFO 812 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3233 ms
+2019-03-12 11:43:57.158  INFO 812 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-12 11:43:57.523  INFO 812 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-03-12 11:43:57.591  INFO 812 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-12 11:43:57.601  INFO 812 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : Started ChunfengApplication in 4.672 seconds (JVM running for 5.233)
+2019-03-12 11:47:34.035  INFO 8080 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : Starting ChunfengApplication on DESKTOP-7G22C3V with PID 8080 (E:\java\chunfeng\target\classes started by yyf in E:\java\chunfeng)
+2019-03-12 11:47:34.037 DEBUG 8080 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-03-12 11:47:34.038  INFO 8080 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : No active profile set, falling back to default profiles: default
+2019-03-12 11:47:34.089  INFO 8080 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-12 11:47:34.090  INFO 8080 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-03-12 11:47:35.862  INFO 8080 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-03-12 11:47:35.894  INFO 8080 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-12 11:47:35.895  INFO 8080 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-12 11:47:35.906  INFO 8080 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.17] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+2019-03-12 11:47:35.907  INFO 8080 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+2019-03-12 11:47:35.907  INFO 8080 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-03-12 11:47:35.907  INFO 8080 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-03-12 11:47:36.960  INFO 8080 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+2019-03-12 11:47:37.074  INFO 8080 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-12 11:47:37.074  INFO 8080 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2984 ms
+2019-03-12 11:47:37.625  INFO 8080 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-12 11:47:37.901  INFO 8080 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-03-12 11:47:37.971  INFO 8080 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-12 11:47:37.976  INFO 8080 --- [restartedMain] com.six.chunfeng.ChunfengApplication     : Started ChunfengApplication in 4.331 seconds (JVM running for 4.856)
+2019-03-12 11:47:48.466  INFO 8080 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-12 11:47:48.466  INFO 8080 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-12 11:47:48.476  INFO 8080 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2019-03-12 11:47:48.651  INFO 8080 --- [http-nio-8080-exec-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-03-12 11:47:49.017  INFO 8080 --- [http-nio-8080-exec-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-03-12 11:47:49.024 DEBUG 8080 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 11:47:49.052 DEBUG 8080 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 11:47:49.084 DEBUG 8080 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 11:47:49.088 DEBUG 8080 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getIndustryDic    : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 11:47:49.088 DEBUG 8080 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getIndustryDic    : ==> Parameters: 
+2019-03-12 11:47:49.104 DEBUG 8080 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getIndustryDic    : <==      Total: 76
+2019-03-12 11:47:49.105 DEBUG 8080 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getPositionDic    : ==>  Preparing: select id,name from position_dic 
+2019-03-12 11:47:49.105 DEBUG 8080 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getCapacityDic    : ==>  Preparing: select * from capacity_dic 
+2019-03-12 11:47:49.105 DEBUG 8080 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getPositionDic    : ==> Parameters: 
+2019-03-12 11:47:49.105 DEBUG 8080 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getCapacityDic    : ==> Parameters: 
+2019-03-12 11:47:49.120 DEBUG 8080 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getPositionDic    : <==      Total: 115
+2019-03-12 11:47:49.121 DEBUG 8080 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 11:47:49.122 DEBUG 8080 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 11:47:49.123 DEBUG 8080 --- [http-nio-8080-exec-4] c.s.c.mapper.TagMapper.getCapacityDic    : <==      Total: 117
+2019-03-12 11:47:49.132 DEBUG 8080 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 11:53:47.733  INFO 9448 --- [main] com.six.chunfeng.ChunfengApplication     : Starting ChunfengApplication on DESKTOP-7G22C3V with PID 9448 (E:\java\chunfeng\target\classes started by yyf in E:\java\chunfeng)
+2019-03-12 11:53:47.737 DEBUG 9448 --- [main] com.six.chunfeng.ChunfengApplication     : Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-03-12 11:53:47.737  INFO 9448 --- [main] com.six.chunfeng.ChunfengApplication     : No active profile set, falling back to default profiles: default
+2019-03-12 11:53:49.610  INFO 9448 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-03-12 11:53:49.657  INFO 9448 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-12 11:53:49.657  INFO 9448 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-12 11:53:49.672  INFO 9448 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.17] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+2019-03-12 11:53:49.673  INFO 9448 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+2019-03-12 11:53:49.673  INFO 9448 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-03-12 11:53:49.674  INFO 9448 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-03-12 11:53:50.723  INFO 9448 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+2019-03-12 11:53:50.856  INFO 9448 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-12 11:53:50.857  INFO 9448 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3058 ms
+2019-03-12 11:53:51.398  INFO 9448 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-12 11:53:51.686  INFO 9448 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-12 11:53:51.689  INFO 9448 --- [main] com.six.chunfeng.ChunfengApplication     : Started ChunfengApplication in 4.395 seconds (JVM running for 4.874)
+2019-03-12 11:53:54.478  INFO 9448 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-12 11:53:54.478  INFO 9448 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-12 11:53:54.492  INFO 9448 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+2019-03-12 11:53:57.218  INFO 9448 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-03-12 11:53:57.488  INFO 9448 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-03-12 11:53:57.500 DEBUG 9448 --- [http-nio-8080-exec-1] c.s.c.mapper.TagMapper.getIndustryDic    : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 11:53:57.538 DEBUG 9448 --- [http-nio-8080-exec-1] c.s.c.mapper.TagMapper.getIndustryDic    : ==> Parameters: 
+2019-03-12 11:53:57.566 DEBUG 9448 --- [http-nio-8080-exec-8] c.s.c.mapper.TagMapper.getPositionDic    : ==>  Preparing: select id,name from position_dic 
+2019-03-12 11:53:57.566 DEBUG 9448 --- [http-nio-8080-exec-8] c.s.c.mapper.TagMapper.getPositionDic    : ==> Parameters: 
+2019-03-12 11:53:57.587 DEBUG 9448 --- [http-nio-8080-exec-8] c.s.c.mapper.TagMapper.getPositionDic    : <==      Total: 115
+2019-03-12 11:53:57.587 DEBUG 9448 --- [http-nio-8080-exec-1] c.s.c.mapper.TagMapper.getIndustryDic    : <==      Total: 76
+2019-03-12 11:53:57.590 DEBUG 9448 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getCapacityDic    : ==>  Preparing: select * from capacity_dic 
+2019-03-12 11:53:57.590 DEBUG 9448 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 11:53:57.590 DEBUG 9448 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getCapacityDic    : ==> Parameters: 
+2019-03-12 11:53:57.590 DEBUG 9448 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 11:53:57.637 DEBUG 9448 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 11:53:57.638 DEBUG 9448 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 11:53:57.639 DEBUG 9448 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 11:53:57.643 DEBUG 9448 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getCapacityDic    : <==      Total: 117
+2019-03-12 11:53:57.644 DEBUG 9448 --- [http-nio-8080-exec-7] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 11:54:28.198 DEBUG 9448 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getCapacityDic    : ==>  Preparing: select * from capacity_dic 
+2019-03-12 11:54:28.199 DEBUG 9448 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getCapacityDic    : ==> Parameters: 
+2019-03-12 11:54:28.205 DEBUG 9448 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getPositionDic    : ==>  Preparing: select id,name from position_dic 
+2019-03-12 11:54:28.205 DEBUG 9448 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getPositionDic    : ==> Parameters: 
+2019-03-12 11:54:28.251 DEBUG 9448 --- [http-nio-8080-exec-9] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 11:54:28.251 DEBUG 9448 --- [http-nio-8080-exec-9] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 11:54:28.252 DEBUG 9448 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getIndustryDic    : ==>  Preparing: select id,name from industry_dic 
+2019-03-12 11:54:28.252 DEBUG 9448 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getIndustryDic    : ==> Parameters: 
+2019-03-12 11:54:28.317 DEBUG 9448 --- [http-nio-8080-exec-5] c.s.c.mapper.TagMapper.getPositionDic    : <==      Total: 115
+2019-03-12 11:54:28.325 DEBUG 9448 --- [http-nio-8080-exec-6] c.s.c.mapper.TagMapper.getCapacityDic    : <==      Total: 117
+2019-03-12 11:54:28.362 DEBUG 9448 --- [http-nio-8080-exec-2] c.s.c.mapper.TagMapper.getIndustryDic    : <==      Total: 76
+2019-03-12 11:54:28.364 DEBUG 9448 --- [http-nio-8080-exec-9] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33
+2019-03-12 11:54:28.364 DEBUG 9448 --- [http-nio-8080-exec-9] c.s.c.mapper.TagMapper.getwelfareDic     : ==>  Preparing: select id,name from welfare_dic 
+2019-03-12 11:54:28.365 DEBUG 9448 --- [http-nio-8080-exec-9] c.s.c.mapper.TagMapper.getwelfareDic     : ==> Parameters: 
+2019-03-12 11:54:28.369 DEBUG 9448 --- [http-nio-8080-exec-9] c.s.c.mapper.TagMapper.getwelfareDic     : <==      Total: 33

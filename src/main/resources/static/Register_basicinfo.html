@@ -128,7 +128,7 @@
 		var result = MakeForm().result;
 		if(result==true){
 			alert("注册成功！")
-			window.location.href="Register_jobinfo.html";
+			window.location.href="Home.html";
 		}else{
 			alert("注册失败");
 		}
@@ -154,16 +154,43 @@
 			<h2>个人信息</h2>
 			<div class="register_form">
 				<form action="/register" method="post">
+					<div class="title">
+					<label class="title"  style="margin-left:4em">姓名:</label>
 					<input type="text" id="name" name="name" placeholder="姓名" required="" />
+					</div>
+					<div class="title">
+					<label class="title" style="margin-left:4em">性别:</label>
 					<input type="text" id="gender" name="gender" placeholder="性别" required="" />
+					</div>
+					<div class="title">
+					<label class="title" style="margin-left:4em">年龄:</label>
 					<input type="text" id="age" name="age" placeholder="年龄" required="" />
-					<input type="text" id="education" name="education" placeholder="最高学历" required="" />
+					</div>
+					<div class="title">
+					<label class="title" style="margin-left:4em">学历:</label>
+					<select id="education_select" class="education_select" style="color:#FFF">
+						<option id="education_first_index">胎教</option>
+						<option>小学</option>
+						<option>中学</option>
+						<option>本科</option>
+						<option>硕士</option>
+				</select>
+					</div>
+					<div class="title">
+					<label class="title" style="margin-left:2em">手机号码:</label>
 					<input type="text" id="phone" name="phone" placeholder="手机号码" required="" onblur="checkPhone()" /> 
 					<a id="info_text" style="display: none"></a>
+					</div>
+					<div class="title">
+					<label class="title" style="margin-left:4em">密码:</label>
 					<input type="text" id="password" name="password" placeholder="密码" required="" />
+					</div>
+					<div class="title">
+					<label class="title">再次输入密码:</label>
 					<input type="text" id="password_confirm" name="password_confirm" placeholder="再次输入密码" required="" onblur="checkPasswd()" />
 					<a id="passwd_text" style="display: none"></a>
-					<input type="button" value="Submit" onclick="login()">
+					</div>
+					<input type="button" value="提交信息" onclick="login()">
 				</form>
 			</div>
 		</div>

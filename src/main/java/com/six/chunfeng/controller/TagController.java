@@ -1,5 +1,9 @@
 package com.six.chunfeng.controller;
 
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +27,26 @@ public class TagController {
 	public TagInfo getTagInfo(@ModelAttribute("id") int userId){
 		log.info("Gotten userId: " + userId);
 		return tagService.getTagInfo(userId);
+	}
+	
+	@GetMapping("/capacityDic")
+	public Iterator<Map<Integer,String>> getCapacityDic(){
+		return tagService.getCapacityDic().iterator();
+	}
+	
+	@GetMapping("/industryDic")
+	public Iterator<Map<Integer,String>> getIndustryDic(){
+		return tagService.getIndustryDic().iterator();
+	}
+	
+	@GetMapping("/positionDic")
+	public Iterator<Map<Integer,String>> getPositionDic(){
+		return tagService.getPositionDic().iterator();
+	}
+	
+	@GetMapping("/welfareDic")
+	public Iterator<Map<Integer,String>> getwelfareDic(){
+		return tagService.getwelfareDic().iterator();
 	}
 	
 	@PostMapping("/setTagInfo")
