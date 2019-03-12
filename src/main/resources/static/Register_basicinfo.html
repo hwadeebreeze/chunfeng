@@ -1,64 +1,183 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>基本信息</title>
-	<meta name="viewport" content="width=device-width,initial-scale=1.0">
-	<meta http-equiv="Content-Type" content="charset=utf-8" />
-	<!-- Bootstrap CSS -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<!-- Header CSS -->
-	<link href="css/header.css" rel="stylesheet">
-	<!-- Register CSS -->
-	<link href="css/register.css" rel="stylesheet">
-	<!-- Footer CSS -->
-	<link href="css/footer.css" rel="stylesheet">
-	<!-- Skill CSS -->
-	<link href="css/skill.css" rel="stylesheet">
-	<!-- Style CSS -->
-	<link href="css/style.css" rel="stylesheet">
-</head>
-<body>
-<header class="header">
-	<nav class="navbar navbar-default navbar-fixed-top box-shadow-10">
-		<div class="collapse navbar-collapse container top_head">
-			<ul class="nav navbar-nav navbar-right">
-				<li><a id="login" data-scroll-nav="0" href="#">登陆</a></li>
-				<li><a id="register" data-scroll-nav="1" href="#">注册</a></li>
-			</ul>				
-		</div>
-	</nav>
-</header>
+<title>基本信息</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="Content-Type" content="charset=utf-8" />
+<!-- Bootstrap CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Header CSS -->
+<link href="css/header.css" rel="stylesheet">
+<!-- Register CSS -->
+<link href="css/register.css" rel="stylesheet">
+<!-- Footer CSS -->
+<link href="css/footer.css" rel="stylesheet">
+<!-- Style CSS -->
+<link href="css/style.css" rel="stylesheet">
 
-<div class="register_cont container">
-	<div class="register">
-		<h2>个人信息 </h2>
-		<div class="register_form">
-			<form action="#" method="post">
-				<input type="text"  name="name" placeholder="姓名" required="" />
-				<input type="text"  name="gender" placeholder="性别" required="" />
-				<input type="text"  name="birth" placeholder="年龄" required="" />
-				<input type="text"  name="education" placeholder="最高学历" required="" />
-				<input type="text"  name="phone" placeholder="手机号码" required="" />
-				<input type="text"  name="password1" placeholder="密码" required="" />
-				<input type="text"  name="password2" placeholder="再次输入密码" required="" />
-				<input type="submit" value="Submit">
-			</form>
-		</div>
-	</div>
-</div>
-
-<footer class="footer">
-	<div class="container">
-		<!-- Col Start -->
-		<div class="copy-right">
-			<p>Copyright &copy; 2018.Company name All rights reserved.</p>
-		</div>
-		<!-- Col End -->
-	</div>
-</footer>
 <!-- JQuery JS -->
 <script src="js/jquery-1.12.0.min.js"></script>
-<!-- Bootstrap JS -->
-<script src="js/boorstrap.min.js"></script>
+
+<script src="js/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="js/jquery.form.js"></script>
+
+<script type="text/javascript">
+	var phone_status = true;
+	var password_status = true;
+
+	function checkPhone() {
+		var phoneNumber = document.getElementById("phone").value;
+		$.ajax({
+					async : false,
+					type : "post",
+					url : "/checkPhone",
+					data : {
+						"phone" : phoneNumber
+					},
+					success : function(result) {
+						//alert(result.name);
+						console.log(result)
+						phone_status = result.resultPhone;
+						if (phone_status == false) {
+							var a = document.getElementById("info_text");
+							a.style.display = "inline";
+							a.innerHTML = "手机号已存在";
+						} else {
+							document.getElementById("info_text").style.display = "none";
+						}
+
+					},
+				});
+	}
+
+	function checkPasswd() {
+		var password = document.getElementById("password").value;
+		var password_confirm = document.getElementById("password_confirm").value;
+		if (password == password_confirm) {
+			password_status = true;
+			document.getElementById("passwd_text").style.display = "none";
+		} else {
+			password_status = false;
+			var a = document.getElementById("passwd_text");
+			a.style.display = "inline";
+			a.innerHTML = "两次密码输入不一致";
+		}
+	}
+
+	function MakeForm() {
+		var jsonResult;
+		var form1 = document.createElement("form");
+		form1.id = "form1";
+		form1.name = "form1";
+		document.body.appendChild(form1);
+
+		var input = document.createElement("input");
+		input.type = "text";
+		input.name = "name";
+		input.value = document.getElementById("name").value;
+		var input1 = document.createElement("input");
+		input1.type = "text";
+		input1.name = "gender";
+		input1.value = document.getElementById("gender").value;
+		var input2 = document.createElement("input");
+		input2.type = "text";
+		input2.name = "age";
+		input2.value = document.getElementById("age").value;
+		var input3 = document.createElement("input");
+		input3.type = "text";
+		input3.name = "education";
+		input3.value = document.getElementById("education").value;
+		var input4 = document.createElement("input");
+		input4.type = "text";
+		input4.name = "phone";
+		input4.value = document.getElementById("phone").value;
+		var input5 = document.createElement("input");
+		input5.type = "text";
+		input5.name = "password";
+		input5.value = document.getElementById("password").value;
+		
+		form1.appendChild(input);
+		form1.appendChild(input1);
+		form1.appendChild(input2);
+		form1.appendChild(input3);
+		form1.appendChild(input4);
+		form1.appendChild(input5);
+
+		form1.method = "post";
+		form1.action = "/register";
+		//		  form1.submit(); 
+		var jsonResult;
+		if(phone_status&&password_status){
+			$("#form1").ajaxSubmit({
+				async : false,
+				success : function(result) {
+					jsonResult = result;
+					document.body.removeChild(form1);
+
+				}
+		});
+		}
+
+
+		return jsonResult;
+		// $("#form1").ajaxForm();
+
+	}
+	function login() {
+		var result = MakeForm().result;
+		if(result==true){
+			alert("注册成功！")
+			window.location.href="Register_jobinfo.html";
+		}else{
+			alert("注册失败");
+		}
+	}
+</script>
+</head>
+<body>
+	<header class="header">
+		<nav class="navbar navbar-default navbar-fixed-top box-shadow-10">
+			<div class="collapse navbar-collapse container top_head">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="welcome">欢迎</li>
+					<li><a id="register" data-scroll-nav="0" href="#">注销</a></li>
+					<li><a id="login" data-scroll-nav="1" href="#">登陆</a></li>
+					<!--<li><a id="register" data-scroll-nav="1" href="#">注册</a></li>-->
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<div class="register_cont container">
+		<div class="register">
+			<h2>个人信息</h2>
+			<div class="register_form">
+				<form action="/register" method="post">
+					<input type="text" id="name" name="name" placeholder="姓名" required="" />
+					<input type="text" id="gender" name="gender" placeholder="性别" required="" />
+					<input type="text" id="age" name="age" placeholder="年龄" required="" />
+					<input type="text" id="education" name="education" placeholder="最高学历" required="" />
+					<input type="text" id="phone" name="phone" placeholder="手机号码" required="" onblur="checkPhone()" /> 
+					<a id="info_text" style="display: none"></a>
+					<input type="text" id="password" name="password" placeholder="密码" required="" />
+					<input type="text" id="password_confirm" name="password_confirm" placeholder="再次输入密码" required="" onblur="checkPasswd()" />
+					<a id="passwd_text" style="display: none"></a>
+					<input type="button" value="Submit" onclick="login()">
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<footer class="footer">
+		<div class="container">
+			<!-- Col Start -->
+			<div class="copy-right">
+				<p>Copyright &copy; 2018.Company name All rights reserved.</p>
+			</div>
+			<!-- Col End -->
+		</div>
+	</footer>
+
 </body>
 </html>

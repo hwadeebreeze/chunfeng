@@ -4,12 +4,10 @@ public class User {
 	private int id;
 	private String name;
 	private String gender;
-	private String age;;
+	private int age;
 	private String education;
 	private String phone;
 	private String password;
-	
-	
 	
 	/**
 	 * @return id
@@ -55,13 +53,13 @@ public class User {
 	/**
 	 * @return age
 	 */
-	public String getAge() {
+	public int getAge() {
 		return age;
 	}
 	/**
 	 * @param age 要设置的 age
 	 */
-	public void setAge(String age) {
+	public void setAge(int age) {
 		this.age = age;
 	}
 	/**
@@ -115,79 +113,59 @@ public class User {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((age == null) ? 0 : age.hashCode());
-		result = prime * result + ((education == null) ? 0 : education.hashCode());
+		result = prime * result + age;
+		result = prime * result
+				+ ((education == null) ? 0 : education.hashCode());
 		result = prime * result + ((gender == null) ? 0 : gender.hashCode());
 		result = prime * result + id;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + ((password == null) ? 0 : password.hashCode());
+		result = prime * result
+				+ ((password == null) ? 0 : password.hashCode());
 		result = prime * result + ((phone == null) ? 0 : phone.hashCode());
 		return result;
 	}
+	
 	/* （非 Javadoc）
-	 * @see java.lang.Object#equals(java.lang.Object)
+	 * @see java.lang.Object#equals()
 	 */
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj) {
+		if (this == obj)
 			return true;
-		}
-		if (obj == null) {
+		if (obj == null)
 			return false;
-		}
-		if (getClass() != obj.getClass()) {
+		if (getClass() != obj.getClass())
 			return false;
-		}
 		User other = (User) obj;
-		if (age == null) {
-			if (other.age != null) {
-				return false;
-			}
-		} else if (!age.equals(other.age)) {
+		if (age != other.age)
 			return false;
-		}
 		if (education == null) {
-			if (other.education != null) {
+			if (other.education != null)
 				return false;
-			}
-		} else if (!education.equals(other.education)) {
+		} else if (!education.equals(other.education))
 			return false;
-		}
 		if (gender == null) {
-			if (other.gender != null) {
+			if (other.gender != null)
 				return false;
-			}
-		} else if (!gender.equals(other.gender)) {
+		} else if (!gender.equals(other.gender))
 			return false;
-		}
-		if (id != other.id) {
+		if (id != other.id)
 			return false;
-		}
 		if (name == null) {
-			if (other.name != null) {
+			if (other.name != null)
 				return false;
-			}
-		} else if (!name.equals(other.name)) {
+		} else if (!name.equals(other.name))
 			return false;
-		}
 		if (password == null) {
-			if (other.password != null) {
+			if (other.password != null)
 				return false;
-			}
-		} else if (!password.equals(other.password)) {
+		} else if (!password.equals(other.password))
 			return false;
-		}
 		if (phone == null) {
-			if (other.phone != null) {
+			if (other.phone != null)
 				return false;
-			}
-		} else if (!phone.equals(other.phone)) {
+		} else if (!phone.equals(other.phone))
 			return false;
-		}
 		return true;
 	}
-
-	
-	
-	
 }

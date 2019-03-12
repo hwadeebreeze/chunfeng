@@ -10,6 +10,9 @@ public interface LoginMapper {
 	@Select("select pswd from user_info where tel=#{phone}")
 	public String getPassworkByphone(@Param("phone") String phone);
 	
-	@Select("select * from user_info where user_id=#{id}")
+	@Select("select * from user_info where id=#{id}")
 	public User getUserById(int id);
+	
+	@Select("select user_id from user_info where tel=#{phone}")
+	public Integer getIdByPhone(String phone);
 }

@@ -1,210 +1,497 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>春风招聘</title>
-	<meta name="viewport" content="width=device-width,initial-scale=1.0">
-	<meta http-equiv="Content-Type" content="charset=utf-8" />
-	<!-- Bootstrap CSS -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<!-- Filter CSS -->
-	<link href="css/filter.css" rel="stylesheet">
-	<!-- Header CSS -->
-	<link href="css/header.css" rel="stylesheet">
-	<!-- Page CSS -->
-	<link href="css/page.css" rel="stylesheet">
-	<!-- Footer CSS -->
-	<link href="css/footer.css" rel="stylesheet">
-	<!-- Login CSS -->
-	<link href="css/page_add.css" rel="stylesheet">
-	<!-- Style CSS -->
-	<link href="css/style.css" rel="stylesheet">
-	<!-- Select.min CSS -->
-	<link href="css/bootstrap-select.min.css">
-	<!-- Select CSS -->
-	<link href="css/bootstrap-select.css">
-	
-</head>
+<title>春风招聘</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="Content-Type" content="charset=utf-8" />
+<!-- Bootstrap CSS -->
+<link href="./css/bootstrap.min.css" rel="stylesheet">
+<!-- Filter CSS -->
+<link href="css/filter.css" rel="stylesheet">
+<!-- Header CSS -->
+<link href="css/header.css" rel="stylesheet">
+<!-- Page CSS -->
+<link href="css/page.css" rel="stylesheet">
+<!-- Footer CSS -->
+<link href="css/footer.css" rel="stylesheet">
+<!-- Login CSS -->
+<link href="css/page_add.css" rel="stylesheet">
+<!-- Style CSS -->
+<link href="css/style.css" rel="stylesheet">
+<!-- Select.min CSS -->
+<link href="css/bootstrap-select.min.css">
+<!-- Select CSS -->
+<link href="css/bootstrap-select.css">
 
-<body>
-	
-<header class="header">
-	<nav class="navbar navbar-default navbar-fixed-top box-shadow-10">
-		<div class="collapse navbar-collapse container top_head">
-			<ul class="nav navbar-nav navbar-right">
-				<li><a id="login" data-scroll-nav="0" href="#">登陆</a></li>
-				<li><a id="register" data-scroll-nav="1" href="#">注册</a></li>
-			</ul>				
-		</div>
-	</nav>
-</header>
-<div class="filter container">
-	<div class="classes">
-		<!-- 一级分类 -->
-		<div class="class_list" id="navlist">
-			<ul id="navfouce">
-			<li><a href="#">分类1</a></li>
-			<li><a href="#">分类2</a></li>
-			<li><a href="#">分类3</a></li>
-			<li><a href="#">分类4</a></li>
-			</ul>
-		</div>
-		<!-- 一级分类下拉面板 -->
-		<div class="subclass_cont" id="navbox" style="height:0px;opacity:0;overflow:hidden;">
-			<div class="subclass_list" style="display:block;">
-				<ul class="subclass">
-					<li>
-					<h3 class="mcate-item-hd"><span>子分类1</span></h3>
-					<p class="mcate-item-bd">
-					<a href="#">职位1</a>
-					<a href="#">职位2</a>
-					<a href="#">职位3</a>
-					<a href="#">职位4</a>
-					</p>
-					</li>
-					<li>
-					<h3 class="mcate-item-hd"><span>子分类2</span></h3>
-					<p class="mcate-item-bd">
-					<a href="#">职位1</a>
-					<a href="#">职位2</a>
-					<a href="#">职位3</a>
-					<a href="#">职位4</a>
-					</p>
-					</li>
-					<li>
-					<h3 class="mcate-item-hd"><span>子分类3</span></h3>
-					<p class="mcate-item-bd">
-					<a href="#">职位1</a>
-					<a href="#">职位2</a>
-					<a href="#">职位3</a>
-					<a href="#">职位4</a>
-					</p>
-					</li>
-					<li>
-					<h3 class="mcate-item-hd"><span>子分类4</span></h3>
-					<p class="mcate-item-bd">
-					<a href="#">职位1</a>
-					<a href="#">职位2</a>
-					<a href="#">职位3</a>
-					<a href="#">职位4</a>
-					</p>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="condition_cont container">
-	<div class="form-group">
-		<label class="select_label">选项title</label>
-		<select class="form-control" id="select_1">
-			<option>选项1</option>
-			<option>选项2</option>
-			<option>选项3</option>
-			<option>选项4</option>
-		</select>
-		<label class="select_label">选项title</label>
-		<select class="form-control" id="select_1">
-			<option>选项1</option>
-			<option>选项2</option>
-			<option>选项3</option>
-			<option>选项4</option>
-		</select>
-		<button type="button" class="search btn">匹配</button>
-		<button type="button" class="search btn">搜索</button>
-	</div>
-</div>
-
-<div id="_start">
-	<div id='login_close' class="glyphicon glyphicon-remove" style="display: none;">
-	</div>
-	<br/> 
-	<!--登录框-->
-	<div id="login_container">
-		<div id="lab1">
-			<span id="lab_login">登录</span>
-			<span id="lab_toRegist">
-				&emsp;还没有账号&nbsp;
-				<span id='toRegist' style="color: #FFFFFF;cursor: pointer;">立即注册</span>
-			</span>
-		</div>
-		<div id="form_container1">
-			<input type="text" class="form-control" placeholder="  手机号/用户名" id="login_number"/>
-			<input type="password" class="form-control" placeholder="  密码" id="login_password" />
-		</div>
-		<input type="button" value="登录" class="btn" id="login_btn" />
-	</div>
-</div>
-
-<!-- 招聘信息列表 -->
-<div class="page_cont container">
-	<div class="joblist_cont container">
-		<ul class="job_list">
-			<li class="job_item">
-				<div class="item_con job_title">
-					<a class="job_name"><span class="address">城市</span>  | <span class="name">工作名称</span></a>
-					<p class="job_salary">3100-4500<i class="unit">元/月</i></p>
-					<div class="job_wel">
-						<span>福利1</span>
-						<span>福利2</span>
-						<span>福利3</span>
-						<span>福利2</span>
-						<span>福利5</span>
-					</div>
-				</div>
-					
-				<div class="item_con job_comp">
-					<a class="comp_name">公司名称</a>
-					<p class="job_require">
-						<span class="">要求1</span>
-						<span class="">要求2</span>
-						<span class="">要求3</span>
-					</p>
-				</div>
-					
-				<button class="item_con detail">详细信息</button>
-			</li>
-		</ul>
-	</div>
-	<div class="pages_cont container">
-		<a class="prev" href="#">
-		</a>
-		<span class="page_nums clearfix">
-			<a class="current" href>1</a>
-			<a class href>2</a>
-			<a class href>3</a>
-			<a class href>4</a>
-			<a class href>5</a>
-			<a class href>6</a>
-			<a class href>7</a>
-			<a class href>8</a>
-		</span>
-		<a class="next" href="#">
-		</a>
-	</div>
-</div>
-
-
-<footer class="footer">
-	<div class="container">
-		<!-- Col Start -->
-		<div class="copy-right">
-			<p>Copyright &copy; 2018.Company name All rights reserved.</p>
-		</div>
-		<!-- Col End -->
-	</div>
-</footer>		
-		
 <!-- JQuery JS -->
 <script src="js/jquery-1.12.0.min.js"></script>
 <!-- Bootstrap JS -->
-<script src="js/boorstrap.min.js"></script>
-<!-- Filter JS -->
-<script src="js/filter.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
 <!-- Login JS -->
 <script src="js/page_add.js"></script>
 <!-- Select.min JS -->
 <script src="js/bootstrap-select.min.js"></script>
 <!-- Select JS -->
 <script src="js/bootstrap-select.js"></script>
+<!-- Form JS -->
+<script type="text/javascript" src="js/jquery.form.js"></script>
+
+<script src="js/jquery.cookie.js"></script>
+
+<script type="text/javascript">
+	var id;
+	$(document).ready(function() {
+		id = $.cookie("id");
+		if (id != undefined) {
+			document.getElementById("header").style.display = "none";
+		}
+	});
+
+	function MakeForm() {
+		var jsonResult;
+		var form1 = document.createElement("form");
+		form1.id = "form1";
+		form1.name = "form1";
+		document.body.appendChild(form1);
+		var input = document.createElement("input");
+		input.type = "text";
+		input.name = "phone";
+		input.value = document.getElementById("login_number").value;
+		var input1 = document.createElement("input");
+		input1.type = "text";
+		input1.name = "password";
+		input1.value = document.getElementById("login_password").value;
+		form1.appendChild(input);
+		form1.appendChild(input1);
+		form1.method = "post";
+		form1.action = "/login";
+		//		  form1.submit(); 
+		$("#form1").ajaxSubmit({
+			async : false,
+			success : function(result) {
+
+				jsonResult = result;
+				document.body.removeChild(form1);
+				console.log(result);
+			}
+		});
+
+		return jsonResult;
+		// $("#form1").ajaxForm();
+
+	}
+	function login() {
+		var a = document.getElementById("login_number").value;
+		var b = document.getElementById("login_password").value;
+		if (a != "" && b != "") {
+
+			var result = MakeForm();
+			console.log(result);
+			console.log(result.result);
+			if (result.result == false) {
+				alert("用户名或密码错误");
+			} else if (result.result == true) {
+				location.reload();
+			}
+
+		} else {
+			if (a == "") {
+				alert("请填写手机号！")
+			} else if (b == "") {
+				alert("请填写密码！")
+			}
+		}
+	}
+
+	function matching(){
+		window.location.href = "./Register_jobinfo.html";
+	}
+</script>
+
+</head>
+
+<body>
+
+	<header class="header" id="header">
+		<nav class="navbar navbar-default navbar-fixed-top box-shadow-10">
+			<div class="collapse navbar-collapse container top_head">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="welcome">欢迎</li>
+					<li><a id="register" data-scroll-nav="0" href="#">注销</a></li>
+					<li><a id="login" data-scroll-nav="1" href="#">登陆</a></li>
+					<li><a id="register" data-scroll-nav="2" href="./Register_basicinfo.html">注册</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<div class="filter container">
+		<div class="classes">
+			<!-- 一级分类 -->
+			<div class="class_list" id="navlist">
+				<ul id="navfouce">
+					<li><a href="#">技术</a></li>
+					<li><a href="#">产品</a></li>
+					<li><a href="#">设计</a></li>
+					<li><a href="#">运营</a></li>
+				</ul>
+			</div>
+			<!-- 一级分类下拉面板 -->
+			<div class="subclass_cont" id="navbox" style="height: 0px; opacity: 0; overflow: hidden;">
+				<div class="subclass_list" style="display: block;">
+					<ul class="subclass">
+						<li>
+							<h3 class="mcate-item-hd">
+							<span>开发</span>
+							</h3>
+							<p class="mcate-item-bd">
+							<a href="#">Java</a>
+							<a href="#">PHP</a> 
+							<a href="#">Python</a>
+							<a href="#">Ruby</a>
+							<a href="#">Node.js</a>
+							<a href="#">.NET</a>
+							<a href="#">ASP</a>
+							<a href="#">C#</a>
+							<a href="#">C++</a>
+							<a href="#">C</a>
+							<a href="#">Delphi</a>
+							<a href="#">Go</a>
+							<a href="#">Docker</a>
+							<a href="#">Hadoop</a>
+							<a href="#">Spark</a>
+							<a href="#">HBase</a>
+							<a href="#">Openstack</a>
+							<a href="#">数据挖掘</a>
+							<a href="#">自然语言处理</a>
+							<a href="#">推荐系统</a>
+							<a href="#">搜索引擎</a>
+							<a href="#">全栈工程师</a>
+							</p>
+						</li>
+						<li>
+							<h3 class="mcate-item-hd">
+							<span>移动开发及前端</span>
+							</h3>
+							<p class="mcate-item-bd">
+							<a href="#">iOS</a>
+							<a href="#">Android</a>
+							<a href="#">U3D</a>
+							<a href="#">COCOS2D-X</a>
+							<a href="#">HTML5</a>
+							<a href="#">Web前端</a>
+							<a href="#">Flash</a>
+							<a href="#">Javascript</a>
+							</p>
+						</li>
+						<li>
+							<h3 class="mcate-item-hd">
+							<span>测试</span>
+							</h3>
+							<p class="mcate-item-bd">
+							<a href="#">测试工程师</a>
+							<a href="#">自动化测试</a>
+							<a href="#">功能测试</a>
+							<a href="#">性能测试</a>
+							<a href="#">测试开发</a>
+							<a href="#">硬件测试</a>
+							</p>
+						</li>
+						<li>
+							<h3 class="mcate-item-hd">
+							<span>运维</span>
+							</h3>
+							<p class="mcate-item-bd">
+							<a href="#">运维工程师</a>
+							<a href="#">系统工程师</a>
+							<a href="#">网络工程师</a>
+							<a href="#">运维开发</a>
+							<a href="#">DBA</a>
+							</p>
+						</li>
+						<li>
+							<h3 class="mcate-item-hd">
+							<span>高端职位</span>
+							</h3>
+							<p class="mcate-item-bd">
+							<a href="#">技术经理</a>
+							<a href="#">架构师</a>
+							<a href="#">技术总监</a>
+							<a href="#">CTO</a>
+							<a href="#">技术合伙人</a>
+							<a href="#">运维总监</a>
+							<a href="#">安全专家</a>
+							<a href="#">项目总监</a>
+							</p>
+						</li>
+					</ul>
+				</div>
+				
+				<div class="subclass_list" style="display: block;">
+					<ul class="subclass">
+						<li>
+							<h3 class="mcate-item-hd">
+							<span>产品经理</span>
+							</h3>
+							<p class="mcate-item-bd">
+							<a href="#">产品经理</a>
+							<a href="#">网页产品经理</a> 
+							<a href="#">移动产品经理</a>
+							<a href="#">产品助理</a>
+							<a href="#">数据产品经理</a>
+							<a href="#">游戏策划</a>
+							<a href="#">电商产品经理</a>
+							</p>
+						</li>
+						<li>
+							<h3 class="mcate-item-hd">
+							<span>产品设计师</span>
+							</h3>
+							<p class="mcate-item-bd">
+							<a href="#">网页产品设计师</a>
+							<a href="#">移动产品设计师</a>
+							</p>
+						</li>
+						<li>
+							<h3 class="mcate-item-hd">
+							<span>高端职位</span>
+							</h3>
+							<p class="mcate-item-bd">
+							<a href="#">产品总监</a>
+							<a href="#">游戏制作人</a>
+							<a href="#">产品部经理</a>
+							</p>
+						</li>
+					</ul>
+				</div>
+				
+				<div class="subclass_list" style="display: block;">
+					<ul class="subclass">
+						<li>
+							<h3 class="mcate-item-hd">
+							<span>视觉设计</span>
+							</h3>
+							<p class="mcate-item-bd">
+							<a href="#">UI设计师</a>
+							<a href="#">视觉设计师</a> 
+							<a href="#">网页设计师</a>
+							<a href="#">APP设计师</a>
+							<a href="#">平面设计师</a>
+							<a href="#">flash设计师</a>
+							<a href="#">美术设计师</a>
+							<a href="#">广告设计师</a>
+							<a href="#">多媒体设计师</a>
+							<a href="#">原画师</a>
+							<a href="#">游戏特效</a>
+							<a href="#">游戏界面设计师</a>
+							<a href="#">游戏场景</a>
+							<a href="#">游戏角色</a>
+							<a href="#">游戏动作</a>
+							</p>
+						</li>
+						<li>
+							<h3 class="mcate-item-hd">
+							<span>交互设计</span>
+							</h3>
+							<p class="mcate-item-bd">
+							<a href="#">交互设计师</a>
+							<a href="#">网页交互设计师</a>
+							<a href="#">无线交互设计师</a>
+							<a href="#">硬件交互设计师</a>
+							</p>
+						</li>
+						<li>
+							<h3 class="mcate-item-hd">
+							<span>用户研究</span>
+							</h3>
+							<p class="mcate-item-bd">
+							<a href="#">数据分析师</a>
+							<a href="#">用户研究员</a>
+							<a href="#">游戏数值策划</a>
+							</p>
+						</li>
+						<li>
+							<h3 class="mcate-item-hd">
+							<span>高端职位</span>
+							</h3>
+							<p class="mcate-item-bd">
+							<a href="#">设计经理</a>
+							<a href="#">设计总监</a>
+							<a href="#">交互设计经理</a>
+							<a href="#">交互设计总监</a>
+							<a href="#">用户研究经理</a>
+							<a href="#">用户研究总监</a>
+							</p>
+						</li>
+					</ul>
+				</div>
+				
+				<div class="subclass_list" style="display: block;">
+					<ul class="subclass">
+						<li>
+							<h3 class="mcate-item-hd">
+							<span>运营</span>
+							</h3>
+							<p class="mcate-item-bd">
+							<a href="#">运营经理</a>
+							<a href="#">运营专员</a> 
+							<a href="#">内容运营</a>
+							<a href="#">产品运营</a>
+							<a href="#">用户运营</a>
+							<a href="#">活动运营</a>
+							<a href="#">数据运营</a>
+							<a href="#">新媒体运营</a>
+							<a href="#">商家运营</a>
+							<a href="#">品类运营</a>
+							<a href="#">游戏运营</a>
+							<a href="#">网络推广</a>
+							<a href="#">海外运营</a>
+							<a href="#">网站运营</a>
+							</p>
+						</li>
+						<li>
+							<h3 class="mcate-item-hd">
+							<span>编辑</span>
+							</h3>
+							<p class="mcate-item-bd">
+							<a href="#">副主编</a>
+							<a href="#">内容编辑</a>
+							<a href="#">文案策划</a>
+							<a href="#">记者</a>
+							</p>
+						</li>
+						<li>
+							<h3 class="mcate-item-hd">
+							<span>客服</span>
+							</h3>
+							<p class="mcate-item-bd">
+							<a href="#">售前咨询</a>
+							<a href="#">售后服务</a>
+							<a href="#">淘宝客服</a>
+							<a href="#">客服经理</a>
+							</p>
+						</li>
+						<li>
+							<h3 class="mcate-item-hd">
+							<span>高端职位</span>
+							</h3>
+							<p class="mcate-item-bd">
+							<a href="#">运营总监 主编 COO 客服总监</a>
+							<a href="#">主编</a>
+							<a href="#">COO</a>
+							<a href="#">客服总监</a>
+							</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="condition_cont container">
+		<div class="form-group">
+			<label class="select_label">选项title</label>
+			<select class="form-control" id="select_1">
+				<option>选项1</option>
+				<option>选项2</option>
+				<option>选项3</option>
+				<option>选项4</option>
+			</select>
+			<label class="select_label">选项title</label>
+			<select class="form-control" id="select_1">
+				<option>选项1</option>
+				<option>选项2</option>
+				<option>选项3</option>
+				<option>选项4</option>
+			</select>
+			<button type="button" class="search btn" onclick="matching()">匹配</button>
+			<button type="button" class="search btn">搜索</button>
+		</div>
+	</div>
+
+	<div id="_start">
+		<div id='login_close' class="glyphicon glyphicon-remove"
+			style="display: none;"></div>
+		<br />
+		<!--登录框-->
+		<div id="login_container">
+			<div id="lab1">
+				<span id="lab_login">登录</span>
+				<span id="lab_toRegist">&emsp;还没有账号&nbsp;
+					<a id='toRegist' style="color: #FFFFFF; cursor: pointer;" href="./Register_basicinfo.html">立即注册</a>
+				</span>
+			</div>
+			<div id="form_container1">
+				<input type="text" class="form-control" placeholder="  手机号/用户名" id="login_number" />
+				<input type="password" class="form-control" placeholder="  密码" id="login_password" />
+			</div>
+			<input type="button" value="登录" class="btn" id="login_btn" onclick="login()" />
+		</div>
+	</div>
+
+	<!-- 招聘信息列表 -->
+	<div class="page_cont container">
+		<div class="joblist_cont container">
+			<ul class="job_list">
+				<li class="job_item">
+					<div class="item_con job_title">
+						<a class="job_name">
+							<span class="address">城市</span> |
+							<span class="name">工作名称</span>
+						</a>
+						<p class="job_salary">
+							3100-4500<i class="unit">元/月</i>
+						</p>
+						<div class="job_wel">
+							<span>福利1</span>
+							<span>福利2</span>
+							<span>福利3</span>
+							<span>福利2</span>
+							<span>福利5</span>
+						</div>
+					</div>
+
+					<div class="item_con job_comp">
+						<a class="comp_name">公司名称</a>
+						<p class="job_require">
+							<span class="">要求1</span>
+							<span class="">要求2</span>
+							<span class="">要求3</span>
+						</p>
+					</div>
+
+					<button class="item_con detail">详细信息</button>
+				</li>
+			</ul>
+		</div>
+		<div class="pages_cont container">
+			<a class="prev" href="#"></a>
+			<span class="page_nums clearfix">
+				<a class="current" href>1</a>
+				<a class href>2</a>
+				<a class href>3</a>
+				<a class href>4</a>
+				<a class href>5</a>
+				<a class href>6</a>
+				<a class href>7</a>
+				<a class href>8</a>
+			</span>
+			<a class="next" href="#"></a>
+		</div>
+	</div>
+
+
+	<footer class="footer">
+		<div class="container">
+			<!-- Col Start -->
+			<div class="copy-right">
+				<p>Copyright &copy; 2018.Company name All rights reserved.</p>
+			</div>
+			<!-- Col End -->
+		</div>
+	</footer>
+
+<!-- Filter JS -->
+<script src="js/filter.js"></script>	
+
 </body>
 </html>
