@@ -50,8 +50,8 @@ public class TagController {
 	}
 	
 	@PostMapping("/setTagInfo")
-	public void setTagInfo(TagInfo tagInfo, @ModelAttribute("id") int userId){
-		log.info("Gotten tagInfo: " + tagInfo + " userId: " + userId);
-		tagService.setTagInfo(tagInfo, userId);
+	public void setTagInfo(TagInfo tagInfo){
+		log.info("Gotten tagInfo: " + tagInfo);
+		tagService.setTagInfo(tagInfo);
 	}
 }

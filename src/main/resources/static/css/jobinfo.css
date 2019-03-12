@@ -44,7 +44,7 @@
 	color:#f60;
 	font-size:20px;
 	font-weight:bold;
-	font-family:Arial;
+	font-family:sans-serif;
 }
 .jobinfo table span,.companydetail table span,#loc span{
 	color:#06C;
@@ -65,11 +65,20 @@
 	margin-right:6px;
 	font-size:12px;
 	font-weight:bold;
-	font-style:italic;
 	color:#000;
 	padding:4px;
 	margin-bottom:3px;
 	border-radius:5px;
+	transition:.2s ease-in;
+	-webkit-transition:.2s ease-in;
+	-moz-transition:.2s ease-in;
+}
+#skill span:hover, #wel span:hover,#indus span:hover{
+	font-size:15px;
+	background-color:#FFB857;
+	transition:.2s ease-in;
+	-webkit-transition:.2s ease-in;
+	-moz-transition:.2s ease-in;
 }
 .companydetail h3{
 	font-family:sans-serif;
@@ -132,7 +141,7 @@
 	/*position:absolute;*/
 	height: 0px;
 	width: 0px;
-	background: #000080;
+	background: #5CACEE;
 	color: white;
 	text-align: center;
 	line-height: 40px;
@@ -173,11 +182,11 @@
 #industry_comp:hover, #city_comp:hover{
 	color:#5CACEE;
 }
-#graph_cont{
+.graph_cont{
 	background-color:#FFF;
-	width:590px;
-	height:400px;
+	width:580px;
+	height:480px;
 	border:1px solid #000;
-	margin:auto;
+	display:inline-block;
 	
 }

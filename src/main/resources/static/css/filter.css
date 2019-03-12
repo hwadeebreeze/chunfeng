@@ -140,8 +140,14 @@
 	background: #FFF;
 	color:#000080;
 	border-color:#000080;
+	transition:.2s ease-in;
+	-webkit-transition:.2s ease-in;
+	-moz-transition:.2s ease-in;
 }
 .condition_cont .search:hover{
-	background:#000080;
+	background-color:#1C86EE;
 	color:#FFF;
+	transition:.2s ease-in;
+	-webkit-transition:.2s ease-in;
+	-moz-transition:.2s ease-in;	
 }

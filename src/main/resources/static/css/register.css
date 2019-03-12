@@ -63,6 +63,7 @@ textarea {
 .city_select,.education_select{
     width: 400px;
 	height:40px;
+	color: #000 !important;
 }
 #education_select{
 	width:420px;

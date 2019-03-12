@@ -27,13 +27,13 @@ public class TagService {
 		return info;
 	}
 
-	public void setTagInfo(TagInfo tagInfo, int userId){
-		int tagInfoCount = tagMapper.getTagInfoCountById(userId);
+	public void setTagInfo(TagInfo tagInfo){
+		int tagInfoCount = tagMapper.getTagInfoCountById(tagInfo.getUserId());
 		log.debug("TagInfo count: " + tagInfoCount);
 		if(tagInfoCount==0){
-			tagMapper.insertTagInfo(tagInfo, userId);
+			tagMapper.insertTagInfo(tagInfo, tagInfo.getUserId());
 		}else{
-			tagMapper.setTagInfoById(tagInfo, userId);
+			tagMapper.setTagInfoById(tagInfo, tagInfo.getUserId());
 		}
 	}
 
