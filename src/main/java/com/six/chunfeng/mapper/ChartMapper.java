@@ -17,10 +17,11 @@ public interface ChartMapper {
     @Select("select * from job_aim where user_id=#{user_id}")
     public TagInfo getTagInfoByUserId(@Param("user_id") int id);
 	
-	@Select("select * from job_info where city=#{city} and #{age}>=age_least and #{age}<=age_most "
-			+ "and work_year<={work_year} or city=#{city} and age_least=0 and age_most=0 "
-			+ "and work_year<={work_year}")
-	public List<JobInfo> getJobInfoByInfo(@Param("city") String city,@Param("age") int age,@Param("work_year") int work_year);
+	@Select("select id, salary_most, welfare, capacity from job_info where city=#{city} and #{age}>=age_least and #{age}<=age_most "
+			+ "and work_year<=#{work_year} and education<=#{edu} ")
+	public List<JobInfo> getJobInfoByInfo(@Param("city") String city,@Param("age") int age,@Param("work_year") int work_year,@Param("edu") String edu);
 	
-	
+	@Select("select name from welfare_dic ")
+	public List<String> getWelfareName();
+
 }
