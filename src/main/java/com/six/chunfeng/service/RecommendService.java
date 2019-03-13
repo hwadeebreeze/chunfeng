@@ -22,7 +22,7 @@ public class RecommendService
 	@Autowired
 	private RecommendMapper mapper;
 	
-	static final int itemsPerPage = 5;
+	static final int itemsPerPage = 7;
 	TagInfo tag; User user;
 	List<JobInfo> list;
 	static HashMap<Integer,String> industryList = new HashMap<Integer,String>();
@@ -78,19 +78,14 @@ public class RecommendService
 	private int calFitValue(JobInfo job)
 	{
 		int res = 0;
-		//log("jobid="+job.getId());
 		if(tag.getCity()!=job.getCity()) res += 1000;
 		if(tag.getSalaryMost()!=0 && job.getSalaryMost()!=0 &&
 			(tag.getSalaryMost()<job.getSalaryLeast() || tag.getSalaryLeast()>job.getSalaryMost())
 		) res += 1000;
-		//log(String.valueOf(res));
 		res += 1000*calOffset(tag.getWelfare(),  job.getWelfare());
-		//log(String.valueOf(res));
 		res += 1000*calOffset(tag.getCapacity(), job.getCapacity());
-		//log(String.valueOf(res));
 		res += 1000*calOffset(tag.getIndustry(), getIndustry(job.getCompanyId()));
-		//log(String.valueOf(res));
-		//res += calOffset(tag.getPosition(), getIndustry(job.getPosition()));
+		res += 1000*calOffset(tag.getPosition(), job.getPosition());
 		return res;
 	}
 	private void calFit()
@@ -142,11 +137,11 @@ public class RecommendService
 		sortFit();
 	}	
 
-	public Object changePage(Integer curPage)
+	public List<JobInfo> changePage(Integer curPage)
 	{
 		log("-- recommend call Step 2: page --");
 		
-		int first = (curPage-1)*itemsPerPage, last = first+itemsPerPage;
+		int first = (curPage-1)*itemsPerPage, last = Math.min(first+itemsPerPage, fit.length);
 		log("匹配成功,最适合您的职位是:");
 		List<JobInfo> res = new ArrayList<JobInfo>();
 		List<Integer> resInt = new ArrayList<Integer>();
@@ -156,10 +151,14 @@ public class RecommendService
 			resInt.add(fit[i][0]);
 		}
 		//log(res.toString());
-		log(resInt.toString());
+		//log(resInt.toString());
 		log("具体信息是:");
 		log(res.toString());
 		log("当前显示第 "+curPage+" 页的数据,即前["+first+","+last+")条.");
-		return resString;
+		return res;
+	}
+	public int getPages()
+	{
+		return (fit.length+itemsPerPage-1)/itemsPerPage;
 	}
 }
