@@ -1,0 +1,173 @@
+.page_cont{
+	height:1000px;
+	background-color:#FFF;
+	opacity:0.9;
+}
+.joblist_cont{
+	height:950px;
+	
+}
+.pages_cont{
+	height:50px;
+	text-align:center;
+}
+/* Job List */
+.job_list{
+	margin-left:0;
+}
+.job_item{
+	position:relative;
+	padding:19px 20px 20px;
+	border-bottom:1px solid #EEE;
+	line-height:1;
+	margin-left:0;
+	overflow:auto;
+}
+.job_item .job_title{
+	width:430px;
+	margin-right:22px;
+}
+.job_item .item_con{
+	float:left;
+}
+.job_item .job_name{
+	font-weight:600;
+	display:block;
+	font-size:18px;
+	margin-bottom:11px;
+	color:#333;
+	float:left;
+	width:100%;
+	display:block;
+	content: " ";
+	clear:both;
+	text-decoration:none;
+}
+.job_item .job_name:hover{
+	color:red;
+}
+.job_item .job_name  .address{
+	max-width: 72px;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	overflow:hidden;
+}
+.job_item .job_name  .name{
+	max-width:270px;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	line-height:20px;
+}
+.job_item .job_name span{
+	display:inline-block;
+	vertical-align:middle;
+}
+
+.job_item .job_salary{
+	color:#00BFFF;
+	font-size:18px;
+	line-height:20px;
+	margin-bottom:11px;
+	font-weight:700;
+}
+.job_item .job_salary .unit{
+	font-size:12px;
+	margin-left:5px;
+}
+.job_itm .job_wel span{
+	float:left;
+	background:gray;
+	margin-right:6px;
+	font-size:12px;
+	color:#00BFFF;
+	padding:4px;
+	margin-bottom:3px;
+}
+
+.job_item .job_comp{
+	width:330px;
+	font-size:12px;
+	padding:18px 0 0;
+	margin-right:22px;
+}
+.job_item .comp_name{
+	margin-bottom:14px;
+	height:18px;
+	line-height:1.2;
+	color:black;
+}
+.job_item .job_require{
+	font-size:12px;
+	color:#999;
+	line-height:18px;
+}
+.job_item .detail{
+	text-align:center; 
+	width:80px;
+	margin-top: 25px;
+	height: 32px;
+	line-height: 32px;
+	background:#5CACEE;
+	font-size: 16px;
+	font-weight:bold;
+	color:#000;
+	border-radius:10px;
+	border:none;
+}
+.job_item .detail:hover{
+
+}
+
+/* 底部页码栏 */
+.pages_cont .page_nums{
+	display:inline-block;
+	vertical-align:middle;
+	margin:0 10px;
+	color:#333;
+}
+.pages_cont .page_nums a{
+	font:14px/36px Arial;
+	float:left;
+	margin-left:-1px;
+	position:relative;
+	color:#333;
+}
+.pages_cont .page_nums a.current{
+	background:#00BFFF;
+	background-color:#00BFFF;
+	color:#FFF;
+}
+/**/
+.pages_cont .prev,.pages_cont .next, .pages_cont .page_nums a{
+	display:inline-block;
+	vertical-align:middle;
+	width: 36px;
+	height: 36px;
+	background:#FFF;
+	border:1px solid #DDD;
+	text-align:center;
+	line-height:36px;
+	position:relative;
+	z-index:999;
+	border:1px solid #000;
+	text-decoration:none;
+}
+.pages_cont .prev:after{
+	border-width:6px 6px 6px 0;
+	border-color:transparent #333 transparent transparent;
+}
+.pages_cont .next:after{
+	border-width:6px 0 6px 6px;
+	border-color:transparent transparent transparent #333;
+}
+.pages_cont .prev:after, .pages_cont .next:after{
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin:-6px 0 0 -3px;
+	content:"";
+	width:0;
+	height:0;
+	border-style:solid;
+}

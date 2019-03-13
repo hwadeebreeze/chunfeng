@@ -1,0 +1,99 @@
+.register_cont{
+	background-color:transparent;
+	min-height:630px;
+}
+.register {
+	width:60%;
+	margin:auto;
+	margin-top:50px;
+    margin-bottom:50px;
+    padding: 50px;
+    background: #000080;
+	border-radius:20px;
+	opacity:0.7;
+	
+}
+.register h2 {
+    color: #FFF;
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 1px;
+    margin: 0px 0px 30px;
+	font-family:sans-serif;
+	
+}
+.register h3 {
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 16px;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+.register_form input[type="text"], .register_form input[type="email"],.city_select,textarea {
+    display:block;
+	width: 400px;
+	margin:auto;
+	margin-bottom:20px;
+	top:0;left:0;bottom:0;right:0;
+    padding: 10px 10px 10px 10px;
+    font-weight: normal;
+    background: none;
+    border: none;
+	background: rgba(235, 235, 235, 0.15);
+    outline: none;
+    font-size: 14px;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    font-family:sans-serif;
+	color:#FFF;
+}
+textarea {
+    resize: none;
+    height: 58px;
+}
+.city_select {
+    width: 400px;
+	height:40px;
+}
+.register_form input[type="submit"],.agile_main_grid_left2_grid_bottom a { 
+	background:#31c4fc;
+    color: #fff;
+    font-size: 17px;
+	margin-top: 10px;
+    border: none;
+    width: 100%;
+    outline: none;
+	letter-spacing: 1px;
+	cursor:pointer;
+    -webkit-appearance: none;
+    padding: 10px 15px;
+	font-family:sans-serif;
+	transition:.5s ease-in;
+	-webkit-transition:.5s ease-in;
+	-moz-transition:.5s ease-in;
+}
+.register_form input[type="submit"]:hover,.agile_main_grid_left2_grid_bottom a:hover {
+    background:#5fe3f8;
+	color: #fff;
+	transition:.5s ease-in;
+	-webkit-transition:.5s ease-in;
+	-moz-transition:.5s ease-in;
+}
+option{
+	background:#FFF;
+	color:#000;
+}
+
+::-webkit-input-placeholder {
+	color:#fff !important;
+}
+:-moz-placeholder { /* Firefox 18- */
+	color:#fff !important; 
+}
+::-moz-placeholder {  /* Firefox 19+ */
+	color:#fff !important;
+}
+:-ms-input-placeholder {  
+	color:#fff !important;
+}
