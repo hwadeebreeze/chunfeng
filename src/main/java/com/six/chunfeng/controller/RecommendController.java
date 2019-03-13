@@ -14,8 +14,10 @@ public class RecommendController {
 	private RecommendService recommendService;
 	
 	@RequestMapping("/recommend")
-	public Object test(@RequestParam(value = "id", defaultValue = "1") int id){
+	public Object test(@RequestParam(value = "id", defaultValue = "1") int id,
+				@RequestParam(value = "page", defaultValue = "1") int page)
+	{
 		recommendService.recommend(id);
-		return recommendService.changePage(1);
+		return recommendService.changePage(page);
 	}
 }
