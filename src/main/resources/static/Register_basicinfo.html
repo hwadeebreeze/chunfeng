@@ -87,7 +87,7 @@
 		var input3 = document.createElement("input");
 		input3.type = "text";
 		input3.name = "education";
-		input3.value = document.getElementById("education").value;
+		input3.value = $('#education_select option:selected').val();
 		var input4 = document.createElement("input");
 		input4.type = "text";
 		input4.name = "phone";
@@ -169,11 +169,13 @@
 					<div class="title">
 					<label class="title" style="margin-left:4em">学历:</label>
 					<select id="education_select" class="education_select" style="color:#FFF">
-						<option id="education_first_index">胎教</option>
-						<option>小学</option>
-						<option>中学</option>
+						<option id="education_first_index">请选择</option>
+						<option>中学及以下</option>
+						<option>中专/高中</option>
+						<option>大专</option>
 						<option>本科</option>
 						<option>硕士</option>
+						<option>博士及以上</option>
 				</select>
 					</div>
 					<div class="title">

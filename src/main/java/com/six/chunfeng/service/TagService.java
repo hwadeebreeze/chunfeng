@@ -28,12 +28,13 @@ public class TagService {
 	}
 
 	public void setTagInfo(TagInfo tagInfo){
+
 		int tagInfoCount = tagMapper.getTagInfoCountById(tagInfo.getUserId());
 		log.debug("TagInfo count: " + tagInfoCount);
 		if(tagInfoCount==0){
-			tagMapper.insertTagInfo(tagInfo, tagInfo.getUserId());
+			tagMapper.insertTagInfo(tagInfo);
 		}else{
-			tagMapper.setTagInfoById(tagInfo, tagInfo.getUserId());
+			tagMapper.setTagInfoById(tagInfo);
 		}
 	}
 
@@ -50,7 +51,6 @@ public class TagService {
 	}
 
 	public List<Map<Integer,String>> getwelfareDic(){
-		System.out.println(tagMapper.getwelfareDic());
 		return tagMapper.getwelfareDic();
 	}
 }

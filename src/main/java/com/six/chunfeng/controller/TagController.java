@@ -51,6 +51,7 @@ public class TagController {
 	
 	@PostMapping("/setTagInfo")
 	public void setTagInfo(TagInfo tagInfo){
+		System.out.println(tagInfo);
 		log.info("Gotten tagInfo: " + tagInfo);
 		tagService.setTagInfo(tagInfo);
 	}

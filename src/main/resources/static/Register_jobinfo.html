@@ -236,44 +236,52 @@
         }
 		
         function commit(){
-            var id = $.cookie("id");
+            var user_id = $.cookie("id");
             var workYear = $("#worktime").val();
             var salaryLeast = $("#low_salary").val();
             var salaryMost = $("#high_salary").val();
             var city = $('#city_select option:selected').val();
-            var capacity_text = document.getElementById("skill_Info").innerText;
-            var position_text = document.getElementById("tendency_job_Info").innerHTML;
-            var welfare_text = document.getElementById("tendency_wal_Info").innerHTML;
-            var industry_text = document.getElementById("familiar_Info").innerHTML;
+            var capacity_text = document.getElementById("skill_Info").innerHTML.split(",");
+            var position_text = document.getElementById("tendency_job_Info").innerHTML.split(",");
+            var welfare_text = document.getElementById("tendency_wal_Info").innerHTML.split(",");
+            var industry_text = document.getElementById("familiar_Info").innerHTML.split(",");
 
             var capacity_id = "";
             var position_id = "";
             var welfare_id = "";
             var industry_id = "";
             for(var i=0;i<capacity.length;i++){
-                if(capacity_text.indexOf(capacity[i].name)!=-1){
-                    capacity_id = capacity_id + capacity[i].id + ",";
+                for(var j=0;j<capacity_text.length;j++){
+                    if(capacity[i].name==capacity_text[j]){
+                        capacity_id = capacity_id + capacity[i].id + ",";
+                    }
                 }
             }
             capacity_id = capacity_id.substr(0,capacity_id.length-1);
 
             for(var i=0;i<position.length;i++){
-                if(position_text.indexOf(position[i].name)!=-1){
-                    position_id = position_id + position[i].id + ",";
+                for(var j=0;j<position_text.length;j++){
+                    if(position[i].name==position_text[j]){
+                        position_id = position_id + position[i].id + ",";
+                    }
                 }
             }
             position_id = position_id.substr(0,position_id.length-1);
 
             for(var i=0;i<welfare.length;i++){
-                if(welfare_text.indexOf(welfare[i].name)!=-1){
-                    welfare_id = welfare_id + welfare[i].id + ",";
+                for(var j=0;j<welfare_text.length;j++){
+                    if(welfare[i].name==welfare_text[j]){
+                        welfare_id = welfare_id + welfare[i].id + ",";
+                    }
                 }
             }
             welfare_id = welfare_id.substr(0,welfare_id.length-1);
 
             for(var i=0;i<industry.length;i++){
-                if(industry_text.indexOf(industry[i].name)!=-1){
-                    industry_id = industry_id + industry[i].id + ",";
+                for(var j=0;j<industry_text.length;j++){
+                    if(industry[i].name==industry_text[j]){
+                        industry_id = industry_id + industry[i].id + ",";
+                    }
                 }
             }
             industry_id = industry_id.substr(0,industry_id.length-1);
@@ -291,7 +299,7 @@
 					type : "post",
 					url : "/setTagInfo",
 					data : {
-						"user_id" : id,
+						"userId" : user_id,
                         "workYear" : workYear,
                         "salaryLeast" : salaryLeast,
                         "salaryMost" : salaryMost,
@@ -421,12 +429,24 @@
 				<label>首选工作地：</label>
 				<select id="city_select" class="city_select" style="color:#FFF">
 					<option id="city_first_index">首选工作地</option>
-					<option>城市1</option>
-					<option>城市2</option>
-					<option>城市3</option>
-					<option>test</option>
-					<option>城市5</option>
-					<option>城市6</option>
+					<option>北京</option>
+					<option>上海</option>
+					<option>广东</option>
+					<option>天津</option>
+					<option>苏州</option>
+                    <option>重庆</option>
+                    <option>南京</option>
+					<option>杭州</option>
+					<option>大连</option>
+					<option>成都</option>
+					<option>武汉</option>
+                    <option>西安</option>
+                    <option>郑州</option>
+					<option>长沙</option>
+					<option>宁波</option>
+					<option>沈阳</option>
+					<option>青岛</option>
+					<option>无锡</option>
 				</select>
 				</div>
 				<div class="search_cont">
