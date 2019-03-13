@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.six.chunfeng.domain.User;
+import com.six.chunfeng.mapper.LoginMapper;
 import com.six.chunfeng.mapper.RegisterMapper;
 import com.six.chunfeng.util.MD5Utils;
 
@@ -17,6 +18,7 @@ public class RegisterService {
 	
 	@Autowired
 	private RegisterMapper registerMapper;
+	
 	
 	private Logger log = LoggerFactory.getLogger(RegisterService.class);
 	
@@ -42,4 +44,5 @@ public class RegisterService {
 			return false;
 		}
 	}
+
 }

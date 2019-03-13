@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
+import com.six.chunfeng.domain.CompanyInfo;
 import com.six.chunfeng.domain.JobInfo;
 import com.six.chunfeng.mapper.InfoMapper;
 import com.six.chunfeng.mapper.LoginMapper;
@@ -19,13 +20,24 @@ public class InfoService {
 	
 	private Logger log = LoggerFactory.getLogger(InfoService.class);
 	
-	public JobInfo getJobInfo(int id){
-		JobInfo info = infoMapper.getJobInfoById(id);
+	public JobInfo getJobInfo(int jobId){
+		JobInfo info = infoMapper.getJobInfoById(jobId);
 		if(info!=null){
 			log.debug("JobInfo: " + info);
 			return info;
 		}else{
-			log.debug("Can't find JobInfo by id: " + id);
+			log.debug("Can't find JobInfo by id: " + jobId);
+			return null;
+		}
+	}
+	
+	public CompanyInfo getCompanyInfo(int jobId){
+		CompanyInfo info = infoMapper.getCompanyInfoByJobId(jobId);
+		if(info!=null){
+			log.debug("CompanyInfo: " + info);
+			return info;
+		}else{
+			log.debug("Can't find CompanyInfo in JobInfo: " + jobId);
 			return null;
 		}
 	}

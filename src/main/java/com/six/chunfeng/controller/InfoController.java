@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.six.chunfeng.domain.CompanyInfo;
 import com.six.chunfeng.domain.JobInfo;
 import com.six.chunfeng.service.InfoService;
 
@@ -21,7 +22,12 @@ public class InfoController {
 	private Logger log = LoggerFactory.getLogger(InfoController.class);
 	
 	@GetMapping("/jobInfo")
-	public JobInfo getJobInfo(@ModelAttribute("id") int id){
-		return infoService.getJobInfo(id);
+	public JobInfo getJobInfo(@ModelAttribute("jobId") int jobId){
+		return infoService.getJobInfo(jobId);
+	}
+	
+	@GetMapping("/companyInfo")
+	public CompanyInfo getCompanyInfo(@ModelAttribute("jobId") int jobId){
+		return infoService.getCompanyInfo(jobId);
 	}
 }

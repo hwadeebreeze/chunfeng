@@ -2,6 +2,8 @@
 	height:1000px;
 	background-color:#FFF;
 	opacity:0.9;
+	margin-bottom:10px;
+	border-radius:0 0 20px 20px;
 }
 .joblist_cont{
 	height:950px;
@@ -44,7 +46,7 @@
 	text-decoration:none;
 }
 .job_item .job_name:hover{
-	color:red;
+	color:#1C86EE;
 }
 .job_item .job_name  .address{
 	max-width: 72px;
@@ -65,7 +67,7 @@
 }
 
 .job_item .job_salary{
-	color:#00BFFF;
+	color:#FFB857;
 	font-size:18px;
 	line-height:20px;
 	margin-bottom:11px;
@@ -75,14 +77,26 @@
 	font-size:12px;
 	margin-left:5px;
 }
-.job_itm .job_wel span{
+.job_item .job_wel span{
 	float:left;
-	background:gray;
+	background:#BFEFFF;
 	margin-right:6px;
 	font-size:12px;
-	color:#00BFFF;
+	font-weight:bold;
+	color:#000;
 	padding:4px;
 	margin-bottom:3px;
+	border-radius:5px;
+	transition:.2s ease-in;
+	-webkit-transition:.2s ease-in;
+	-moz-transition:.2s ease-in;
+}
+.job_item .job_wel span:hover{
+	font-size:13px;
+	background-color:#FFB857;
+	transition:.2s ease-in;
+	-webkit-transition:.2s ease-in;
+	-moz-transition:.2s ease-in;	
 }
 
 .job_item .job_comp{
@@ -96,11 +110,32 @@
 	height:18px;
 	line-height:1.2;
 	color:black;
+	font-size:15px;
+	font-weight:bold;
 }
 .job_item .job_require{
 	font-size:12px;
 	color:#999;
 	line-height:18px;
+	margin-top:5px;
+}
+.job_item .job_require span{
+	background-color:#BFEFFF;
+	padding:4px;
+	font-size:10px;
+	color:#000;
+	border-radius:5px;
+	font-weight:bolder;
+	transition:.2s ease-in;
+	-webkit-transition:.2s ease-in;
+	-moz-transition:.2s ease-in;
+}
+.job_item .job_require span:hover{
+	font-size:13px;
+	background-color:#FFB857;
+	transition:.2s ease-in;
+	-webkit-transition:.2s ease-in;
+	-moz-transition:.2s ease-in;
 }
 .job_item .detail{
 	text-align:center; 
@@ -108,15 +143,21 @@
 	margin-top: 25px;
 	height: 32px;
 	line-height: 32px;
-	background:#5CACEE;
+	background:#BFEFFF;
 	font-size: 16px;
 	font-weight:bold;
 	color:#000;
 	border-radius:10px;
 	border:none;
+	transition:.2s ease-in;
+	-webkit-transition:.2s ease-in;
+	-moz-transition:.2s ease-in;
 }
 .job_item .detail:hover{
-
+	background-color:#1C86EE;
+	transition:.2s ease-in;
+	-webkit-transition:.2s ease-in;
+	-moz-transition:.2s ease-in;
 }
 
 /* 底部页码栏 */
@@ -134,8 +175,8 @@
 	color:#333;
 }
 .pages_cont .page_nums a.current{
-	background:#00BFFF;
-	background-color:#00BFFF;
+	background:#5CACEE;
+	background-color:#5CACEE;
 	color:#FFF;
 }
 /**/
@@ -150,7 +191,6 @@
 	line-height:36px;
 	position:relative;
 	z-index:999;
-	border:1px solid #000;
 	text-decoration:none;
 }
 .pages_cont .prev:after{

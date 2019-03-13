@@ -23,26 +23,70 @@
 	text-indent:20px;
 	font-size:14px;
 	border:none;
-	text-align:center;
+	text-align:right;
 }
-.jobinfo table{
+.jobinfo table,.companydetail table{
 	border:none;
-	margin:30px;
+	margin:30px 30px 5px 30px;
 	text-align:left;
 }
-.jobinfo table tr{
+.jobinfo table tr,.companydetail table tr{
 	border:none;
 }
-.jobinfo table tr td{
+.jobinfo table tr td ,.companydetail table tr td{
 	width:300px;
 	height:40px;
 	line-height:40px;
 	border:none;
-	font-weight:bold;
+	font-weight:bold;
 }
-.jobinfo table span{
+#salary span{
+	color:#f60;
+	font-size:20px;
+	font-weight:bold;
+	font-family:sans-serif;
+}
+.jobinfo table span,.companydetail table span,#loc span{
 	color:#06C;
 	font-weight: bold;
+}
+#skill,#wel,#loc,#indus{
+	text-align:left;
+	margin-left:30px;
+}
+#skill label,#wel label,#loc label,#indus label{
+	height:40px;
+	line-height:40px;
+	border:none;
+	font-weight:bold;
+}
+#skill span, #wel span,#indus span{
+	background:#BFEFFF;
+	margin-right:6px;
+	font-size:12px;
+	font-weight:bold;
+	color:#000;
+	padding:4px;
+	margin-bottom:3px;
+	border-radius:5px;
+	transition:.2s ease-in;
+	-webkit-transition:.2s ease-in;
+	-moz-transition:.2s ease-in;
+}
+#skill span:hover, #wel span:hover,#indus span:hover{
+	font-size:15px;
+	background-color:#FFB857;
+	transition:.2s ease-in;
+	-webkit-transition:.2s ease-in;
+	-moz-transition:.2s ease-in;
+}
+.companydetail h3{
+	font-family:sans-serif;
+	padding-left:28px;
+	font-size:15px;
+	height:26px;
+	line-height:26px;
+	border-bottom:1px dashed #666666;
 }
 .jobinfo table i{
 	color:#f60;
@@ -51,25 +95,28 @@
 	font-family:Arial;
 }
 .jobinfo_btn{
-	width:200px;
+	margin-right:15px;
+	width:100px;
 	height:50px;
 	line-height:50px;
-	text-align:center;
-	color:#FFF;
-	background-color:#5CACEE;
-	font-size:30px;
+	color:#000;
+	background-color:#BFEFFF;
+	font-size:18px;
 	font-family:sans-serif;
-	letter-spacing:4px;
+	font-weight:bold;
+	letter-spacing:2px;
 	margin-bottom:20px;
 	border-radius:10px;
-	border:1px solid #000;
+	border:none;
+	transition:.2s ease-in;
+	-webkit-transition:.2s ease-in;
+	-moz-transition:.2s ease-in;
 }
 .jobinfo_btn:hover{
-	background-color:#FFF;
-	color:#5CACEE;
-	border-width:2px;
+	background-color:#1C86EE;
+	color:#000;
 }
-.jobdetail_label{
+.jobdetail_label,.companydetail_label{
 	width:100%;
 	height:40px;
 	line-height:40px;
@@ -80,10 +127,13 @@
 	font-family:sans-serif;
 	text-indent:10px;
 	margin-bottom:30px;
+	padding-left:10px;
 }
-.jobdetail p{
+.jobdetail p,.companydetail p{
+	text-indent:2em;
 	line-height:24px;
 	font-size:14px;
+	padding:0 2em;
 }
 
 /*弹窗*/
@@ -91,7 +141,7 @@
 	/*position:absolute;*/
 	height: 0px;
 	width: 0px;
-	background: #000080;
+	background: #5CACEE;
 	color: white;
 	text-align: center;
 	line-height: 40px;
@@ -132,11 +182,11 @@
 #industry_comp:hover, #city_comp:hover{
 	color:#5CACEE;
 }
-#graph_cont{
+.graph_cont{
 	background-color:#FFF;
-	width:590px;
-	height:400px;
+	width:580px;
+	height:480px;
 	border:1px solid #000;
-	margin:auto;
+	display:inline-block;
 	
 }

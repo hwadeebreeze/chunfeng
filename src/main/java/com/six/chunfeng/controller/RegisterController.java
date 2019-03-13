@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.six.chunfeng.domain.User;
+import com.six.chunfeng.service.LoginService;
 import com.six.chunfeng.service.RegisterService;
 import com.six.chunfeng.util.CookieUtil;
 
@@ -23,6 +24,9 @@ public class RegisterController {
 	@Autowired
 	private RegisterService registerService;
 	
+	@Autowired
+	private LoginService loginService;
+	
 	private Logger log = LoggerFactory.getLogger(RegisterController.class);
 	
 	@PostMapping("/register")
@@ -31,7 +35,8 @@ public class RegisterController {
 		Map<String,Boolean> result = new HashMap<String,Boolean>();
 		result.put("result", registerService.register(user));
 		if(result.get("result")==true){
-			CookieUtil.setCookie(response, "phone", user.getPhone());
+			CookieUtil.setCookie(response, "id",
+					loginService.getIdByPhone(user.getPhone()).toString());
 		}
 		return result;
 	}
