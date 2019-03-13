@@ -17,6 +17,36 @@
 	<!-- Style CSS -->
 	<link href="css/style.css" rel="stylesheet">
 
+	<script src="js/jquery-1.12.0.min.js"></script>
+
+	<script type="text/javascript">
+		var jobInfo;
+		var companyInfo;
+		$(document).ready(function() {
+			getJobInfoAndCompanyInfo();
+			
+		});
+		function getJobInfoAndCompanyInfo(){
+			var jobId = window.location.href.split("#")[1];
+			$.ajax({
+                type: "get",
+                url: "/jobInfo?jobId=" + jobId,
+                success: function (data) {
+                    console.log(data);
+					jobInfo = data;
+                }
+            });
+			$.ajax({
+                type: "get",
+                url: "/companyInfo?jobId=" + jobId,
+                success: function (data) {
+                    console.log(data);
+					companyInfo = data;
+                }
+            });
+		}
+	</script>
+
 </head>
 
 <body>
@@ -120,7 +150,7 @@
 </footer>
 
 <!-- JQuery JS -->
-<script src="js/jquery-1.12.0.min.js"></script>
+
 <!-- Bootstrap JS -->
 <script src="js/bootstrap.min.js"></script>
 <!-- Filter JS -->
