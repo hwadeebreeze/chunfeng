@@ -162,4 +162,6 @@ public class RecommendService
 		log("当前显示第 "+curPage+" 页的数据,即前["+first+","+last+")条.");
 		return resString;
 	}
+	
+	
 }

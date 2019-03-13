@@ -1,117 +1,216 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>春风招聘</title>
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta http-equiv="Content-Type" content="charset=utf-8" />
-<!-- Bootstrap CSS -->
-<link href="./css/bootstrap.min.css" rel="stylesheet">
-<!-- Filter CSS -->
-<link href="css/filter.css" rel="stylesheet">
-<!-- Header CSS -->
-<link href="css/header.css" rel="stylesheet">
-<!-- Page CSS -->
-<link href="css/page.css" rel="stylesheet">
-<!-- Footer CSS -->
-<link href="css/footer.css" rel="stylesheet">
-<!-- Login CSS -->
-<link href="css/page_add.css" rel="stylesheet">
-<!-- Style CSS -->
-<link href="css/style.css" rel="stylesheet">
-<!-- Select.min CSS -->
-<link href="css/bootstrap-select.min.css">
-<!-- Select CSS -->
-<link href="css/bootstrap-select.css">
+	<title>春风招聘</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="charset=utf-8" />
+	<!-- Bootstrap CSS -->
+	<link href="./css/bootstrap.min.css" rel="stylesheet">
+	<!-- Filter CSS -->
+	<link href="css/filter.css" rel="stylesheet">
+	<!-- Header CSS -->
+	<link href="css/header.css" rel="stylesheet">
+	<!-- Page CSS -->
+	<link href="css/page.css" rel="stylesheet">
+	<!-- Footer CSS -->
+	<link href="css/footer.css" rel="stylesheet">
+	<!-- Login CSS -->
+	<link href="css/page_add.css" rel="stylesheet">
+	<!-- Style CSS -->
+	<link href="css/style.css" rel="stylesheet">
+	<!-- Select.min CSS -->
+	<link href="css/bootstrap-select.min.css">
+	<!-- Select CSS -->
+	<link href="css/bootstrap-select.css">
 
-<!-- JQuery JS -->
-<script src="js/jquery-1.12.0.min.js"></script>
-<!-- Bootstrap JS -->
-<script src="js/bootstrap.min.js"></script>
+	<!-- JQuery JS -->
+	<script src="js/jquery-1.12.0.min.js"></script>
+	<!-- Bootstrap JS -->
+	<script src="js/bootstrap.min.js"></script>
 
-<!-- Login JS -->
-<script src="js/page_add.js"></script>
-<!-- Select.min JS -->
-<script src="js/bootstrap-select.min.js"></script>
-<!-- Select JS -->
-<script src="js/bootstrap-select.js"></script>
-<!-- Form JS -->
-<script type="text/javascript" src="js/jquery.form.js"></script>
+	<!-- Login JS -->
+	<script src="js/page_add.js"></script>
+	<!-- Select.min JS -->
+	<script src="js/bootstrap-select.min.js"></script>
+	<!-- Select JS -->
+	<script src="js/bootstrap-select.js"></script>
+	<!-- Form JS -->
+	<script type="text/javascript" src="js/jquery.form.js"></script>
 
-<script src="js/jquery.cookie.js"></script>
+	<script src="js/jquery.cookie.js"></script>
 
-<script type="text/javascript">
-	var id;
-	$(document).ready(function() {
-		id = $.cookie("id");
-		if (id != undefined) {
-			document.getElementById("header").style.display = "none";
-		}
-	});
-
-	function MakeForm() {
-		var jsonResult;
-		var form1 = document.createElement("form");
-		form1.id = "form1";
-		form1.name = "form1";
-		document.body.appendChild(form1);
-		var input = document.createElement("input");
-		input.type = "text";
-		input.name = "phone";
-		input.value = document.getElementById("login_number").value;
-		var input1 = document.createElement("input");
-		input1.type = "text";
-		input1.name = "password";
-		input1.value = document.getElementById("login_password").value;
-		form1.appendChild(input);
-		form1.appendChild(input1);
-		form1.method = "post";
-		form1.action = "/login";
-		//		  form1.submit(); 
-		$("#form1").ajaxSubmit({
-			async : false,
-			success : function(result) {
-
-				jsonResult = result;
-				document.body.removeChild(form1);
-				console.log(result);
+	<script type="text/javascript">
+		var id;
+		$(document).ready(function () {
+			id = $.cookie("id");
+			if (id != undefined) {
+				document.getElementById("logout").style.display = "block";
+				document.getElementById("welcome").style.display = "block";
+				document.getElementById("login").style.display = "none";
+				document.getElementById("register").style.display = "none";
 			}
+			else {
+				document.getElementById("login").style.display = "block";
+				document.getElementById("register").style.display = "block";
+				document.getElementById("logout").style.display = "none";
+				document.getElementById("welcome").style.display = "none";
+			}
+
+
+			$.ajax({
+				type: "post",
+				url: "/getPosition",
+				success: function (data) {
+					console.log(data);
+					load_filter(data);
+				}
+			});
+
+			// for(var i=0;i<7;i++){
+			// 	load_item(i);
+			// }
+
 		});
 
-		return jsonResult;
-		// $("#form1").ajaxForm();
+		function load_filter(data) {
+			for (var item = 0; item < data.length; item++) {
+				var index1;
+				var index2;
+				var cat1 = data[item].bot_class;
+				var cat2 = data[item].top_class;
+				var cat = [['技术', '开发', '移动开发及前端', '测试', '运维', '高端职位'], ['产品', '产品经理', '高端职位'], ['设计', '视觉设计', '交互设计', '用户研究', '高端职位'], ['运营', '运营', '编辑', '客服', '高端职位']];
+				for (var i = 0; i < 4; i++) {
+					if (cat1==cat[i][0]) {
+						index1 = i;
+						for (var j = 1; j < cat[index1].length; j++) {
+							if (cat2==cat[index1][j]) {
+								index2 = j;
+								break;
+							}
+						}
+						break;
+					}
+				}
+				var li = document.getElementsByClassName('cat')[index1];
+				var p = li.getElementsByClassName('mcate-item-bd')[index2 - 1];
 
-	}
-	function login() {
-		var a = document.getElementById("login_number").value;
-		var b = document.getElementById("login_password").value;
-		if (a != "" && b != "") {
+				var new_a = document.createElement('a');
+				new_a.innerText = data[item].name;
+				p.appendChild(new_a);
 
-			var result = MakeForm();
-			console.log(result);
-			console.log(result.result);
-			if (result.result == false) {
-				alert("用户名或密码错误");
-			} else if (result.result == true) {
-				location.reload();
 			}
 
-		} else {
-			if (a == "") {
-				alert("请填写手机号！")
-			} else if (b == "") {
-				alert("请填写密码！")
+		}
+
+		function load_item(city, jobname, salary, companyname, welfare, capacity, item) {
+			// var city = '城市';
+			// var jobname =  '工作名称';
+			// var salary = '3-5';
+			// var companyname = '公司名称';
+			// var welfare=['词条1','词条2','词条3','词条4','词条5'];
+			// var capacity=['词条1','词条2','词条3','词条4','词条5'];
+			var joblist = document.getElementsByClassName("job_list")[0];
+			var html = '<div class="item_con job_title">';
+			html += '<a class="job_name" >';
+			html += '<span class="address">' + city + '</span> |';
+			html += '<span class="name">' + jobname + '</span>';
+			html += '</a>';
+			html += '<p class="job_salary">';
+			html += salary + '<i class="unit">万元/月</i>';
+			html += '</p>';
+			html += '<div class="job_wel">';
+			html += '</div>';
+			html += '</div>';
+			html += '<div class="item_con job_comp">';
+			html += '<a class="comp_name">' + companyname + '</a>';
+			html += '<p class="job_require">';
+			html += '</p>';
+			html += '</div>';
+			html += '<button class="item_con detail" onclick="jumpToInfoPage()">详细信息</button>';
+			var li = document.createElement('li');
+			li.className = "job_item";
+			joblist.appendChild(li);
+			li.innerHTML = html;
+
+			var wal_container = document.getElementsByClassName("job_wel")[item];
+			var req_container = document.getElementsByClassName("job_require")[item];
+			for (var i = 0; i < welfare.length; i++) {
+				var new_span = document.createElement('span');
+				new_span.innerText = welfare[i];
+				wal_container.appendChild(new_span);
+			}
+			for (var i = 0; i < capacity.length; i++) {
+				var new_span = document.createElement('span');
+				new_span.innerText = capacity[i];
+				req_container.appendChild(new_span);
 			}
 		}
-	}
 
-	function matching(){
-		window.location.href = "./Register_jobinfo.html";
-	}
+		function MakeForm() {
+			var jsonResult;
+			var form1 = document.createElement("form");
+			form1.id = "form1";
+			form1.name = "form1";
+			document.body.appendChild(form1);
+			var input = document.createElement("input");
+			input.type = "text";
+			input.name = "phone";
+			input.value = document.getElementById("login_number").value;
+			var input1 = document.createElement("input");
+			input1.type = "text";
+			input1.name = "password";
+			input1.value = document.getElementById("login_password").value;
+			form1.appendChild(input);
+			form1.appendChild(input1);
+			form1.method = "post";
+			form1.action = "/login";
+			//		  form1.submit(); 
+			$("#form1").ajaxSubmit({
+				async: false,
+				success: function (result) {
 
-	function jumpToInfoPage(){
-		window.location.href = "./Jobinfo.html#52";
-	}
-</script>
+					jsonResult = result;
+					document.body.removeChild(form1);
+					console.log(result);
+				}
+			});
+
+			return jsonResult;
+			// $("#form1").ajaxForm();
+
+		}
+		function login() {
+			var a = document.getElementById("login_number").value;
+			var b = document.getElementById("login_password").value;
+			if (a != "" && b != "") {
+
+				var result = MakeForm();
+				console.log(result);
+				console.log(result.result);
+				if (result.result == false) {
+					alert("用户名或密码错误");
+				} else if (result.result == true) {
+					location.reload();
+				}
+
+			} else {
+				if (a == "") {
+					alert("请填写手机号！")
+				} else if (b == "") {
+					alert("请填写密码！")
+				}
+			}
+		}
+
+		function matching() {
+			window.location.href = "./Register_jobinfo.html";
+		}
+
+		function jumpToInfoPage() {
+			window.location.href = "./Jobinfo.html#52";
+		}
+	</script>
 
 </head>
 
@@ -121,8 +220,8 @@
 		<nav class="navbar navbar-default navbar-fixed-top box-shadow-10">
 			<div class="collapse navbar-collapse container top_head">
 				<ul class="nav navbar-nav navbar-right">
-					<li class="welcome">欢迎</li>
-					<li><a id="register" data-scroll-nav="0" href="#">注销</a></li>
+					<li id="welcome">欢迎</li>
+					<li><a id="logout" data-scroll-nav="0" href="#">注销</a></li>
 					<li><a id="login" data-scroll-nav="1" href="#">登陆</a></li>
 					<li><a id="register" data-scroll-nav="2" href="./Register_basicinfo.html">注册</a></li>
 				</ul>
@@ -143,247 +242,131 @@
 			<!-- 一级分类下拉面板 -->
 			<div class="subclass_cont" id="navbox" style="height: 0px; opacity: 0; overflow: hidden;">
 				<div class="subclass_list" style="display: block;">
-					<ul class="subclass">
+					<ul class="subclass cat">
 						<li>
 							<h3 class="mcate-item-hd">
-							<span>开发</span>
+								<span>开发</span>
 							</h3>
 							<p class="mcate-item-bd">
-								<a href="/search?jobId=1">Java</a>
-								<a href="#">PHP</a> 
-								<a href="#">Python</a>
-								<a href="#">Ruby</a>
-								<a href="#">Node.js</a>
-								<a href="#">.NET</a>
-								<a href="#">ASP</a>
-								<a href="#">C#</a>
-								<a href="#">C++</a>
-								<a href="#">C</a>
-								<a href="#">Delphi</a>
-								<a href="#">Go</a>
-								<a href="#">Docker</a>
-								<a href="#">Hadoop</a>
-								<a href="#">Spark</a>
-								<a href="#">HBase</a>
-								<a href="#">Openstack</a>
-								<a href="#">数据挖掘</a>
-								<a href="#">自然语言处理</a>
-								<a href="#">推荐系统</a>
-								<a href="#">搜索引擎</a>
-								<a href="#">全栈工程师</a>
+
 							</p>
 						</li>
 						<li>
 							<h3 class="mcate-item-hd">
-							<span>移动开发及前端</span>
+								<span>移动开发及前端</span>
 							</h3>
 							<p class="mcate-item-bd">
-							<a href="#">iOS</a>
-							<a href="#">Android</a>
-							<a href="#">U3D</a>
-							<a href="#">COCOS2D-X</a>
-							<a href="#">HTML5</a>
-							<a href="#">Web前端</a>
-							<a href="#">Flash</a>
-							<a href="#">Javascript</a>
+
 							</p>
 						</li>
 						<li>
 							<h3 class="mcate-item-hd">
-							<span>测试</span>
+								<span>测试</span>
 							</h3>
 							<p class="mcate-item-bd">
-							<a href="#">测试工程师</a>
-							<a href="#">自动化测试</a>
-							<a href="#">功能测试</a>
-							<a href="#">性能测试</a>
-							<a href="#">测试开发</a>
-							<a href="#">硬件测试</a>
+
 							</p>
 						</li>
 						<li>
 							<h3 class="mcate-item-hd">
-							<span>运维</span>
+								<span>运维</span>
 							</h3>
 							<p class="mcate-item-bd">
-							<a href="#">运维工程师</a>
-							<a href="#">系统工程师</a>
-							<a href="#">网络工程师</a>
-							<a href="#">运维开发</a>
-							<a href="#">DBA</a>
+
 							</p>
 						</li>
 						<li>
 							<h3 class="mcate-item-hd">
-							<span>高端职位</span>
+								<span>高端职位</span>
 							</h3>
 							<p class="mcate-item-bd">
-							<a href="#">技术经理</a>
-							<a href="#">架构师</a>
-							<a href="#">技术总监</a>
-							<a href="#">CTO</a>
-							<a href="#">技术合伙人</a>
-							<a href="#">运维总监</a>
-							<a href="#">安全专家</a>
-							<a href="#">项目总监</a>
+
 							</p>
 						</li>
 					</ul>
 				</div>
-				
+
 				<div class="subclass_list" style="display: block;">
-					<ul class="subclass">
+					<ul class="subclass cat">
 						<li>
 							<h3 class="mcate-item-hd">
-							<span>产品经理</span>
+								<span>产品经理</span>
 							</h3>
 							<p class="mcate-item-bd">
-							<a href="#">产品经理</a>
-							<a href="#">网页产品经理</a> 
-							<a href="#">移动产品经理</a>
-							<a href="#">产品助理</a>
-							<a href="#">数据产品经理</a>
-							<a href="#">游戏策划</a>
-							<a href="#">电商产品经理</a>
+
 							</p>
 						</li>
 						<li>
 							<h3 class="mcate-item-hd">
-							<span>产品设计师</span>
+								<span>高端职位</span>
 							</h3>
 							<p class="mcate-item-bd">
-							<a href="#">网页产品设计师</a>
-							<a href="#">移动产品设计师</a>
-							</p>
-						</li>
-						<li>
-							<h3 class="mcate-item-hd">
-							<span>高端职位</span>
-							</h3>
-							<p class="mcate-item-bd">
-							<a href="#">产品总监</a>
-							<a href="#">游戏制作人</a>
-							<a href="#">产品部经理</a>
 							</p>
 						</li>
 					</ul>
 				</div>
-				
+
 				<div class="subclass_list" style="display: block;">
-					<ul class="subclass">
+					<ul class="subclass cat">
 						<li>
 							<h3 class="mcate-item-hd">
-							<span>视觉设计</span>
+								<span>视觉设计</span>
 							</h3>
 							<p class="mcate-item-bd">
-							<a href="#">UI设计师</a>
-							<a href="#">视觉设计师</a> 
-							<a href="#">网页设计师</a>
-							<a href="#">APP设计师</a>
-							<a href="#">平面设计师</a>
-							<a href="#">flash设计师</a>
-							<a href="#">美术设计师</a>
-							<a href="#">广告设计师</a>
-							<a href="#">多媒体设计师</a>
-							<a href="#">原画师</a>
-							<a href="#">游戏特效</a>
-							<a href="#">游戏界面设计师</a>
-							<a href="#">游戏场景</a>
-							<a href="#">游戏角色</a>
-							<a href="#">游戏动作</a>
 							</p>
 						</li>
 						<li>
 							<h3 class="mcate-item-hd">
-							<span>交互设计</span>
+								<span>交互设计</span>
 							</h3>
 							<p class="mcate-item-bd">
-							<a href="#">交互设计师</a>
-							<a href="#">网页交互设计师</a>
-							<a href="#">无线交互设计师</a>
-							<a href="#">硬件交互设计师</a>
 							</p>
 						</li>
 						<li>
 							<h3 class="mcate-item-hd">
-							<span>用户研究</span>
+								<span>用户研究</span>
 							</h3>
 							<p class="mcate-item-bd">
-							<a href="#">数据分析师</a>
-							<a href="#">用户研究员</a>
-							<a href="#">游戏数值策划</a>
 							</p>
 						</li>
 						<li>
 							<h3 class="mcate-item-hd">
-							<span>高端职位</span>
+								<span>高端职位</span>
 							</h3>
 							<p class="mcate-item-bd">
-							<a href="#">设计经理</a>
-							<a href="#">设计总监</a>
-							<a href="#">交互设计经理</a>
-							<a href="#">交互设计总监</a>
-							<a href="#">用户研究经理</a>
-							<a href="#">用户研究总监</a>
 							</p>
 						</li>
 					</ul>
 				</div>
-				
+
 				<div class="subclass_list" style="display: block;">
-					<ul class="subclass">
+					<ul class="subclass cat">
 						<li>
 							<h3 class="mcate-item-hd">
-							<span>运营</span>
+								<span>运营</span>
 							</h3>
 							<p class="mcate-item-bd">
-							<a href="#">运营经理</a>
-							<a href="#">运营专员</a> 
-							<a href="#">内容运营</a>
-							<a href="#">产品运营</a>
-							<a href="#">用户运营</a>
-							<a href="#">活动运营</a>
-							<a href="#">数据运营</a>
-							<a href="#">新媒体运营</a>
-							<a href="#">商家运营</a>
-							<a href="#">品类运营</a>
-							<a href="#">游戏运营</a>
-							<a href="#">网络推广</a>
-							<a href="#">海外运营</a>
-							<a href="#">网站运营</a>
 							</p>
 						</li>
 						<li>
 							<h3 class="mcate-item-hd">
-							<span>编辑</span>
+								<span>编辑</span>
 							</h3>
 							<p class="mcate-item-bd">
-							<a href="#">副主编</a>
-							<a href="#">内容编辑</a>
-							<a href="#">文案策划</a>
-							<a href="#">记者</a>
 							</p>
 						</li>
 						<li>
 							<h3 class="mcate-item-hd">
-							<span>客服</span>
+								<span>客服</span>
 							</h3>
 							<p class="mcate-item-bd">
-							<a href="#">售前咨询</a>
-							<a href="#">售后服务</a>
-							<a href="#">淘宝客服</a>
-							<a href="#">客服经理</a>
 							</p>
 						</li>
 						<li>
 							<h3 class="mcate-item-hd">
-							<span>高端职位</span>
+								<span>高端职位</span>
 							</h3>
 							<p class="mcate-item-bd">
-							<a href="#">运营总监 主编 COO 客服总监</a>
-							<a href="#">主编</a>
-							<a href="#">COO</a>
-							<a href="#">客服总监</a>
 							</p>
 						</li>
 					</ul>
@@ -393,28 +376,26 @@
 	</div>
 	<div class="condition_cont container">
 		<div class="form-group">
-			<label class="select_label">选项title</label>
+			<label class="select_label">城市：</label>
 			<select class="form-control" id="select_1">
 				<option>选项1</option>
 				<option>选项2</option>
 				<option>选项3</option>
 				<option>选项4</option>
 			</select>
-			<label class="select_label">选项title</label>
-			<select class="form-control" id="select_1">
-				<option>选项1</option>
-				<option>选项2</option>
-				<option>选项3</option>
-				<option>选项4</option>
-			</select>
+			<label class="select_label">工资：</label>
+			<input class="form-control" id="select_1">
+			~
+			<input class="form-control" id="select_1">
+			万元/年
+			</input>
 			<button type="button" class="search btn" onclick="matching()">匹配</button>
-			<button type="button" class="search btn">搜索</button>
+			<button type="button" class="search btn" onclick="load_item()">搜索</button>
 		</div>
 	</div>
 
 	<div id="_start">
-		<div id='login_close' class="glyphicon glyphicon-remove"
-			style="display: none;"></div>
+		<div id='login_close' class="glyphicon glyphicon-remove" style="display: none;"></div>
 		<br />
 		<!--登录框-->
 		<div id="login_container">
@@ -436,6 +417,7 @@
 	<div class="page_cont container">
 		<div class="joblist_cont container">
 			<ul class="job_list">
+				<!--
 				<li class="job_item">
 					<div class="item_con job_title">
 						<a class="job_name" >
@@ -443,28 +425,33 @@
 							<span class="name">工作名称</span>
 						</a>
 						<p class="job_salary">
-							3100-4500<i class="unit">元/月</i>
+							3100-4500<i class="unit">万元/月</i>
 						</p>
 						<div class="job_wel">
+						
 							<span>福利1</span>
 							<span>福利2</span>
 							<span>福利3</span>
 							<span>福利2</span>
 							<span>福利5</span>
+						
 						</div>
 					</div>
 
 					<div class="item_con job_comp">
 						<a class="comp_name">公司名称</a>
 						<p class="job_require">
-							<span class="">要求1</span>
-							<span class="">要求2</span>
-							<span class="">要求3</span>
+						
+							<span>要求1</span>
+							<span>要求2</span>
+							<span>要求3</span>
+						
 						</p>
 					</div>
 
 					<button class="item_con detail" onclick="jumpToInfoPage()">详细信息</button>
 				</li>
+				-->
 			</ul>
 		</div>
 		<div class="pages_cont container">
@@ -494,8 +481,9 @@
 		</div>
 	</footer>
 
-<!-- Filter JS -->
-<script src="js/filter.js"></script>	
+	<!-- Filter JS -->
+	<script src="js/filter.js"></script>
 
 </body>
+
 </html>

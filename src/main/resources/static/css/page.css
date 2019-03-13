@@ -1,13 +1,8 @@
 .page_cont{
-	height:1000px;
 	background-color:#FFF;
 	opacity:0.9;
 	margin-bottom:10px;
 	border-radius:0 0 20px 20px;
-}
-.joblist_cont{
-	height:950px;
-	
 }
 .pages_cont{
 	height:50px;
@@ -122,6 +117,8 @@
 .job_item .job_require span{
 	background-color:#BFEFFF;
 	padding:4px;
+	margin-right:3px;
+	margin-bottom:3px;
 	font-size:10px;
 	color:#000;
 	border-radius:5px;
