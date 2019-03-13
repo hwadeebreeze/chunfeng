@@ -42,6 +42,7 @@
 
 	<script type="text/javascript">
 		var id;
+		var showList;
 		$(document).ready(function () {
 			id = $.cookie("id");
 			if (id != undefined) {
@@ -81,10 +82,10 @@
 				var cat2 = data[item].top_class;
 				var cat = [['技术', '开发', '移动开发及前端', '测试', '运维', '高端职位'], ['产品', '产品经理', '高端职位'], ['设计', '视觉设计', '交互设计', '用户研究', '高端职位'], ['运营', '运营', '编辑', '客服', '高端职位']];
 				for (var i = 0; i < 4; i++) {
-					if (cat1==cat[i][0]) {
+					if (cat1 == cat[i][0]) {
 						index1 = i;
 						for (var j = 1; j < cat[index1].length; j++) {
-							if (cat2==cat[index1][j]) {
+							if (cat2 == cat[index1][j]) {
 								index2 = j;
 								break;
 							}
@@ -97,54 +98,73 @@
 
 				var new_a = document.createElement('a');
 				new_a.innerText = data[item].name;
+
+				new_a.onclick = new function () {
+					$.ajax({
+						async: false,
+						type: "post",
+						url: "/search",
+						data: {
+							position: data[item].id
+						},
+						success: function (result) {
+							showList = result;
+							window.location.reload;
+						}
+					});
+				};
 				p.appendChild(new_a);
 
 			}
 
 		}
 
-		function load_item(city, jobname, salary, companyname, welfare, capacity, item) {
-			// var city = '城市';
-			// var jobname =  '工作名称';
-			// var salary = '3-5';
-			// var companyname = '公司名称';
-			// var welfare=['词条1','词条2','词条3','词条4','词条5'];
-			// var capacity=['词条1','词条2','词条3','词条4','词条5'];
-			var joblist = document.getElementsByClassName("job_list")[0];
-			var html = '<div class="item_con job_title">';
-			html += '<a class="job_name" >';
-			html += '<span class="address">' + city + '</span> |';
-			html += '<span class="name">' + jobname + '</span>';
-			html += '</a>';
-			html += '<p class="job_salary">';
-			html += salary + '<i class="unit">万元/月</i>';
-			html += '</p>';
-			html += '<div class="job_wel">';
-			html += '</div>';
-			html += '</div>';
-			html += '<div class="item_con job_comp">';
-			html += '<a class="comp_name">' + companyname + '</a>';
-			html += '<p class="job_require">';
-			html += '</p>';
-			html += '</div>';
-			html += '<button class="item_con detail" onclick="jumpToInfoPage()">详细信息</button>';
-			var li = document.createElement('li');
-			li.className = "job_item";
-			joblist.appendChild(li);
-			li.innerHTML = html;
+		function load_item() {
 
-			var wal_container = document.getElementsByClassName("job_wel")[item];
-			var req_container = document.getElementsByClassName("job_require")[item];
-			for (var i = 0; i < welfare.length; i++) {
-				var new_span = document.createElement('span');
-				new_span.innerText = welfare[i];
-				wal_container.appendChild(new_span);
+			for (var k = 0; k < showList.length; k++) {
+				var city = showList[k].city;
+				var jobname = showList[k].title;
+				var salary = showList[k].salartLeast + "-" + showList[k].salartMost;
+				var companyname = '公司名称';
+				var welfare = ['词条1', '词条2', '词条3', '词条4', '词条5'];
+				var capacity = ['词条1', '词条2', '词条3', '词条4', '词条5'];
+				var joblist = document.getElementsByClassName("job_list")[0];
+				var html = '<div class="item_con job_title">';
+				html += '<a class="job_name" >';
+				html += '<span class="address">' + city + '</span> |';
+				html += '<span class="name">' + jobname + '</span>';
+				html += '</a>';
+				html += '<p class="job_salary">';
+				html += salary + '<i class="unit">万元/月</i>';
+				html += '</p>';
+				html += '<div class="job_wel">';
+				html += '</div>';
+				html += '</div>';
+				html += '<div class="item_con job_comp">';
+				html += '<a class="comp_name">' + companyname + '</a>';
+				html += '<p class="job_require">';
+				html += '</p>';
+				html += '</div>';
+				html += '<button class="item_con detail" onclick="jumpToInfoPage()">详细信息</button>';
+				var li = document.createElement('li');
+				li.className = "job_item";
+				joblist.appendChild(li);
+				li.innerHTML = html;
+
+				var wal_container = document.getElementsByClassName("job_wel")[k];
+				var req_container = document.getElementsByClassName("job_require")[k];
+				for (var i = 0; i < welfare.length; i++) {
+					var new_span = document.createElement('span');
+					new_span.innerText = welfare[i];
+					wal_container.appendChild(new_span);
+				}
+				for (var i = 0; i < capacity.length; i++) {
+					var new_span = document.createElement('span');
+					new_span.innerText = capacity[i];
+					req_container.appendChild(new_span);
+				}
 			}
-			for (var i = 0; i < capacity.length; i++) {
-				var new_span = document.createElement('span');
-				new_span.innerText = capacity[i];
-				req_container.appendChild(new_span);
-			}
+
 		}
 
 		function MakeForm() {
