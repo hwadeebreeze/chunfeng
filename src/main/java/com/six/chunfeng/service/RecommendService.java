@@ -14,6 +14,7 @@ import com.six.chunfeng.domain.CompanyInfo;
 import com.six.chunfeng.domain.JobInfo;
 import com.six.chunfeng.domain.TagInfo;
 import com.six.chunfeng.domain.User;
+import com.six.chunfeng.mapper.InfoMapper;
 import com.six.chunfeng.mapper.RecommendMapper;
 
 @Service
@@ -21,6 +22,8 @@ public class RecommendService
 {
 	@Autowired
 	private RecommendMapper mapper;
+	@Autowired
+	private InfoMapper infoMapper;
 	
 	static final int itemsPerPage = 7;
 	TagInfo tag; User user;
@@ -144,14 +147,14 @@ public class RecommendService
 		int first = (curPage-1)*itemsPerPage, last = Math.min(first+itemsPerPage, fit.length);
 		log("匹配成功,最适合您的职位是:");
 		List<JobInfo> res = new ArrayList<JobInfo>();
-		List<Integer> resInt = new ArrayList<Integer>();
 		for(int i=first;i<last;++i)
 		{
-			res.add(mapper.selectJobInfoById(fit[i][0]));
-			resInt.add(fit[i][0]);
+			JobInfo info = mapper.selectJobInfoById(fit[i][0]);
+			info.setCapacity(infoMapper.getCapacityName("("+info.getCapacity()+")").toString().split("\\[")[1].split("\\]")[0]);
+			info.setWelfare(infoMapper.getWelfareName("("+info.getWelfare()+")").toString().split("\\[")[1].split("\\]")[0]);
+			res.add(info);
 		}
 		//log(res.toString());
-		//log(resInt.toString());
 		log("具体信息是:");
 		log(res.toString());
 		log("当前显示第 "+curPage+" 页的数据,即前["+first+","+last+")条.");

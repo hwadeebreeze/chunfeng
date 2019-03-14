@@ -36,14 +36,6 @@ public class IndexController {
 		return indexService.getPositionDic();
 	}
 	
-	@PostMapping("/getJobList")
-	@ResponseBody
-	public List<Map<String,Object>> getJobList(@ModelAttribute("position") int position,
-			@ModelAttribute("city") String city, @ModelAttribute("salaryLeast") int salaryLeast,
-			@ModelAttribute("salaryMost") int salaryMost){
-		
-		
-	}
 	
 	@PostMapping("/getCompanyList")
 	@ResponseBody
