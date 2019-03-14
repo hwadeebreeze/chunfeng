@@ -47,6 +47,7 @@ public class IndexController {
 		return indexService.getPositionDic();
 	}
 	
+
 	@PostMapping("/searchJobList")
 	@ResponseBody
 	public List<JobInfo> getJobList(@ModelAttribute("position") String position,
@@ -61,6 +62,7 @@ public class IndexController {
 						salaryMost.equals("")?null:Integer.valueOf(salaryMost));
 		return searchService.changePage(curPage.equals("")?0:Integer.valueOf(curPage));
 	}
+
 	
 	@PostMapping("/recommendJobList")
 	@ResponseBody

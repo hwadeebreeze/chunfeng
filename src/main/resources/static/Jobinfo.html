@@ -16,6 +16,8 @@
 	<link href="css/footer.css" rel="stylesheet">
 	<!-- Style CSS -->
 	<link href="css/style.css" rel="stylesheet">
+  <!-- Select logo -->
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 	
 	<!-- 引入 ECharts 文件 -->
     <script src="js/echarts.common.min.js"></script>
@@ -114,12 +116,175 @@
 			indus_container.appendChild(new_span);
 			}
 		}
+        function getChartData(){
+            myPieChart.showLoading();
+            myBarChart.showLoading();
+            $.post("/chart",
+            {
+                id:1
+            },
+            function(data,status){
+            	//alert(data instanceof JSON);
+                //alert(data.LessTen);
+         // 基于准备好的dom，初始化echarts饼图实例
+        var myPieChart = echarts.init(document.getElementById('cont_pie'));
+        // 指定图表的配置项和数据
+        var option = {
+                backgroundColor: '#F0F8FF',
+
+                title: {
+                    text: '薪资形势分析',
+                    left: 'center',
+                    top: 20,
+                    textStyle: {
+                        color: 'rgba(25,25,112, 1)'
+                    }
+                },
+
+                tooltip : {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                
+                series : [
+                    {
+                        name:'访问来源',
+                        type:'pie',
+                        radius : '55%',
+                        center: ['50%', '50%'],
+                       //data:[],
+                        data:[
+                            {value:data.LessTen, name:'<10万'},
+                            {value:data.TenToFif, name:'10万-15万'},
+                            {value:data.FifToThir, name:'15万-30万'},
+                            {value:data.ThirToFif, name:'30万-50万'},
+                            {value:data.FifToHun, name:'50万-100万'},
+                            {value:data.MoreHun, name:'>100万'},
+                        ].sort(function (a, b) { return a.value - b.value; }),
+                        roseType: 'radius',
+                        label: {
+                            normal: {
+                                textStyle: {
+                                    color: 'rgba(25,25,112, 1)',
+                                    fontWeight:"bolder",
+                                    fontSize:16
+                                }
+                            }
+                        },
+                        labelLine: {
+                            normal: {
+                                lineStyle: {
+                                    color: 'rgba(25,25,112, 1)'
+                                },
+                                smooth: 0.2,
+                                length: 10,
+                                length2: 20
+                            }
+                        },
+                        itemStyle: {
+                            normal: {
+                                color: '#4169E1',
+                                shadowBlur: 200,
+                                shadowColor: 'rgba(0, 0, 0, 0.7)'
+                            }
+                        },
+
+                        animationType: 'scale',
+                        animationEasing: 'elasticOut',
+                        animationDelay: function (idx) {
+                            return Math.random() * 200;
+                        }
+                    }
+                ]
+        };
+        myPieChart.hideLoading();
+        // 使用刚指定的配置项和数据显示图表。
+        myPieChart.setOption(option);
+        delete data["LessTen"];
+        delete data["TenToFif"];
+        delete data["FifToThir"];
+        delete data["ThirToFif"];
+        delete data["FifToHun"];
+        delete data["MoreHun"];
+        //alert(JSON.stringify(data));
+
+
+        //柱状图：
+        var xA = [];
+        var yA = [];
+        for (var key in data) {
+            xA.push(key);
+            yA.push(data[key]);
+        }
+        console.log(xA);
+        // 基于准备好的dom，初始化echarts实例
+        var myBarChart = echarts.init(document.getElementById('cont_bar'));
+        // 指定图表的配置项和数据
+        var option = {
+                title: {
+                    text: '福利形势分析',
+                    left: 'center',       
+                    top: 20,
+                    textStyle: {
+                        color: 'rgba(25,25,112, 1)'
+                    }
+                },
+                tooltip: {},
+                grid: { // 控制图的大小，调整下面这些值就可以，
+                        x: 70,//控制x轴文字与底部的距离
+                        y2: 120 // y2可以控制倾斜的文字狱最右边的距离，放置倾斜的文字超过显示区域
+                        }, 
+                xAxis: {
+                    data: xA,
+                    axisLabel: { 
+                        interval: 0,    //强制文字产生间隔
+                        rotate: 45,     //文字逆时针旋转45°       
+                        show: true,
+                        textStyle: {
+                            color:'rgba(25,25,112, 1)',                              
+                            fontSize:16
+                        }
+                    },
+                    axisLine:{
+                        　　　　show:true,
+                             lineStyle:{
+                                 color:'rgba(25,25,112, 1)'
+                             }
+                    }  
+                },
+                yAxis: {axisLabel: {        
+                    show: true,
+                    textStyle: {
+                        color:'rgba(25,25,112, 1)',                              
+                        fontSize:16
+                    }
+                },
+                axisLine:{
+                    　　　　show:true,
+                         lineStyle:{
+                             color:'rgba(25,25,112, 1)'
+                         }
+                }},
+                series: [{
+                    name: '福利',
+                    type: 'bar',
+                    data: yA,
+                    color: '#00CED1'
+                }],
+        };
+        myBarChart.hideLoading();
+        // 使用刚指定的配置项和数据显示图表。
+        myBarChart.setOption(option);
+        
+            });
+        }
+
 	</script>
 
 </head>
 
 <body>
-<!-- <header class="header">
+<header class="header">
 	<nav class="navbar navbar-default navbar-fixed-top box-shadow-10">
 		<div class="collapse navbar-collapse container top_head">
 			<ul class="nav navbar-nav navbar-right">
@@ -130,7 +295,7 @@
 			</ul>				
 		</div>
 	</nav>
-</header> -->
+</header>
 
 <div id="_report">
 	<div id="report_close" class="glyphicon glyphicon-remove" style="display:none">
@@ -139,161 +304,8 @@
 	<div id="report_container">
 		<div class="graph_cont" id="cont_pie">
 		</div>
-		<!-- 饼图脚本 -->
-		<script type="text/javascript">
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('cont_pie'));
-        // 指定图表的配置项和数据
-        var option = {
-        		backgroundColor: '#F0F8FF',
-
-        	    title: {
-        	        text: '薪资形势分析',
-        	        left: 'center',
-        	        top: 20,
-        	        textStyle: {
-        	            color: 'rgba(25,25,112, 1)'
-        	        }
-        	    },
-
-        	    tooltip : {
-        	        trigger: 'item',
-        	        formatter: "{a} <br/>{b} : {c} ({d}%)"
-        	    },
-        	    
-        	    series : [
-        	        {
-        	            name:'访问来源',
-        	            type:'pie',
-        	            radius : '55%',
-        	            center: ['50%', '50%'],
-        	           //data:[],
-        	            data:[
-        	                {value:335, name:'直接访问'},
-        	                {value:310, name:'邮件营销'},
-        	                {value:274, name:'联盟广告'},
-        	                {value:235, name:'视频广告'},
-        	                {value:400, name:'搜索引擎'}
-        	            ].sort(function (a, b) { return a.value - b.value; }),
-        	            roseType: 'radius',
-        	            label: {
-        	                normal: {
-        	                    textStyle: {
-        	                        color: 'rgba(25,25,112, 1)',
-        	                        fontWeight:"bolder",
-        	                        fontSize:16
-        	                    }
-        	                }
-        	            },
-        	            labelLine: {
-        	                normal: {
-        	                    lineStyle: {
-        	                        color: 'rgba(25,25,112, 1)'
-        	                    },
-        	                    smooth: 0.2,
-        	                    length: 10,
-        	                    length2: 20
-        	                }
-        	            },
-        	            itemStyle: {
-        	                normal: {
-        	                    color: '#4169E1',
-        	                    shadowBlur: 200,
-        	                    shadowColor: 'rgba(0, 0, 0, 0.7)'
-        	                }
-        	            },
-
-        	            animationType: 'scale',
-        	            animationEasing: 'elasticOut',
-        	            animationDelay: function (idx) {
-        	                return Math.random() * 200;
-        	            }
-        	        }
-        	    ]
-        };
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-        //异步载入数据
-        $.get('salary_data.json').done(function (salary_data) {
-    // 填入数据
-//    myChart.setOption({
-//        data:salarydata.maps..sort(function (a, b) { return a.value - b.value; })
-        //maps为List<map> 元素示例：{value:335, name:'直接访问'}
-//    });
-});
-    </script>
-		
 		<div class="graph_cont" id="cont_bar">
 		</div>
-		<!-- 饼图脚本 -->
-		<script type="text/javascript">
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('cont_bar'));
-        // 指定图表的配置项和数据
-        var option = {
-        		title: {
-                    text: '福利形势分析',
-                    left: 'center',       
-                    top: 20,
-        	        textStyle: {
-        	            color: 'rgba(25,25,112, 1)'
-        	        }
-                },
-                tooltip: {},           
-                xAxis: {
-                    data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"],
-                    axisLabel: {        
-                        show: true,
-                        textStyle: {
-                        	color:'rgba(25,25,112, 1)',                    	    	 
-               	    	    fontSize:16
-                        }
-                    },
-                    axisLine:{
-                    	　　　　show:true,
-                    	     lineStyle:{
-                    	    	 color:'rgba(25,25,112, 1)'
-                    	     }
-                    }  
-                },
-                yAxis: {axisLabel: {        
-                    show: true,
-                    textStyle: {
-                    	color:'rgba(25,25,112, 1)',                    	    	 
-           	    	    fontSize:16
-                    }
-                },
-                axisLine:{
-                	　　　　show:true,
-                	     lineStyle:{
-                	    	 color:'rgba(25,25,112, 1)'
-                	     }
-                }},
-                series: [{
-                    name: '福利',
-                    type: 'bar',
-                    data: [5, 20, 36, 10, 10, 20],
-                    color: '#00CED1'
-                }],
-		};
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-        //异步加载数据
-/*        $.get('data.json').done(function (data) {
-        	// 填入数据
-        	myChart.setOption({
-       		xAxis: {
-              data: data.categories //横坐标值数组
-            },
-            series: [{
-            	// 根据名字对应到相应的系列
-            	name: '销量',
-            	data: data.data  //纵坐标值数组
-            	}]
-            });
-        });                   */
-    </script>
-    
 	</div>
 </div>
 
@@ -321,7 +333,7 @@
 			<label id="wel_la">工作福利：
 			</label>
 		</div>
-		<button id="report" class="jobinfo_btn">我要匹配</button>
+		<button id="report" class="jobinfo_btn" onclick="getChartData()">我要匹配</button>
 		<button  class="jobinfo_btn" onclick="load_label()">投递简历</button>
 	</div>
 	
