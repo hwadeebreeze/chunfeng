@@ -25,7 +25,8 @@ public class InfoService {
 	public JobInfo getJobInfo(int jobId){
 		JobInfo info = infoMapper.getJobInfoById(jobId);
 		info.setCapacity(infoMapper.getCapacityName("("+info.getCapacity()+")").toString().split("\\[")[1].split("\\]")[0]);
-		info.setWelfare(infoMapper.getWelfareName("("+info.getWelfare()+")").toString().split("\\[")[1].split("\\]")[0]);
+		info.setWelfare(info.getWelfare().equals("")
+				?"":infoMapper.getWelfareName("("+info.getWelfare()+")").toString().split("\\[")[1].split("\\]")[0]);
 		log.debug("JobInfo: " + info);
 		return info;
 	}

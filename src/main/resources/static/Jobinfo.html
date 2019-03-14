@@ -36,8 +36,16 @@
 			console.log(companyInfo);
 
 			document.getElementById("job_title").innerText = jobInfo.title;
-			document.getElementById("salary_least").innerText = jobInfo.salaryLeast;
-			document.getElementById("salary_most").innerText = jobInfo.salaryMost;
+            if(jobInfo.salaryLeast!=0 && jobInfo.salaryMost!=0){
+                document.getElementById("salary_least").innerText = jobInfo.salaryLeast;
+			    document.getElementById("salary_most").innerText = jobInfo.salaryMost;
+            }else{
+                document.getElementById("salary_least").innerText="面议";
+                document.getElementById("salary_most").style.display="none";
+                document.getElementById("salaryCode").style.display="none";
+
+            }
+			
 			document.getElementById("company_name").innerText = companyInfo.name;
 			document.getElementById("work_city").innerText = jobInfo.city;
 			document.getElementById("age_least").innerText = jobInfo.ageLeast;
@@ -62,6 +70,7 @@
 		});
 		function getJobInfo(){
 			var jobId = window.location.href.split("#")[1];
+            console.log(jobId);
 			var result;
 			$.ajax({
                 type: "get",
@@ -117,6 +126,8 @@
 			}
 		}
         function getChartData(){
+            var myPieChart = echarts.init(document.getElementById('cont_pie'));
+            var myBarChart = echarts.init(document.getElementById('cont_bar'));
             myPieChart.showLoading();
             myBarChart.showLoading();
             $.post("/chart",
@@ -127,7 +138,7 @@
             	//alert(data instanceof JSON);
                 //alert(data.LessTen);
          // 基于准备好的dom，初始化echarts饼图实例
-        var myPieChart = echarts.init(document.getElementById('cont_pie'));
+        //var myPieChart = echarts.init(document.getElementById('cont_pie'));
         // 指定图表的配置项和数据
         var option = {
                 backgroundColor: '#F0F8FF',
@@ -218,7 +229,7 @@
         }
         console.log(xA);
         // 基于准备好的dom，初始化echarts实例
-        var myBarChart = echarts.init(document.getElementById('cont_bar'));
+        //var myBarChart = echarts.init(document.getElementById('cont_bar'));
         // 指定图表的配置项和数据
         var option = {
                 title: {
@@ -284,7 +295,7 @@
 </head>
 
 <body>
-<header class="header">
+<!-- <header class="header">
 	<nav class="navbar navbar-default navbar-fixed-top box-shadow-10">
 		<div class="collapse navbar-collapse container top_head">
 			<ul class="nav navbar-nav navbar-right">
@@ -295,7 +306,7 @@
 			</ul>				
 		</div>
 	</nav>
-</header>
+</header> -->
 
 <div id="_report">
 	<div id="report_close" class="glyphicon glyphicon-remove" style="display:none">
@@ -316,7 +327,7 @@
 	<div class="jobinfo">
 		<table>
 		<tr>
-			<td id="salary">薪资：<span id="salary_least">薪资下限</span> ~ <span id="salary_most">薪资上限</span></td>
+			<td id="salary">薪资：<span id="salary_least">薪资下限</span><span id="salaryCode">~</span><span id="salary_most">薪资上限</span></td>
 			<td>公司名称：<span id="company_name">公司名称信息</span></td>
 			<td>工作地点：<span id="work_city">工作地点信息</span></td>
 		</tr>

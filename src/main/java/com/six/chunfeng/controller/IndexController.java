@@ -65,14 +65,14 @@ public class IndexController {
 	
 	@PostMapping("/recommendJobList")
 	@ResponseBody
-	public List<JobInfo> recommendJobList(@ModelAttribute("userId") int userId, @ModelAttribute("curPage") String curPage){
-		recommendService.recommend(userId);
+	public List<JobInfo> recommendJobList(@ModelAttribute("userId") String userId, @ModelAttribute("curPage") String curPage){
+		recommendService.recommend(Integer.valueOf(userId));
 		return recommendService.changePage(curPage.equals("")?0:Integer.valueOf(curPage));
 	}
 	
 	@PostMapping("/getSearchCompanyList")
 	@ResponseBody
-	public List<CompanyInfo> getSearchCompanyList(@ModelAttribute("curPage") Integer curPage){
+	public List<CompanyInfo> getSearchCompanyList(@ModelAttribute("curPage") String curPage){
 		List<JobInfo> list = searchService.changePage(curPage.equals("")?0:Integer.valueOf(curPage));
 		List<Integer> userId = new ArrayList<Integer>();
 		for(int i=0;i<list.size();i++){
@@ -83,7 +83,7 @@ public class IndexController {
 	
 	@PostMapping("/getRecommendCompanyList")
 	@ResponseBody
-	public List<CompanyInfo> getRecommendCompanyList(@ModelAttribute("curPage") Integer curPage){
+	public List<CompanyInfo> getRecommendCompanyList(@ModelAttribute("curPage") String curPage){
 		List<JobInfo> list = recommendService.changePage(curPage.equals("")?0:Integer.valueOf(curPage));
 		List<Integer> userId = new ArrayList<Integer>();
 		for(int i=0;i<list.size();i++){
