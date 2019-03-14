@@ -28,7 +28,7 @@
 .top_head{
 	height:100%;
 }
-.welcome{
+#welcome{
 	font-size:15px;
 	font-weight:bold;
 	margin-top:10px !important;
