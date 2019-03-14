@@ -18,6 +18,9 @@
 	font-weight:900;
 	font-family:sans-serif;
 }
+.job_title a{
+	color: #FFF !important;
+}
 .jobinfo{
 	width:100%;
 	text-indent:20px;

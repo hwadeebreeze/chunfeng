@@ -67,7 +67,8 @@ public class SearchService
 		{
 			JobInfo info = mapper.selectJobInfoById(list.get(i));
 			info.setCapacity(infoMapper.getCapacityName("("+info.getCapacity()+")").toString().split("\\[")[1].split("\\]")[0]);
-			info.setWelfare(infoMapper.getWelfareName("("+info.getWelfare()+")").toString().split("\\[")[1].split("\\]")[0]);
+			info.setWelfare(info.getWelfare().equals("")
+					?"":infoMapper.getWelfareName("("+info.getWelfare()+")").toString().split("\\[")[1].split("\\]")[0]);
 			res.add(info);
 		}
 		return res;

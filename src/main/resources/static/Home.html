@@ -78,9 +78,9 @@
 					load_filter(data);
 				}
 			});
-			console.log("position:" + position + "city:" + city + "salary:" + salaryLeast + "-" + salaryMost + "curPage:" + curPage);
+			console.log();
 
-			if ((method == undefined ? 1 : method) == 1) {
+			if ((method == undefined ? "1" : method) == "1") {
 				$.ajax({
 					type: "post",
 					url: "/searchJobList",
@@ -98,7 +98,7 @@
 						var companyInfo;
 						$.ajax({
 							type: "post",
-							url: "/getCompanyList",
+							url: "/getSearchCompanyList",
 							async: false,
 							data: {
 								curPage: curPage == undefined ? "" : curPage
@@ -113,13 +113,13 @@
 					}
 				});
 			} else {
+				console.log($.cookie("id"));
 				$.ajax({
 					type: "post",
 					url: "/recommendJobList",
-					dataType: "json",
 					contentType: "application/json;charset=UTF-8",
 					data: {
-						userId: id,
+						userId: "1",
 						curPage: curPage == undefined ? "" : curPage
 					},
 					success: function (data) {
@@ -127,7 +127,7 @@
 						var companyInfo;
 						$.ajax({
 							type: "post",
-							url: "/getCompanyList",
+							url: "/getRecommendCompanyList",
 							async: false,
 							data: {
 								curPage: curPage == undefined ? "" : curPage
@@ -148,6 +148,10 @@
 
 		});
 
+
+		function search(){
+		
+		}
 		function getUrlParms(name) {
 			let tstr = window.location.href;
 			let index = tstr.indexOf('?')
@@ -201,8 +205,8 @@
 				var jobname = data[k].title;
 				var salary = data[k].salaryLeast + "-" + data[k].salaryMost;
 				var companyname = companyInfo[k].name;
-				var welfare = data[k].welfare;
-				var capacity = data[k].capacity;
+				var welfare =data[k].welfare.split(",");
+				var capacity = data[k].capacity.split(",");
 
 				var joblist = document.getElementsByClassName("job_list")[0];
 				var html = '<div class="item_con job_title">';
@@ -221,25 +225,30 @@
 				html += '<p class="job_require">';
 				html += '</p>';
 				html += '</div>';
-				html += '<button class="item_con detail" onclick="jumpToInfoPage()">详细信息</button>';
+				//html += '<label class="item_con detail" id="'+k+'" href="">详细信息</label>';
 				var li = document.createElement('li');
+				var new_label = document.createElement('a');
 				li.className = "job_item";
 				joblist.appendChild(li);
 				li.innerHTML = html;
+				li.appendChild(new_label);
+				new_label.className="item_con detail";
+				new_label.href = "./Jobinfo.html#"+parseInt(data[k].id);
+				console.log(new_label.href);
+				new_label.innerText="详细信息";
+
 
 				var wal_container = document.getElementsByClassName("job_wel")[k];
 				var req_container = document.getElementsByClassName("job_require")[k];
-				for (var i = 0; i < welfare.length > 5 ? 5 : welfare.length; i++) {
+				for (var i = 0; i < welfare.length; i++) {
 					var new_span = document.createElement('span');
 					new_span.innerText = welfare[i];
 					wal_container.appendChild(new_span);
-
 				}
-				for (var i = 0; i < capacity.length > 5 ? 5 : capacity.length; i++) {
+				for (var i = 0; i < capacity.length; i++) {
 					var new_span = document.createElement('span');
 					new_span.innerText = capacity[i];
 					req_container.appendChild(new_span);
-					if (i == 5) break;
 				}
 			}
 
@@ -486,7 +495,7 @@
 			万元/年
 			</input>
 			<button type="button" class="search btn" onclick="matching()">匹配</button>
-			<button type="button" class="search btn" onclick="load_item()">搜索</button>
+			<button type="button" class="search btn" onclick="search()">搜索</button>
 		</div>
 	</div>
 
