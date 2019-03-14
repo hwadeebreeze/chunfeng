@@ -6,13 +6,13 @@
 	
    <script src="./search/js/jquery.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="./search/css/bootstrap.css">
     <script src="./search/js/bootstrap.min.js"></script>
 
     <link href="./search/css/bootstrap-select.css" rel="stylesheet">
     <script src="./search/js/bootstrap-select.js"></script>
 
-    <script src="js/jquery.cookie.js"></script>
+    <script src="./js/jquery.cookie.js"></script>
 
 	<!-- Header CSS -->
 	<link href="./css/header.css" rel="stylesheet">
@@ -24,38 +24,46 @@
 	<link href="./css/register.css" rel="stylesheet">
 	<!-- Search CSS -->
 	<link href="./search/css/search.css" rel="stylesheet">
+	<!-- Select logo -->
+	<link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 	
     <script type="text/javascript">
 
+        var welfare;
+        var position;
+        var industry;
+        var capacity;
         init();
 
 
-        $(document).ready(function() {
-            var id = $.cookie("id");
-            if(id!=undefined){
-                $.ajax({
-                    type: "get",
-                    url: "/tagInfo?id="+id,
-                    success: function (data) {
-                        console.log(data);
-                        document.getElementById("worktime").placeholder = data.workYear;
-                        document.getElementById("low_salary").placeholder = data.salaryLeast;
-                        document.getElementById("high_salary").placeholder = data.salaryMost;
+        // $(document).ready(function() {
+        //     var id = $.cookie("id");
+        //     if(id!=undefined){
+        //         $.ajax({
+        //             type: "get",
+        //             url: "/tagInfo?id="+id,
+        //             success: function (data) {
+        //                 console.log(data);
+        //                 document.getElementById("worktime").placeholder = data.workYear;
+        //                 document.getElementById("low_salary").placeholder = data.salaryLeast;
+        //                 document.getElementById("high_salary").placeholder = data.salaryMost;
                         
-                        var city_selector = document.getElementById("city_select");
-                        console.log(city_selector.length);
-                        for(var i=0;i<city_selector.length;i++){
-                            if(city_selector[i].innerText==data.city){
-                                city_selector[i].selected = true;
-                                city_selector.options[0].remove(0);
-                                break;
-                            }
-                        }
-                    }
-                });
-            }
+        //                 var city_selector = document.getElementById("city_select");
+        //                 console.log(city_selector.length);
+        //                 for(var i=0;i<city_selector.length;i++){
+        //                     if(city_selector[i].innerText==data.city){
+        //                         city_selector[i].selected = true;
+        //                         city_selector.options[0].remove(0);
+        //                         break;
+        //                     }
+        //                 }
+
+                        
+        //             }
+        //         });
+        //     }
 		
-	    });
+	    // });
         function init() {
             initInfo();
         }
@@ -63,206 +71,265 @@
         function loadSkillInfo() {
 
             // 接口获取数据
-            // $.ajax({
-            //     type: "get",
-            //     url: "http://localhost:8000/data/orange_info/",
-            //     // xhrFields: {withCredentials: true},
-            //     success: function (data) {
-            //
-            //         var area = document.getElementById("id_select");
-            //         area.options.length = 0;
-            //         result = "";
-            //
-            //         if (data.status === 0) {
-            //             result = data.data;
-            //             for (var item in result) {
-            //                 area.options.add(new Option(result[item], result[item]));
-            //             }
-            //             $('.selectpicker').selectpicker('refresh');
-            //             // $('.selectpicker').selectpicker('render');
-            //         } else {
-            //             controls.log(data)
-            //         }
-            //     }
-            // });
+            $.ajax({
+                type: "get",
+                url: "/capacityDic",
+                success: function (data) {
+                    console.log(data);
+                    capacity = data;
+                    var area = document.getElementById("skill_select");
+                        for (var item in data) {
+                            area.options.add(new Option(data[item].name, data[item].name));
+                        }
+                        $("#skill_select").selectpicker('refresh');
+                        // $('.selectpicker').selectpicker('render');
+                }
+            });
 
             // 默认数据
-            var area = document.getElementById("skill_select");
-            area.options.length = 0;
-            result = {
-                "6": "技能1",
-                "7": "技能2",
-                "8": "技能3",
-                "9": "技能4",
-                "10": "技能5",
-                "11": "技能6",
-                "17": "技能7",
-                "18": "技能8",
-                "19": "技能9",
-                "20": "技能10"
-            };
-            for (var item in result) {
-                area.options.add(new Option(result[item], result[item]));
-            }
+            // var area = document.getElementById("skill_select");
+            // area.options.length = 0;
+            // result = {
+            //     "6": "技能1",
+            //     "7": "技能2",
+            //     "8": "技能3",
+            //     "9": "技能4",
+            //     "10": "技能5",
+            //     "11": "技能6",
+            //     "17": "技能7",
+            //     "18": "技能8",
+            //     "19": "技能9",
+            //     "20": "技能10"
+            // };
+            // for (var item in result) {
+            //     area.options.add(new Option(result[item], result[item]));
+            // }
 
-            $('#skill_select').selectpicker('refresh');
+            // $('#skill_select').selectpicker('refresh');
         }
 		
 		function loadTendency_jobInfo() {
 
             // 接口获取数据
-            // $.ajax({
-            //     type: "get",
-            //     url: "http://localhost:8000/data/orange_info/",
-            //     // xhrFields: {withCredentials: true},
-            //     success: function (data) {
-            //
-            //         var area = document.getElementById("id_select");
-            //         area.options.length = 0;
-            //         result = "";
-            //
-            //         if (data.status === 0) {
-            //             result = data.data;
-            //             for (var item in result) {
-            //                 area.options.add(new Option(result[item], result[item]));
-            //             }
-            //             $('.selectpicker').selectpicker('refresh');
-            //             // $('.selectpicker').selectpicker('render');
-            //         } else {
-            //             controls.log(data)
-            //         }
-            //     }
-            // });
+            $.ajax({
+                type: "get",
+                url: "/positionDic",
+                // xhrFields: {withCredentials: true},
+                success: function (data) {
+                    position = data;
+                    console.log(data);
+                    var area = document.getElementById("tendency_job_select");
 
+                    welfare = data;
+                    for (var item in data) {
+                        
+                        area.options.add(new Option(data[item].name, data[item].name));
+                    }
+                   $("#tendency_job_select").selectpicker('refresh');
+                    // $('.selectpicker').selectpicker('render');
+
+                }
+            });
             // 默认数据
-            var area = document.getElementById("tendency_job_select");
-            area.options.length = 0;
-            result = {
-                "6": "倾向1",
-                "7": "倾向2",
-                "8": "倾向3",
-                "9": "倾向4",
-                "10": "倾向5",
-                "11": "倾向6",
-                "17": "倾向7",
-                "18": "倾向8",
-                "19": "倾向9",
-                "20": "倾向10"
-            };
-            for (var item in result) {
-                area.options.add(new Option(result[item], result[item]));
-            }
+            // var area = document.getElementById("tendency_job_select");
+            // area.options.length = 0;
+            // result = {
+            //     "6": "倾向1",
+            //     "7": "倾向2",
+            //     "8": "倾向3",
+            //     "9": "倾向4",
+            //     "10": "倾向5",
+            //     "11": "倾向6",
+            //     "17": "倾向7",
+            //     "18": "倾向8",
+            //     "19": "倾向9",
+            //     "20": "倾向10"
+            // };
+            // for (var item in result) {
+            //     area.options.add(new Option(result[item], result[item]));
+            // }
 
-            $('#tendency_job_select').selectpicker('refresh');
+            // $('#tendency_job_select').selectpicker('refresh');
         }
 		
 		function loadTendency_walInfo() {
 
             // 接口获取数据
-            // $.ajax({
-            //     type: "get",
-            //     url: "http://localhost:8000/data/orange_info/",
-            //     // xhrFields: {withCredentials: true},
-            //     success: function (data) {
-            //
-            //         var area = document.getElementById("id_select");
-            //         area.options.length = 0;
-            //         result = "";
-            //
-            //         if (data.status === 0) {
-            //             result = data.data;
-            //             for (var item in result) {
-            //                 area.options.add(new Option(result[item], result[item]));
-            //             }
-            //             $('.selectpicker').selectpicker('refresh');
-            //             // $('.selectpicker').selectpicker('render');
-            //         } else {
-            //             controls.log(data)
-            //         }
-            //     }
-            // });
+            $.ajax({
+                type: "get",
+                url: "/welfareDic",
+                // xhrFields: {withCredentials: true},
+                success: function (data) {
+                    welfare = data;
+                    console.log(data);
+                    var area = document.getElementById("tendency_wal_select");
+                    
+                        for (var item in data) {
+                            area.options.add(new Option(data[item].name, data[item].name));
+                        }
+                       $("#tendency_wal_select").selectpicker('refresh');
+                        // $('.selectpicker').selectpicker('render');
+                    
+                }
+            });
 
             // 默认数据
-            var area = document.getElementById("tendency_wal_select");
-            area.options.length = 0;
-            result = {
-                "6": "福利1",
-                "7": "福利2",
-                "8": "福利3",
-                "9": "福利4",
-                "10": "福利5",
-                "11": "福利6",
-                "17": "福利7",
-                "18": "福利8",
-                "19": "福利9",
-                "20": "福利10"
-            };
-            for (var item in result) {
-                area.options.add(new Option(result[item], result[item]));
-            }
+            // var area = document.getElementById("tendency_wal_select");
+            // area.options.length = 0;
+            // result = {
+            //     "6": "福利1",
+            //     "7": "福利2",
+            //     "8": "福利3",
+            //     "9": "福利4",
+            //     "10": "福利5",
+            //     "11": "福利6",
+            //     "17": "福利7",
+            //     "18": "福利8",
+            //     "19": "福利9",
+            //     "20": "福利10"
+            // };
+            // for (var item in result) {
+            //     area.options.add(new Option(result[item], result[item]));
+            // }
 
-            $('#tendency_wal_select').selectpicker('refresh');
+            // $('#tendency_wal_select').selectpicker('refresh');
         }
 		
 		function loadFamiliarInfo() {
 
             // 接口获取数据
-            // $.ajax({
-            //     type: "get",
-            //     url: "http://localhost:8000/data/orange_info/",
-            //     // xhrFields: {withCredentials: true},
-            //     success: function (data) {
-            //
-            //         var area = document.getElementById("id_select");
-            //         area.options.length = 0;
-            //         result = "";
-            //
-            //         if (data.status === 0) {
-            //             result = data.data;
-            //             for (var item in result) {
-            //                 area.options.add(new Option(result[item], result[item]));
-            //             }
-            //             $('.selectpicker').selectpicker('refresh');
-            //             // $('.selectpicker').selectpicker('render');
-            //         } else {
-            //             controls.log(data)
-            //         }
-            //     }
-            // });
+            $.ajax({
+                type: "get",
+                url: "/industryDic",
+                // // xhrFields: {withCredentials: true},
+                success: function (data) {
+                    industry = data;
+                    console.log(data);
+                    var area = document.getElementById("familiar_select");
+                   
+                        for (var item in data) {
+                            area.options.add(new Option(data[item].name, data[item].name));
+                        }
+                       $("#familiar_select").selectpicker('refresh');
+                        // $('.selectpicker').selectpicker('render');
+                }
+            });
 
             // 默认数据
-            var area = document.getElementById("familiar_select");
-            area.options.length = 0;
-            result = {
-                "6": "行业1",
-                "7": "行业2",
-                "8": "行业3",
-                "9": "行业4",
-                "10": "行业5",
-                "11": "行业6",
-                "17": "行业7",
-                "18": "行业8",
-                "19": "行业9",
-                "20": "行业10"
-            };
-            for (var item in result) {
-                area.options.add(new Option(result[item], result[item]));
-            }
+            // var area = document.getElementById("familiar_select");
+            // area.options.length = 0;
+            // result = {
+            //     "6": "行业1",
+            //     "7": "行业2",
+            //     "8": "行业3",
+            //     "9": "行业4",
+            //     "10": "行业5",
+            //     "11": "行业6",
+            //     "17": "行业7",
+            //     "18": "行业8",
+            //     "19": "行业9",
+            //     "20": "行业10"
+            // };
+            // for (var item in result) {
+            //     area.options.add(new Option(result[item], result[item]));
+            // }
 
-            $('#familiar_select').selectpicker('refresh');
+            // $('#familiar_select').selectpicker('refresh');
         }
 		
+        function commit(){
+            var user_id = $.cookie("id");
+            var workYear = $("#worktime").val();
+            var salaryLeast = $("#low_salary").val();
+            var salaryMost = $("#high_salary").val();
+            var city = $('#city_select option:selected').val();
+            var capacity_text = document.getElementById("skill_Info").innerHTML.split(",");
+            var position_text = document.getElementById("tendency_job_Info").innerHTML.split(",");
+            var welfare_text = document.getElementById("tendency_wal_Info").innerHTML.split(",");
+            var industry_text = document.getElementById("familiar_Info").innerHTML.split(",");
+
+            var capacity_id = "";
+            var position_id = "";
+            var welfare_id = "";
+            var industry_id = "";
+            for(var i=0;i<capacity.length;i++){
+                for(var j=0;j<capacity_text.length;j++){
+                    if(capacity[i].name==capacity_text[j]){
+                        capacity_id = capacity_id + capacity[i].id + ",";
+                    }
+                }
+            }
+            capacity_id = capacity_id.substr(0,capacity_id.length-1);
+
+            for(var i=0;i<position.length;i++){
+                for(var j=0;j<position_text.length;j++){
+                    if(position[i].name==position_text[j]){
+                        position_id = position_id + position[i].id + ",";
+                    }
+                }
+            }
+            position_id = position_id.substr(0,position_id.length-1);
+
+            for(var i=0;i<welfare.length;i++){
+                for(var j=0;j<welfare_text.length;j++){
+                    if(welfare[i].name==welfare_text[j]){
+                        welfare_id = welfare_id + welfare[i].id + ",";
+                    }
+                }
+            }
+            welfare_id = welfare_id.substr(0,welfare_id.length-1);
+
+            for(var i=0;i<industry.length;i++){
+                for(var j=0;j<industry_text.length;j++){
+                    if(industry[i].name==industry_text[j]){
+                        industry_id = industry_id + industry[i].id + ",";
+                    }
+                }
+            }
+            industry_id = industry_id.substr(0,industry_id.length-1);
+
+            console.log("workYear: " + workYear);   
+            console.log("salaryLeast: " + salaryLeast);
+            console.log("salaryMost: " + salaryMost);
+            console.log("city: " + city);
+            console.log("capacity: " + capacity_id);
+            console.log("position: " + position_id);
+            console.log("welfare: " + welfare_id);
+            console.log("industry: " + industry_id);
+            $.ajax({
+					async : true,
+					type : "post",
+					url : "/setTagInfo",
+					data : {
+						"userId" : user_id,
+                        "workYear" : workYear,
+                        "salaryLeast" : salaryLeast,
+                        "salaryMost" : salaryMost,
+                        "city" : city,
+                        "capacity" : capacity_id,
+                        "position" : position_id,
+                        "welfare" : welfare_id,
+                        "industry" : industry_id
+					},
+                    success : function(){
+                        window.location.href = "./Home.html?method=2";
+                    }
+                    
+				});
+
+        }
+
         function initInfo() {
             $(window).on('load', function () {
-
+				loadSkillInfo();
+				
                 $('#skill_select').selectpicker({
                     noneSelectedText: '请选择',
                     noneResultsText: '没有找到匹配的组织 {0}'
                 });
-
-                loadSkillInfo();
-
+				
                 $("#chooseskill").unbind("click").click(function () {
+					
                     var info = $('#skill_select').selectpicker('val');
 
                     var label = document.getElementById("skill_Info");
@@ -270,13 +337,15 @@
                     console.log(info)
                 });
 				
+				
+				
+				loadTendency_jobInfo();
+				
                 $('#tendency_job_select').selectpicker({
                     noneSelectedText: '请选择',
                     noneResultsText: '没有找到匹配的组织 {0}'
                 });
-				
-                loadTendency_jobInfo();
-
+				$('#tendency_job_select').selectpicker('val',['']);
                 $("#choosetendency_job").unbind("click").click(function () {
                     var info = $('#tendency_job_select').selectpicker('val');
 
@@ -284,29 +353,32 @@
                     label.innerHTML = info;
                     console.log(info)
                 });
-					
+				
+				
+				loadTendency_walInfo();	
+				
                 $('#tendency_wal_select').selectpicker({
                     noneSelectedText: '请选择',
                     noneResultsText: '没有找到匹配的组织 {0}'
                 });
-				
-                loadTendency_walInfo();
-
+				$('#tendency_wal_select').selectpicker('val',['福利1']);
                 $("#choosetendency_wal").unbind("click").click(function () {
                     var info = $('#tendency_wal_select').selectpicker('val');
 
                     var label = document.getElementById("tendency_wal_Info");
                     label.innerHTML = info;
                     console.log(info)
-                });	
+                });
 
+
+				
+				loadFamiliarInfo();
+				
                 $('#familiar_select').selectpicker({
                     noneSelectedText: '请选择',
                     noneResultsText: '没有找到匹配的组织 {0}'
                 });
-				
-                loadFamiliarInfo();
-
+				$('#familiar_select').selectpicker('val',['行业1']);
                 $("#choosefamiliar").unbind("click").click(function () {
                     var info = $('#familiar_select').selectpicker('val');
                     var label = document.getElementById("familiar_Info");
@@ -342,34 +414,52 @@
 	<div class="register">
 		<h2 style="font-size:30px; font-weight:900;">求职信息</h2>
 		<div class="register_form">
-			<form action="#" method="post">
+			
+				<div class="title">
+				<label style="margin-left:1em">工作年限：</label>
 				<input type="text"  id="worktime" name="worktime" placeholder="工作年限" required="" />
-				<input type="text"  id="low_salary" name="low_salary" placeholder="薪资下限" required="" />
-				<input type="text"  id="high_salary" name="high_salary" placeholder="薪资上限" required="" />
-				<!--
-				<input type="email"  name="familiar" placeholder="熟悉行业" required="" />
-				<input type="text"  name="tendency_job" placeholder="倾向职业" required="" />
-				<input type="text"  name="tendency_wal" placeholder="倾向福利" required="" />
-				-->
+				</div>
+				<div class="title">
+				<label style="margin-left:1em">薪资下限：</label>
+				<input type="text"  id="low_salary" name="low_salary" placeholder="薪资下限（万元/年）" required="" />
+				</div>
+				<div class="title">
+				<label style="margin-left:1em">薪资上限：</label>
+				<input type="text"  id="high_salary" name="high_salary" placeholder="薪资上限（万元/年）" required="" />
+				</div>
+				<div class="title">
+				<label>首选工作地：</label>
 				<select id="city_select" class="city_select" style="color:#FFF">
 					<option id="city_first_index">首选工作地</option>
-					<option>城市1</option>
-					<option>城市2</option>
-					<option>城市3</option>
-					<option>test</option>
-					<option>城市5</option>
-					<option>城市6</option>
+					<option>北京</option>
+					<option>上海</option>
+					<option>广东</option>
+					<option>天津</option>
+					<option>苏州</option>
+                    <option>重庆</option>
+                    <option>南京</option>
+					<option>杭州</option>
+					<option>大连</option>
+					<option>成都</option>
+					<option>武汉</option>
+                    <option>西安</option>
+                    <option>郑州</option>
+					<option>长沙</option>
+					<option>宁波</option>
+					<option>沈阳</option>
+					<option>青岛</option>
+					<option>无锡</option>
 				</select>
-				
+				</div>
 				<div class="search_cont">
-				<label class="choose_title">技能：</label>
+				<label class="choose_title" style="margin-left:2em">技能：</label>
 				<div class="search">
 				<select id="skill_select" class="selectpicker" multiple
 						data-live-search="true"
 						data-width="300px"
 						data-actions-box="true"></select>
 				</div>
-				<button id="chooseskill" class="choose_tag">选中信息</button>
+				<label id="chooseskill" class="choose_tag">选中信息</label>
 				<label class="result_label">选中结果:</label>
 				<label id="skill_Info" class="choose_result"></label>
 				</div>
@@ -382,7 +472,7 @@
 						data-width="300px"
 						data-actions-box="true"></select>
 				</div>
-				<button id="choosetendency_job" class="choose_tag">选中信息</button>
+				<label id="choosetendency_job" class="choose_tag">选中信息</label>
 				<label class="result_label">选中结果:</label>
 				<label id="tendency_job_Info" class="choose_result"></label>
 				</div>
@@ -395,7 +485,7 @@
 						data-width="300px"
 						data-actions-box="true"></select>
 				</div>
-				<button id="choosetendency_wal" class="choose_tag">选中信息</button>
+				<label id="choosetendency_wal" class="choose_tag">选中信息</label>
 				<label class="result_label">选中结果:</label>
 				<label id="tendency_wal_Info" class="choose_result"></label>
 				</div>
@@ -408,13 +498,13 @@
 						data-width="300px"
 						data-actions-box="true"></select>
 				</div>
-				<button id="choosefamiliar" class="choose_tag">选中信息</button>
+				<label id="choosefamiliar" class="choose_tag">选中信息</label>
 				<label class="result_label">选中结果:</label>
 				<label id="familiar_Info" class="choose_result"></label>
 				</div>
 				
-				<input type="button" value="Submit" onclick="login()">
-			</form>	
+				<input type="button" value="提交信息" onclick="commit()">
+			
 		</div>
 	</div>
 </div>

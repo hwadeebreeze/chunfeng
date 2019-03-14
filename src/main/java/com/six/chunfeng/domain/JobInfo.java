@@ -5,6 +5,7 @@ public class JobInfo {
 	private String url;
 	private String title;
 	private String education;
+	private String position;
 	private Integer workYear;
 	private Integer ageMost;
 	private String city;
@@ -38,6 +39,12 @@ public class JobInfo {
 	}
 	public void setEducation(String education) {
 		this.education = education;
+	}
+	public String getPosition() {
+		return position;
+	}
+	public void setPosition(String position) {
+		this.position = position;
 	}
 	public Integer getWorkYear() {
 		return workYear;
@@ -116,6 +123,8 @@ public class JobInfo {
 				+ ((education == null) ? 0 : education.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result
+				+ ((position == null) ? 0 : position.hashCode());
+		result = prime * result
 				+ ((salaryLeast == null) ? 0 : salaryLeast.hashCode());
 		result = prime * result
 				+ ((salaryMost == null) ? 0 : salaryMost.hashCode());
@@ -175,6 +184,11 @@ public class JobInfo {
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
+		if (position == null) {
+			if (other.position != null)
+				return false;
+		} else if (!position.equals(other.position))
+			return false;
 		if (salaryLeast == null) {
 			if (other.salaryLeast != null)
 				return false;
@@ -210,13 +224,12 @@ public class JobInfo {
 	@Override
 	public String toString() {
 		return "JobInfo [id=" + id + ", url=" + url + ", title=" + title
-				+ ", education=" + education + ", workYear=" + workYear
-				+ ", ageMost=" + ageMost + ", city=" + city + ", content="
-				+ content + ", salaryMost=" + salaryMost + ", salaryLeast="
-				+ salaryLeast + ", ageLeast=" + ageLeast + ", welfare="
-				+ welfare + ", capacity=" + capacity + ", company_id="
-				+ companyId + "]";
+				+ ", education=" + education + ", position=" + position
+				+ ", workYear=" + workYear + ", ageMost=" + ageMost + ", city="
+				+ city + ", content=" + content + ", salaryMost=" + salaryMost
+				+ ", salaryLeast=" + salaryLeast + ", ageLeast=" + ageLeast
+				+ ", welfare=" + welfare + ", capacity=" + capacity
+				+ ", companyId=" + companyId + "]";
 	}
-	
 
 }

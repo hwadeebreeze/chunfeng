@@ -17,30 +17,41 @@ import com.six.chunfeng.mapper.ChartMapper;
 @Service
 public class ChartService {
 	@Autowired
-	private ChartMapper mapper;
+	private ChartMapper chartMapper;
 	
+	//返回的键值对存入map
 	private static Map<String, Integer> map = new HashMap<String, Integer>();
+	//从数据库中读出的福利字典
 	private static List<String> welfareDic = new ArrayList<String>();
 	
 	public Map<String,Integer> getChartData(int id){
 		TagInfo info = new TagInfo();
-		if(mapper.getTagInfoByUserId(id)==null)return null;
-		info = mapper.getTagInfoByUserId(id);
+		if(chartMapper.getTagInfoByUserId(id)==null)return null;
+		//通过userid从job_aim中读取TagInfo
+		info = chartMapper.getTagInfoByUserId(id);
 		System.out.println(info);
 		User user = new User();
-		if(mapper.getUserById(id)==null)return null;
-		user = mapper.getUserById(id);
+		if(chartMapper.getUserById(id)==null)return null;
+		//通过id读取user
+		user = chartMapper.getUserById(id);
 		System.out.println(user);
-		welfareDic = mapper.getWelfareName();
+		//读出福利字典
+		welfareDic = chartMapper.getWelfareName();
 		int[] salaryCount = new int[6];
+		//工作经验
 		int work_year = info.getWorkYear();
+		//目标工作地
 		String city = info.getCity();
+		//年龄
 		int age = user.getAge();
+		//学历
 		String education = user.getEducation();
 		ArrayList<String> userCapacity = new ArrayList<String>();
+		//获取用户技能list
 		userCapacity = getCapList(userCapacity,info.getCapacity());
 		System.out.println("done");
-		List<JobInfo> jobList = mapper.getJobInfoByInfo(city, age, work_year,education);
+		//获取第一次筛选得出的招聘信息
+		List<JobInfo> jobList = chartMapper.getJobInfoByInfo(city, age, work_year,education);
 		System.out.println(jobList.size());
 		ArrayList<String> jobCapcity = new ArrayList<String>();
 		int[] welfareCount = new int[33];
@@ -49,29 +60,35 @@ public class ChartService {
 //			if(userCapacity.containsAll(jobCapcity));
 //			else jobList.remove(job);
 //		}
+		//循环招聘信息
 		 Iterator<JobInfo> iterator = jobList.iterator();
 	        while(iterator.hasNext()){
 	            JobInfo job = iterator.next();
+	            //获取招聘信息技能
 	            jobCapcity = getCapList(jobCapcity, job.getCapacity());
 			    if(!userCapacity.containsAll(jobCapcity)){
 //			    	System.out.println(jobCapcity+" "+userCapacity);
 			    	iterator.remove();
-			    }//注意这个地方
+			    }
 	        }
 //	        System.out.println(jobList);
 		for(JobInfo job: jobList){
 //			System.out.println(job.getId());
+			//获取薪资统计
 			getSalaryNum(job.getSalaryMost(),salaryCount);
 //			System.out.println(job.getWelfare());
+			//获取福利最大值
 			getWelfareMax(job.getWelfare(),welfareCount);
 //			for(int i=0;i<welfareCount.length;i++){
 //				System.out.print(welfareCount[i]+"a");
 //			}
 //			System.out.println();
 		}
+		//薪资统计放入map
 		map.put("LessTen",salaryCount[0]);map.put("TenToFif",salaryCount[1]);
 		map.put("FifToThir",salaryCount[2]);map.put("ThirToFif",salaryCount[3]);
 		map.put("FifToHun",salaryCount[4]);map.put("MoreHun",salaryCount[5]);
+		//福利统计放入map
 		for(int i=0;i<5;i++){
 			int index = getMaxIndex(welfareCount);
 			if(index==-1)break;
@@ -82,7 +99,7 @@ public class ChartService {
 		return map;
 	}
 	
-	
+	//得到薪资统计
 	private static void getSalaryNum(int salary,int[] salaryCount){ 
 		if(salary<=10)salaryCount[0]++;
 		else{
@@ -100,7 +117,7 @@ public class ChartService {
 		}	
 	}
 	
-	
+	//获取福利最大值
 	private static void getWelfareMax(String welfare,int[] welfareCount){
 //		System.out.println(welfare);
 		if(welfare.equals(""))return;
@@ -118,7 +135,7 @@ public class ChartService {
 	}
 	
 	
-	
+	//获取数组最大值下标
 	private static int getMaxIndex(int[] array){
 		if(array.length > 0){
 			int index = 0;
@@ -136,7 +153,7 @@ public class ChartService {
 		return -1;
 	}
 	
-	
+	//输入存放技能的list，读出的技能字符串，输出技能list
 	private static ArrayList<String> getCapList(ArrayList<String> list,String capacity){
 		if(capacity==null){
 			list.clear();

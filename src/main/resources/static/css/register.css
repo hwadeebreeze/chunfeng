@@ -8,7 +8,7 @@
 	margin-top:50px;
     margin-bottom:50px;
     padding: 50px;
-    background: #000080;
+    background: #5CACFF;
 	border-radius:20px;
 	opacity:0.7;
 	
@@ -29,8 +29,16 @@
     margin-bottom: 8px;
     letter-spacing: 1px;
 }
+.title label{
+	display:inline-block !important;
+	color:#FFF;
+	font-size:18px;
+	font-weight:bold;
+	padding-bottom:15px;
+	vertical-align: middle;
+}
 .register_form input[type="text"], .register_form input[type="email"],.city_select,textarea {
-    display:block;
+    display:inline-block;
 	width: 400px;
 	margin:auto;
 	margin-bottom:20px;
@@ -39,27 +47,33 @@
     font-weight: normal;
     background: none;
     border: none;
-	background: rgba(235, 235, 235, 0.15);
+	background:#FFF;
     outline: none;
     font-size: 14px;
     transition: 0.5s all;
     -webkit-transition: 0.5s all;
     -moz-transition: 0.5s all;
     font-family:sans-serif;
-	color:#FFF;
+	color:#000;
 }
 textarea {
     resize: none;
     height: 58px;
 }
-.city_select {
+.city_select,.education_select{
     width: 400px;
 	height:40px;
+	color: #000 !important;
+}
+#education_select{
+	width:420px;
+	margin-bottom:20px;
 }
 .register_form input[type="button"],.agile_main_grid_left2_grid_bottom a { 
-	background:#31c4fc;
+	background:#5fe3f8;
     color: #fff;
     font-size: 17px;
+	font-weight:bold;
 	margin-top: 10px;
     border: none;
     width: 100%;
@@ -69,13 +83,14 @@ textarea {
     -webkit-appearance: none;
     padding: 10px 15px;
 	font-family:sans-serif;
-	transition:.5s ease-in;
-	-webkit-transition:.5s ease-in;
-	-moz-transition:.5s ease-in;
+	transition:.2s ease-in;
+	-webkit-transition:.2s ease-in;
+	-moz-transition:.2s ease-in;
 }
-.register_form input[type="submit"]:hover,.agile_main_grid_left2_grid_bottom a:hover {
-    background:#5fe3f8;
+.register_form input[type="button"]:hover,.agile_main_grid_left2_grid_bottom a:hover {
+    background:#FFB857;
 	color: #fff;
+	font-weight:bold;
 	transition:.5s ease-in;
 	-webkit-transition:.5s ease-in;
 	-moz-transition:.5s ease-in;
@@ -91,14 +106,14 @@ option{
 }
 
 ::-webkit-input-placeholder {
-	color:#fff !important;
+	color:#000 !important;
 }
 :-moz-placeholder { /* Firefox 18- */
-	color:#fff !important; 
+	color:#000 !important; 
 }
 ::-moz-placeholder {  /* Firefox 19+ */
-	color:#fff !important;
+	color:#000 !important;
 }
 :-ms-input-placeholder {  
-	color:#fff !important;
+	color:#000 !important;
 }

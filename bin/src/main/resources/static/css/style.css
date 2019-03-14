@@ -1,0 +1,9 @@
+body{
+	background:url(../img/background.jpg)no-repeat;
+	background-size:cover;
+	background-position:center;
+	background-attachment:fixed;
+}
+button{
+	outline:none;
+}

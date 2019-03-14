@@ -3,9 +3,9 @@ $(document).ready(function() {
 	$("#report").click(function() {
 		$("#report_close").show();
 		$("#_report").animate({
-			left: '500px',
+			left: '200px',
 			height: '600px',
-			width: '600px'
+			width: '1200px'
 		}, 500, function() {
 			$("#report_container").show(500);
 			$("#report_close").animate({

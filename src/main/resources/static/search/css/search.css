@@ -1,5 +1,5 @@
 .search_cont{
-	margin-left:90px;
+	margin-left:20px;
 }
 .search{
 	margin-left:50px;
@@ -12,21 +12,23 @@
 .choose_tag{
 	border-radius: 5px;
 	border:none;
-	height: 36px;
+	vertical-align:middle;
+	height: 30px;
 	width: 100px;
-	background-color: #5CACEE;
+	background-color: #BFEFFF;
 	font-size: 20px;
 	font-weight:bold;
 	color: #000;
+	text-align: center;
 }
 .choose_tag:hover{
-	background-color:#FFF;
-	color:#5CACEE;
+	background-color:#1C86EE;
+	color:#000;
 }
 .result_label{
 	margin-top: 10px;
-	margin-left: 0px;
-	display:block;
+	margin-left: 1em;
+	display:inline-block;
 	font-size: 15px;
 	font-weight:bold;
 	color: #FFF;
@@ -36,13 +38,12 @@
 	letter-spacing:1.5px;
 	color:#000;
 	background-color:#FFF;
-	border: 2px solid #000;
 	font-size:15px;
 	border-radius:2px;
 }
 .choose_title{
 	color:#FFF;
-	display:block;
+	display:inline-block;
 	font-size: 18px;
 	font-weight:bold;
 }

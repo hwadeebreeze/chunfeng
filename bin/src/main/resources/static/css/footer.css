@@ -1,0 +1,19 @@
+.footer {
+	padding:10px 0 10px;
+	position:relative;
+	background-color:#F2F2F2;
+}
+
+.copy-right p {
+	font-size:16px;
+	color:#999999;
+	text-align:right;
+	margin-bottom:0;
+}
+
+.scroll-top-btn a {
+	left:50%;
+	transform:translateX(-50%);
+	-webkit-transform:translateX(-50%);
+	-ms-transform:translateX(-50%);
+}
