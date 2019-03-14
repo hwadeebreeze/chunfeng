@@ -61,6 +61,7 @@ public class IndexController {
 						salaryMost.equals("")?null:Integer.valueOf(salaryMost));
 		return searchService.changePage(curPage.equals("")?0:Integer.valueOf(curPage));
 	}
+
 	
 	@PostMapping("/recommendJobList")
 	@ResponseBody
