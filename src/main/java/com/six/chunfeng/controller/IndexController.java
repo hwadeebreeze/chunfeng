@@ -31,7 +31,7 @@ public class IndexController {
 	
 	@PostMapping("/getPosition")
 	@ResponseBody
-	public List<Map<String,String>> getPositionDic(){
+	public List<Map<String,Object>> getPositionDic(){
 		return indexService.getPositionDic();
 	}
 

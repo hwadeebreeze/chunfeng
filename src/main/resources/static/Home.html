@@ -41,8 +41,8 @@
 	<script src="js/jquery.cookie.js"></script>
 
 	<script type="text/javascript">
-		var id;
-		var showList;
+		var id
+		
 		$(document).ready(function () {
 			id = $.cookie("id");
 			if (id != undefined) {
@@ -68,6 +68,15 @@
 				}
 			});
 
+			$.ajax({
+				type: "post",
+				url: "/getJobList",
+				success: function (data) {
+					console.log(data);
+					load_item(data);
+				}
+			});
+			
 			// for(var i=0;i<7;i++){
 			// 	load_item(i);
 			// }
@@ -98,36 +107,23 @@
 
 				var new_a = document.createElement('a');
 				new_a.innerText = data[item].name;
-
-				new_a.onclick = new function () {
-					$.ajax({
-						async: false,
-						type: "post",
-						url: "/search",
-						data: {
-							position: data[item].id
-						},
-						success: function (result) {
-							showList = result;
-							window.location.reload;
-						}
-					});
-				};
+				new_a.href = "Home.html?position=" + data[item].id;
 				p.appendChild(new_a);
 
 			}
 
 		}
 
-		function load_item() {
+		function load_item(data) {
 
-			for (var k = 0; k < showList.length; k++) {
-				var city = showList[k].city;
-				var jobname = showList[k].title;
-				var salary = showList[k].salartLeast + "-" + showList[k].salartMost;
+			for (var k = 0; k < data.length; k++) {
+				var city = data[k].city;
+				var jobname = data[k].title;
+				var salary = data[k].salartLeast + "-" + data[k].salartMost;
 				var companyname = '公司名称';
-				var welfare = ['词条1', '词条2', '词条3', '词条4', '词条5'];
-				var capacity = ['词条1', '词条2', '词条3', '词条4', '词条5'];
+				var welfare = "\\[" + data[k].welfare + "\\]";
+				var capacity = "\\[" + data[k].capacity + "\\]";
+				
 				var joblist = document.getElementsByClassName("job_list")[0];
 				var html = '<div class="item_con job_title">';
 				html += '<a class="job_name" >';

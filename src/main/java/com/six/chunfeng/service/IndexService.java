@@ -19,7 +19,7 @@ public class IndexService {
 	
 	private Logger log = LoggerFactory.getLogger(IndexService.class);
 	
-	public List<Map<String,String>> getPositionDic(){
+	public List<Map<String,Object>> getPositionDic(){
 		return indexMapper.getPositionDic();
 	}
 	

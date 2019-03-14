@@ -7,6 +7,6 @@ import org.apache.ibatis.annotations.Select;
 
 public interface IndexMapper {
 	
-	@Select("select name,top_class,bot_class from position_dic")
-	public List<Map<String,String>> getPositionDic();
+	@Select("select * from position_dic")
+	public List<Map<String,Object>> getPositionDic();
 }
