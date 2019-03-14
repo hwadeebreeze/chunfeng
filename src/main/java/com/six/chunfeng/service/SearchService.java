@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.six.chunfeng.domain.JobInfo;
+import com.six.chunfeng.mapper.InfoMapper;
 import com.six.chunfeng.mapper.SearchMapper;
 
 @Service
@@ -16,6 +17,8 @@ public class SearchService
 	
 	@Autowired
 	private SearchMapper mapper;
+	@Autowired
+	private InfoMapper infoMapper;
 	
 	private List<Integer> list;
 	
@@ -63,7 +66,9 @@ public class SearchService
 		for(int i=first;i<last;++i)
 		{
 			JobInfo info = mapper.selectJobInfoById(list.get(i));
-			info.setCapacity(numToWord(info.getCapacity(),"capacity"));  
+			info.setCapacity(infoMapper.getCapacityName("("+info.getCapacity()+")").toString().split("\\[")[1].split("\\]")[0]);
+			info.setWelfare(infoMapper.getWelfareName("("+info.getWelfare()+")").toString().split("\\[")[1].split("\\]")[0]);
+			res.add(info);
 		}
 		return res;
 	}
