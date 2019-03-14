@@ -50,6 +50,8 @@
 			var salaryLeast = getUrlParms("salaryLeast");
 			var salaryMost = getUrlParms("salaryMost");
 			var curPage = getUrlParms("curPage");
+			var method = getUrlParms("method");
+
 			id = $.cookie("id");
 			if (id != undefined) {
 				document.getElementById("logout").style.display = "block";
@@ -74,43 +76,73 @@
 					load_filter(data);
 				}
 			});
-			console.log("position:"+position+"city:"+city+"salary:"+salaryLeast+"-"+salaryMost+"curPage:"+curPage);
+			console.log("position:" + position + "city:" + city + "salary:" + salaryLeast + "-" + salaryMost + "curPage:" + curPage);
 
-			$.ajax({
-				type: "post",
-				url: "/searchJobList",
-				dataType: "json", 
-				contentType: "application/json;charset=UTF-8", 
-				data: {
-					position: position==undefined?"":position,
-					city: city==undefined?"":city,
-					salartLeast: salaryLeast==undefined?"":salaryLeast,
-					salartMost: salaryMost==undefined?"":salaryMost,
-					curPage: curPage==undefined?"":curPage
-				},
-				success: function (data) {
-					console.log(data);
-					var companyInfo;
-					$.ajax({
-						type: "post",
-						url: "/getCompanyList",
-						async: false,
-						data: {
-							curPage: curPage==undefined?"":curPage
-						},
-						success: function (result) {
-							console.log(result);
-							companyInfo = result;
-						}
-					});
-					console.log(data);
-					load_item(data, companyInfo);
-				}
-			});
+			if ((method == undefined ? 1 : method) == 1) {
+				$.ajax({
+					type: "post",
+					url: "/searchJobList",
+					dataType: "json",
+					contentType: "application/json;charset=UTF-8",
+					data: {
+						position: position == undefined ? "" : position,
+						city: city == undefined ? "" : city,
+						salartLeast: salaryLeast == undefined ? "" : salaryLeast,
+						salartMost: salaryMost == undefined ? "" : salaryMost,
+						curPage: curPage == undefined ? "" : curPage
+					},
+					success: function (data) {
+						console.log(data);
+						var companyInfo;
+						$.ajax({
+							type: "post",
+							url: "/getCompanyList",
+							async: false,
+							data: {
+								curPage: curPage == undefined ? "" : curPage
+							},
+							success: function (result) {
+								console.log(result);
+								companyInfo = result;
+							}
+						});
+						console.log(data);
+						load_item(data, companyInfo);
+					}
+				});
+			} else {
+				$.ajax({
+					type: "post",
+					url: "/recommendJobList",
+					dataType: "json",
+					contentType: "application/json;charset=UTF-8",
+					data: {
+						userId: id,
+						curPage: curPage == undefined ? "" : curPage
+					},
+					success: function (data) {
+						console.log(data);
+						var companyInfo;
+						$.ajax({
+							type: "post",
+							url: "/getCompanyList",
+							async: false,
+							data: {
+								curPage: curPage == undefined ? "" : curPage
+							},
+							success: function (result) {
+								console.log(result);
+								companyInfo = result;
+							}
+						});
+						console.log(data);
+						load_item(data, companyInfo);
+					}
+				});
+			}
 
-			// for(var i=0;i<7;i++){
-			// 	load_item(i);
-			// }
+
+
 
 		});
 
@@ -195,17 +227,17 @@
 
 				var wal_container = document.getElementsByClassName("job_wel")[k];
 				var req_container = document.getElementsByClassName("job_require")[k];
-				for (var i = 0; i < welfare.length>5?5:welfare.length; i++) {
+				for (var i = 0; i < welfare.length > 5 ? 5 : welfare.length; i++) {
 					var new_span = document.createElement('span');
 					new_span.innerText = welfare[i];
 					wal_container.appendChild(new_span);
 
 				}
-				for (var i = 0; i < capacity.length>5?5:capacity.length; i++) {
+				for (var i = 0; i < capacity.length > 5 ? 5 : capacity.length; i++) {
 					var new_span = document.createElement('span');
 					new_span.innerText = capacity[i];
 					req_container.appendChild(new_span);
-					if(i == 5)break;
+					if (i == 5) break;
 				}
 			}
 
