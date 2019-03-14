@@ -43,7 +43,7 @@
 	<script src="js/jquery.cookie.js"></script>
 
 	<script type="text/javascript">
-		var id
+		var id;
 
 		$(document).ready(function () {
 
@@ -119,7 +119,7 @@
 					url: "/recommendJobList",
 					contentType: "application/json;charset=UTF-8",
 					data: {
-						userId: "1",
+						userId: 1,
 						curPage: curPage == undefined ? "" : curPage
 					},
 					success: function (data) {

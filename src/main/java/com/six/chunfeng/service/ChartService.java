@@ -122,7 +122,6 @@ public class ChartService {
 //		System.out.println(welfare);
 		if(welfare.equals(""))return;
 		else{
-			Map<String, Integer> map = new HashMap<String, Integer>();
 			String[] welfareList = welfare.split(",");
 //			for(int i=0;i<welfareList.length;i++){
 //				System.out.print(welfareList[i]+"a");
