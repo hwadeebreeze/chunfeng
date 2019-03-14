@@ -25,28 +25,94 @@
 	<script type="text/javascript">
 		var jobInfo;
 		var companyInfo;
+
+		
 		$(document).ready(function() {
-			getJobInfoAndCompanyInfo();
-			
+			jobInfo = getJobInfo();
+			companyInfo = getCompanyInfo();
+			console.log(jobInfo);
+			console.log(companyInfo);
+
+			document.getElementById("job_title").innerText = jobInfo.title;
+			document.getElementById("salary_least").innerText = jobInfo.salaryLeast;
+			document.getElementById("salary_most").innerText = jobInfo.salaryMost;
+			document.getElementById("company_name").innerText = companyInfo.name;
+			document.getElementById("work_city").innerText = jobInfo.city;
+			document.getElementById("age_least").innerText = jobInfo.ageLeast;
+			document.getElementById("age_most").innerText = jobInfo.ageMost;
+			$.ajax({
+                type: "post",
+				async : false,
+                url: "/educationName?educationId=" + jobInfo.education,
+                success: function (data) {
+                    document.getElementById("education").innerText = data;
+                }
+            });
+
+			document.getElementById("content").innerHTML = jobInfo.content + "<br>test";
+
+			document.getElementById("company_name").innerText = companyInfo.name;
+			document.getElementById("company_size").innerText = companyInfo.size;
+			document.getElementById("location").innerText = companyInfo.address;
+			document.getElementById("company_info").innerText = companyInfo.info;
+
+			load_label();
 		});
-		function getJobInfoAndCompanyInfo(){
+		function getJobInfo(){
 			var jobId = window.location.href.split("#")[1];
+			var result;
 			$.ajax({
                 type: "get",
+				async : false,
                 url: "/jobInfo?jobId=" + jobId,
                 success: function (data) {
-                    console.log(data);
-					jobInfo = data;
+                    
+					result = data;
                 }
             });
+			return result;
+		}
+
+		function getCompanyInfo(){
+			var jobId = window.location.href.split("#")[1];
+			var result;
 			$.ajax({
                 type: "get",
+				async : false,
                 url: "/companyInfo?jobId=" + jobId,
                 success: function (data) {
-                    console.log(data);
-					companyInfo = data;
+                   
+					result = data;
                 }
             });
+			return result;
+		}
+		
+		function load_label(){
+			var skill=jobInfo.capacity.split(",");
+			var wal=jobInfo.welfare.split(",");
+			var indus=companyInfo.industry.split(",");
+			
+			console.log(jobInfo[2]);
+
+			var skill_container = document.getElementById("skill_la");
+			var wal_container = document.getElementById("wel_la");
+			var indus_container = document.getElementById("indus_la");
+			for( var i = 0; i < skill.length ; i++){
+			var new_span = document.createElement('span');
+			new_span.innerText=skill[i];
+			skill_container.appendChild(new_span);
+			}
+			for( var i = 0; i < wal.length ; i++){
+			var new_span = document.createElement('span');
+			new_span.innerText=wal[i];
+			wal_container.appendChild(new_span);
+			}
+			for( var i = 0; i < indus.length ; i++){
+			var new_span = document.createElement('span');
+			new_span.innerText=indus[i];
+			indus_container.appendChild(new_span);
+			}
 		}
         function getChartData(){
             myPieChart.showLoading();
@@ -243,64 +309,57 @@
 
 <div class="jobinfo_cont container">
 	<div class="job_title">
-	招聘信息标题
+		<a id="job_title">标题</a>
 	</div>
 	<div class="jobinfo">
 		<table>
 		<tr>
-			<td id="salary">薪资：<span>薪资下限</span> ~ <span>薪资上限</span></td>
-			<td>公司名称：<span>公司名称信息</span></td>
-			<td>工作地点：<span>工作地点信息</span></td>
+			<td id="salary">薪资：<span id="salary_least">薪资下限</span> ~ <span id="salary_most">薪资上限</span></td>
+			<td>公司名称：<span id="company_name">公司名称信息</span></td>
+			<td>工作地点：<span id="work_city">工作地点信息</span></td>
 		</tr>
 		<tr>
-			<td>年龄限制：<span>最低年龄</span> ~ <span>最高年龄</span></td>
-			<td>工作经验：<span>工作经验要求</span></td>
-			<td>学历：<span>学历要求</span> </td>
+			<td>年龄限制：<span id="age_least">最低年龄</span> ~ <span id="age_most">最高年龄</span></td>
+			<td>学历：<span id="education">学历要求</span> </td>
 		</tr>
 		</table>
 		<div id="skill">
-			<label >技能要求：
-			<span>技能1</span><span>技能2</span><span>技能3</span><span>技能2</span><span>技能5</span>
+			<label id="skill_la">技能要求：
 			</label>
 		</div>
 		<div id="wel">
-			<label >工作福利：
-			<span>福利1</span><span>福利2</span><span>福利3</span><span>福利4</span><span>福利5</span>
+			<label id="wel_la">工作福利：
 			</label>
 		</div>
 		<button id="report" class="jobinfo_btn" onclick="getChartData()">我要匹配</button>
-		<button  class="jobinfo_btn">投递简历</button>
+		<button  class="jobinfo_btn" onclick="load_label()">投递简历</button>
 	</div>
 	
 	<div class="jobdetail">
 		<label class="jobdetail_label">招聘详情</label>
-		<p>
+		<p id="content">
 		由上海地纬(集团)股份有限公司重磅打造的复合型商业旗舰广场『地纬生活广场』项目招商现场火爆，客户持币踊跃待租，万众期待的财富核爆席卷川沙。地纬生活广场集餐饮、娱乐、休闲、购物、健身、早教六大高端功能于一体。铂金地标、便捷交通、一流配置、超强人气，全力构筑浦东高端商业带，引领川沙商业区崛起。　　
-		</p>
-		<p>
-		立足“两镇一区”打造中环新地标川沙新城正进行高打造中环新地标川沙新城正进行高起点规划建设打造中环新打造中环新地标川沙新城正进行高起点规划建设地标川沙新城正进行高起点规划建设打造中环新地标川沙新城正进行高起点规划建设打造中环新地标川沙新城正进行高起点规划建设打造中环新地标川沙新城正进行高起点规划建设打造中环新地标川沙新城正进行高起点规划建设起点规划建设，强势崛起的上海国际空港城以及迪士尼落户川沙为区域积攒强大人气。拔地而起的『地纬生活广场』，地处川沙镇、唐镇、张江科技园区“两镇一区”合围处，川沙新城核心位置。“两镇一区”拥有深厚的商业沉淀与积累，目前区域常住人口60多万，区域内有3000多家核心企业和近万家注册企业，政府部门、研发机构以及各类高校300多所。由于川沙改革发展的滞后，周边一直没有成型的商业配套，地纬生活广场的启航，填补了川沙集中性商业的空白，迎合了更多有实力人群对生活、居住品质的更高追求。显著的区位优势使『地纬生活广场』在东部商业区熠熠生辉，打造中环新地标。
 		</p>
 	</div>
 	<div class="companydetail">
 		<label class="companydetail_label">公司详情</label>
 		<table>
 		<tr>
-			<td>公司名称：<span>公司名称</span></td>
-			<td>公司规模：<span>公司规模</span></td>
+			<td>公司名称：<span id="company_name">公司名称</span></td>
+			<td>公司规模：<span id="company_size">公司规模</span></td>
 		</tr>
 		</table>
 		<div id="loc">
 			<label >公司地址：
-			<span>公司地址信息</span>
+			<span id="location">公司地址信息</span>
 			</label>
 		</div>
 		<div id="indus">
-			<label >公司行业：
-			<span>行业1</span><span>行业2</span><span>行业3</span>
+			<label id="indus_la">公司行业：
 			</label>
 		</div>
 		<h3>公司简介：</h3>
-		<p>
+		<p id="company_info">
 		由上海地纬(集团)股份有限公司重磅打造的复合型商业旗舰广场『地纬生活广场』项目招商现场火爆，客户持币踊跃待租，万众期待的财富核爆席卷川沙。地纬生活广场集餐饮、娱乐、休闲、购物、健身、早教六大高端功能于一体。铂金地标、便捷交通、一流配置、超强人气，全力构筑浦东高端商业带，引领川沙商业区崛起。　　
 		</p>
 	</div>

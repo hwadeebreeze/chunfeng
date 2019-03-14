@@ -134,6 +134,11 @@
 	margin:0 0 0 15px;
 	border:1px solid #000;
 }
+.condition_cont input{
+	margin:0 0 0 0px;
+	border:1px solid #000;
+	width:100px;
+}
 .condition_cont .search{
 	float:right;
 	margin:0 10px 0 0;
