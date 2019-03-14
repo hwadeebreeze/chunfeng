@@ -43,7 +43,7 @@
 	<script src="js/jquery.cookie.js"></script>
 
 	<script type="text/javascript">
-		var id
+		var id;
 
 		$(document).ready(function () {
 
@@ -117,6 +117,7 @@
 				$.ajax({
 					type: "post",
 					url: "/recommendJobList",
+					dataType: "json",
 					contentType: "application/json;charset=UTF-8",
 					data: {
 						userId: "1",

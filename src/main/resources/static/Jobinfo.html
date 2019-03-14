@@ -132,7 +132,7 @@
             myBarChart.showLoading();
             $.post("/chart",
             {
-                id:1
+                id:$.cookie("id")
             },
             function(data,status){
             	//alert(data instanceof JSON);

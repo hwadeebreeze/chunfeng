@@ -66,7 +66,8 @@ public class IndexController {
 	@PostMapping("/recommendJobList")
 	@ResponseBody
 	public List<JobInfo> recommendJobList(@ModelAttribute("userId") String userId, @ModelAttribute("curPage") String curPage){
-		recommendService.recommend(Integer.valueOf(userId));
+		if(userId.equals(""))recommendService.recommend(1);
+		else recommendService.recommend(Integer.valueOf(userId));
 		return recommendService.changePage(curPage.equals("")?0:Integer.valueOf(curPage));
 	}
 	
