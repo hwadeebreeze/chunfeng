@@ -36,12 +36,6 @@ public class SearchService
 			}
 		}
 	}
-	private String numToWord(String nums, String type)
-	{
-		if(nums==null)
-			return null;
-		return null;
-	}
 	public void search(Integer position, String city, Integer salaryLeast, Integer salaryMost )
 	{
 		if(city==null) city = "%";
