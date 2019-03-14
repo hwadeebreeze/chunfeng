@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.six.chunfeng.domain.CompanyInfo;
 import com.six.chunfeng.service.IndexService;
 import com.six.chunfeng.service.RecommendService;
 
@@ -33,6 +34,21 @@ public class IndexController {
 	@ResponseBody
 	public List<Map<String,Object>> getPositionDic(){
 		return indexService.getPositionDic();
+	}
+	
+	@PostMapping("/getJobList")
+	@ResponseBody
+	public List<Map<String,Object>> getJobList(@ModelAttribute("position") int position,
+			@ModelAttribute("city") String city, @ModelAttribute("salaryLeast") int salaryLeast,
+			@ModelAttribute("salaryMost") int salaryMost){
+		
+		
+	}
+	
+	@PostMapping("/getCompanyList")
+	@ResponseBody
+	public List<CompanyInfo> getCompanyList(@ModelAttribute("jobId") List<Integer> jobId){
+		return indexService.getCompanyInfo(jobId);
 	}
 
 }
