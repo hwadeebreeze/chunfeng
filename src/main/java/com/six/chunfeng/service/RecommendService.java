@@ -141,7 +141,7 @@ public class RecommendService
 	{
 		log("-- recommend call Step 2: page --");
 		
-		int first = (curPage-1)*itemsPerPage, last = Math.min(first+itemsPerPage, fit.length);
+		int first = (curPage)*itemsPerPage, last = Math.min(first+itemsPerPage, fit.length);
 		log("匹配成功,最适合您的职位是:");
 		List<JobInfo> res = new ArrayList<JobInfo>();
 		List<Integer> resInt = new ArrayList<Integer>();

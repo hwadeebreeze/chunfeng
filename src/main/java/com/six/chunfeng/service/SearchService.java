@@ -53,7 +53,7 @@ public class SearchService
 	
 	public List<JobInfo> changePage(int curPage)
 	{
-		int first = (curPage-1)*itemsPerPage, last = Math.min(first+itemsPerPage, list.size());
+		int first = (curPage)*itemsPerPage, last = Math.min(first+itemsPerPage, list.size());
 		List<JobInfo> res = new ArrayList<JobInfo>();
 		for(int i=first;i<last;++i)
 		{
