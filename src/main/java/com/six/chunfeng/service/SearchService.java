@@ -33,7 +33,12 @@ public class SearchService
 			}
 		}
 	}
-	
+	private String numToWord(String nums, String type)
+	{
+		if(nums==null)
+			return null;
+		return null;
+	}
 	public void search(Integer position, String city, Integer salaryLeast, Integer salaryMost )
 	{
 		if(city==null) city = "%";
@@ -57,7 +62,8 @@ public class SearchService
 		List<JobInfo> res = new ArrayList<JobInfo>();
 		for(int i=first;i<last;++i)
 		{
-			res.add(mapper.selectJobInfoById(list.get(i)));
+			JobInfo info = mapper.selectJobInfoById(list.get(i));
+			info.setCapacity(numToWord(info.getCapacity(),"capacity"));  
 		}
 		return res;
 	}
