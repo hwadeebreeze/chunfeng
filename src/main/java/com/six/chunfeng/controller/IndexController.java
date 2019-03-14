@@ -47,7 +47,6 @@ public class IndexController {
 		return indexService.getPositionDic();
 	}
 	
-
 	@PostMapping("/searchJobList")
 	@ResponseBody
 	public List<JobInfo> getJobList(@ModelAttribute("position") String position,
