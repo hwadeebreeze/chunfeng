@@ -13,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.alibaba.fastjson.JSONObject;
 import com.six.chunfeng.domain.User;
 import com.six.chunfeng.service.LoginService;
 import com.six.chunfeng.util.CookieUtil;

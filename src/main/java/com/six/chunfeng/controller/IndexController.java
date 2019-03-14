@@ -7,14 +7,11 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.six.chunfeng.domain.CompanyInfo;
 import com.six.chunfeng.domain.JobInfo;
@@ -65,11 +62,11 @@ public class IndexController {
 	
 	@PostMapping("/recommendJobList")
 	@ResponseBody
-	public List<JobInfo> recommendJobList(@ModelAttribute("userId") String userId, @ModelAttribute("curPage") String curPage){
-		recommendService.recommend(Integer.valueOf(userId));
+	public List<JobInfo> recommendJobList(@ModelAttribute("userId") int userId, @ModelAttribute("curPage") String curPage){
+		recommendService.recommend(userId);
 		return recommendService.changePage(curPage.equals("")?0:Integer.valueOf(curPage));
 	}
-	
+	 
 	@PostMapping("/getSearchCompanyList")
 	@ResponseBody
 	public List<CompanyInfo> getSearchCompanyList(@ModelAttribute("curPage") String curPage){
